@@ -1,0 +1,32 @@
+\newcommand{\partialBoardClipping}{
+  \ifthenelse{
+    \equal{\horClipStart}{-1} \AND
+    \equal{\horClipEnd}{-1} \AND
+    \equal{\verClipStart}{-1} \AND
+    \equal{\verClipEnd}{-1}
+  }{}{
+    \tikzmath{
+      \horStart = (-1.5 + \horClipStart) * \step;
+      \horEnd = (\horClipEnd) * \step;
+      \verStart = (-1.5 + \verClipStart) * \step;
+      \verEnd = (\verClipEnd) * \step;
+    }
+
+    \clip (\horStart, \verStart) rectangle 
+          (\horEnd, \verEnd);
+  }
+}
+
+\newenvironment{goban}[1][]{
+  \pgfkeys{/phili/goban/.cd, #1}
+
+  \begin{tikzpicture}[scale = \scale, transform shape]
+    \calculateStep
+
+    \partialBoardClipping
+
+    \goGrid
+}{
+    \setcounter{moveCounter}{1}
+  \end{tikzpicture}
+}

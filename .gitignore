@@ -1,0 +1,10 @@
+dist*/
+
+# LaTeX Stuff
+
+*.aux
+*.dvi
+*.log
+*.ps
+*.fls
+*.fdb_latexmk

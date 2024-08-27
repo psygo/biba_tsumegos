@@ -1,0 +1,31 @@
+\documentclass{book}
+
+\usepackage{./goban/goban}
+
+\def\sgfA{;AB[sa];AW[sb];AW[sc];AB[sd]}
+
+
+\begin{document}
+  \begin{figure}[ht]
+    \begin{center}
+      \begin{goban}[board dimension       = 10,
+                    board size            = 19,
+                    scale                 = 1,
+                    outline line width    = 0.5mm,
+                    horizontal clip start = 9,
+                    horizontal clip end   = 19,
+                    vertical clip start   = 9,
+                    vertical clip end     = 19]
+        \parseSgf[sgf       = \sgfA, 
+                  numbering = true]
+      \end{goban}
+
+      % \begin{tikzpicture}
+      %   \clip (0,0) circle (1cm);
+      %   \fill[red] (1,0) circle (1cm);
+      % \end{tikzpicture}
+
+      \caption{Goban 2}\label{my_goban_2}
+    \end{center}
+  \end{figure}
+\end{document}
