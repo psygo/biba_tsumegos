@@ -9,20 +9,22 @@
             bottom        = 0.6in,
             footskip      = 0.25in]{geometry}
 
-\usepackage[labelformat=simple]{subfig}
+\usepackage[labelformat = simple]{subfig}
+\captionsetup[subfloat]{captionskip=10pt}
 \renewcommand{\thesubfigure}{\relax} 
 
 \usepackage{./goban/goban}
 
 \def\sgfA{;AB[sa];AW[sb];AW[sc];AB[sd]}
 \def\sgfB{;AB[sa];AW[sb];AW[sc]}
+% \def\sgfC{(;GM[1]FF[4]CA[UTF-8]AP[Sabaki:0.52.2]KM[6.5]SZ[19]DT[2024-08-27]AW[pd]AB[od][pe][qd])}
 
 \begin{document}
   \begin{figure}[ht]
     \centering
 
     \subfloat[\large 1]{
-      \begin{goban}[board dimension       = 7,
+      \begin{goban}[board dimension       = 7.25,
                     board size            = 19,
                     scale                 = 1,
                     outline line width    = 0.4mm,
@@ -35,7 +37,7 @@
       \end{goban}
     }
     \subfloat[\large 2]{
-      \begin{goban}[board dimension       = 7,
+      \begin{goban}[board dimension       = 7.25,
                     board size            = 19,
                     scale                 = 1,
                     outline line width    = 0.4mm,
@@ -47,9 +49,11 @@
                   numbering = true]
       \end{goban}
     }
-    \\
+
+    \vspace{0.7cm}
+
     \subfloat[\large 3]{
-      \begin{goban}[board dimension       = 7,
+      \begin{goban}[board dimension       = 7.25,
                     board size            = 19,
                     scale                 = 1,
                     outline line width    = 0.4mm,
@@ -62,7 +66,7 @@
       \end{goban}
     }
     \subfloat[\large 4]{
-      \begin{goban}[board dimension       = 7,
+      \begin{goban}[board dimension       = 7.25,
                     board size            = 19,
                     scale                 = 1,
                     outline line width    = 0.4mm,
