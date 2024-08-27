@@ -9,26 +9,70 @@
             bottom        = 0.6in,
             footskip      = 0.25in]{geometry}
 
+\usepackage[labelformat=simple]{subfig}
+\renewcommand{\thesubfigure}{\relax} 
+
 \usepackage{./goban/goban}
 
 \def\sgfA{;AB[sa];AW[sb];AW[sc];AB[sd]}
+\def\sgfB{;AB[sa];AW[sb];AW[sc]}
 
 \begin{document}
   \begin{figure}[ht]
-    \begin{center}
-      \begin{goban}[board dimension       = 7.5,
+    \centering
+
+    \subfloat[\large 1]{
+      \begin{goban}[board dimension       = 7,
                     board size            = 19,
                     scale                 = 1,
-                    outline line width    = 0.5mm,
-                    horizontal clip start = 9,
+                    outline line width    = 0.4mm,
+                    horizontal clip start = 11,
                     horizontal clip end   = 19,
-                    vertical clip start   = 9,
+                    vertical clip start   = 11,
                     vertical clip end     = 19]
         \parseSgf[sgf       = \sgfA, 
                   numbering = true]
       \end{goban}
-
-      \caption{Goban 2}\label{my_goban}
-    \end{center}
+    }
+    \subfloat[\large 2]{
+      \begin{goban}[board dimension       = 7,
+                    board size            = 19,
+                    scale                 = 1,
+                    outline line width    = 0.4mm,
+                    horizontal clip start = 11,
+                    horizontal clip end   = 19,
+                    vertical clip start   = 11,
+                    vertical clip end     = 19]
+        \parseSgf[sgf       = \sgfA, 
+                  numbering = true]
+      \end{goban}
+    }
+    \\
+    \subfloat[\large 3]{
+      \begin{goban}[board dimension       = 7,
+                    board size            = 19,
+                    scale                 = 1,
+                    outline line width    = 0.4mm,
+                    horizontal clip start = 11,
+                    horizontal clip end   = 19,
+                    vertical clip start   = 11,
+                    vertical clip end     = 19]
+        \parseSgf[sgf       = \sgfB,
+                  numbering = true]
+      \end{goban}
+    }
+    \subfloat[\large 4]{
+      \begin{goban}[board dimension       = 7,
+                    board size            = 19,
+                    scale                 = 1,
+                    outline line width    = 0.4mm,
+                    horizontal clip start = 11,
+                    horizontal clip end   = 19,
+                    vertical clip start   = 11,
+                    vertical clip end     = 19]
+        \parseSgf[sgf       = \sgfB,
+                  numbering = true]
+      \end{goban}
+    }
   \end{figure}
 \end{document}
