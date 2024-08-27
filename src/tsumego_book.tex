@@ -1,5 +1,14 @@
 \documentclass{book}
 
+\usepackage[paperheight   = 5.8in, % A6
+            paperwidth    = 4.1in,
+            bindingoffset = 0.2in,
+            left          = 0.1in,
+            right         = 0.26in,
+            top           = 0.7in,
+            bottom        = 0.6in,
+            footskip      = 0.25in]{geometry}
+
 \usepackage{./goban/goban}
 
 \def\sgfA{;AB[sa];AW[sb];AW[sc];AB[sd]}
@@ -7,7 +16,7 @@
 \begin{document}
   \begin{figure}[ht]
     \begin{center}
-      \begin{goban}[board dimension       = 10,
+      \begin{goban}[board dimension       = 7.5,
                     board size            = 19,
                     scale                 = 1,
                     outline line width    = 0.5mm,
@@ -19,7 +28,7 @@
                   numbering = true]
       \end{goban}
 
-      \caption{Goban 2}\label{my_goban_2}
+      \caption{Goban 2}\label{my_goban}
     \end{center}
   \end{figure}
 \end{document}
