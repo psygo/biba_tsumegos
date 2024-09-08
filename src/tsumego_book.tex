@@ -19,7 +19,39 @@
 \def\sgfB{;AB[sa];AW[sb];AW[sc]}
 % \def\sgfC{(;GM[1]FF[4]CA[UTF-8]AP[Sabaki:0.52.2]KM[6.5]SZ[19]DT[2024-08-27]AW[pd]AB[od][pe][qd])}
 
+\def\sgfE{(
+  ;GM[1]FF[4]CA[UTF-8]AP[CGoban:3]ST[2]RU[Japanese]SZ[19]KM[6.50]DT[2023-12-25]
+  ;B[pd]
+  ;W[dd]
+  ;B[dp]
+  ;W[pp]
+  ;AW[ji][jn][kn][ln]AB[jj][jm][km]TR[jp][kp][lp]PL[B]
+  ;B[jq]CR[pp]LB[dd:A][jd:C][pd:B]TR[jj]SQ[ji]MA[dp]
+)}
+
+\def\sgfF{\input{./sgf/1.sgf}}
+
+\def\sgfG{(
+  ;GM[1]FF[4]CA[UTF-8]AP[Sabaki:0.52.2]KM[6.5]SZ[19]DT[2024-08-27]
+  AW[pd]
+  AB[od][pe][qd]
+)}
+
+\def\sgfH{(
+  ;GM[1]FF[4]CA[UTF-8]AP[Sabaki:0.52.2]KM[6.5]SZ[19]DT[2024-08-27]
+  AW[pd]
+  AB[od][pe][qd]
+  ;B[pc]
+)}
+
+\newcommand{\test}[1]{
+  \Large #1
+}
+
 \begin{document}
+  \sgfF
+  \\
+  \test{\input{sgf/1.sgf}}
   \begin{figure}[ht]
     \centering
 
@@ -32,51 +64,50 @@
                     horizontal clip end   = 19,
                     vertical clip start   = 11,
                     vertical clip end     = 19]
-        \parseSgf[sgf       = \sgfA, 
-                  numbering = true]
+        \parseSgf{\sgfH}
       \end{goban}
     }
-    \subfloat[\large 2]{
-      \begin{goban}[board dimension       = 7.25,
-                    board size            = 19,
-                    scale                 = 1,
-                    outline line width    = 0.4mm,
-                    horizontal clip start = 11,
-                    horizontal clip end   = 19,
-                    vertical clip start   = 11,
-                    vertical clip end     = 19]
-        \parseSgf[sgf       = \sgfA, 
-                  numbering = true]
-      \end{goban}
-    }
+    % \subfloat[\large 2]{
+    %   \begin{goban}[board dimension       = 7.25,
+    %                 board size            = 19,
+    %                 scale                 = 1,
+    %                 outline line width    = 0.4mm,
+    %                 horizontal clip start = 11,
+    %                 horizontal clip end   = 19,
+    %                 vertical clip start   = 11,
+    %                 vertical clip end     = 19]
+    %     \parseSgf[sgf       = \sgfA, 
+    %               numbering = true]
+    %   \end{goban}
+    % }
 
-    \vspace{0.7cm}
+    % \vspace{0.7cm}
 
-    \subfloat[\large 3]{
-      \begin{goban}[board dimension       = 7.25,
-                    board size            = 19,
-                    scale                 = 1,
-                    outline line width    = 0.4mm,
-                    horizontal clip start = 11,
-                    horizontal clip end   = 19,
-                    vertical clip start   = 11,
-                    vertical clip end     = 19]
-        \parseSgf[sgf       = \sgfB,
-                  numbering = true]
-      \end{goban}
-    }
-    \subfloat[\large 4]{
-      \begin{goban}[board dimension       = 7.25,
-                    board size            = 19,
-                    scale                 = 1,
-                    outline line width    = 0.4mm,
-                    horizontal clip start = 11,
-                    horizontal clip end   = 19,
-                    vertical clip start   = 11,
-                    vertical clip end     = 19]
-        \parseSgf[sgf       = \sgfB,
-                  numbering = true]
-      \end{goban}
-    }
+    % \subfloat[\large 3]{
+    %   \begin{goban}[board dimension       = 7.25,
+    %                 board size            = 19,
+    %                 scale                 = 1,
+    %                 outline line width    = 0.4mm,
+    %                 horizontal clip start = 11,
+    %                 horizontal clip end   = 19,
+    %                 vertical clip start   = 11,
+    %                 vertical clip end     = 19]
+    %     \parseSgf[sgf       = \sgfB,
+    %               numbering = true]
+    %   \end{goban}
+    % }
+    % \subfloat[\large 4]{
+    %   \begin{goban}[board dimension       = 7.25,
+    %                 board size            = 19,
+    %                 scale                 = 1,
+    %                 outline line width    = 0.4mm,
+    %                 horizontal clip start = 11,
+    %                 horizontal clip end   = 19,
+    %                 vertical clip start   = 11,
+    %                 vertical clip end     = 19]
+    %     \parseSgf[sgf       = \sgfB,
+    %               numbering = true]
+    %   \end{goban}
+    % }
   \end{figure}
 \end{document}
