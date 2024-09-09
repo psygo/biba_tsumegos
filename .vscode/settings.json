@@ -7,5 +7,6 @@
         "**/*.fls": true,
         "**/*.synctex.gz": true,
         "**/*.fdb_latexmk": true,
-    }
+    },
+    "editor.wordWrap": "on"
 }

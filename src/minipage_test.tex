@@ -20,14 +20,56 @@
 
 \usepackage{./goban/goban}
 
-\def\sgfH{(
-  ;GM[1]FF[4]CA[UTF-8]AP[Sabaki:0.52.2]KM[6.5]SZ[19]DT[2024-08-27]
-  AW[pd]
-  AB[od][pe][qd]
-  ;B[pc]
-)}
+\usepackage{catchfile}
+
+% From [this question/answer](https://tex.stackexchange.com/a/726141/64441)
+\newcommand\parseSgfFile[1]{%
+  \CatchFileDef{\mysgf}{#1}{}%
+  \parseSgf{\mysgf}% 
+}
+
+\newcounter{problemCounter}
+\setcounter{problemCounter}{1}
+
+\newcommand\problemDiagram{
+  \begin{figure}[ht]
+    \centering
+
+    \subfloat[\large \theproblemCounter]{
+      \begin{goban}[board dimension       = 8,
+                    board size            = 19,
+                    scale                 = 1,
+                    outline line width    = 0.4mm,
+                    horizontal clip start = 11,
+                    horizontal clip end   = 19,
+                    vertical clip start   = 11,
+                    vertical clip end     = 19]
+        \parseSgfFile{sgf/\theproblemCounter.sgf}
+      \end{goban}
+    }
+    
+    \stepcounter{problemCounter}
+
+    \subfloat[\large \theproblemCounter]{
+      \begin{goban}[board dimension       = 8,
+                    board size            = 19,
+                    scale                 = 1,
+                    outline line width    = 0.4mm,
+                    horizontal clip start = 11,
+                    horizontal clip end   = 19,
+                    vertical clip start   = 11,
+                    vertical clip end     = 19]
+        \parseSgfFile{sgf/\theproblemCounter.sgf}
+      \end{goban}
+    }
+
+    \stepcounter{problemCounter}
+  \end{figure}
+}
 
 \begin{document}
+  \problemDiagram
+
   \begin{figure}[ht]
     \centering
 
@@ -40,7 +82,7 @@
                     horizontal clip end   = 19,
                     vertical clip start   = 11,
                     vertical clip end     = 19]
-        \parseSgf{\sgfH}
+        \parseSgfFile{sgf/1.sgf}
       \end{goban}
     }
 
@@ -53,15 +95,13 @@
                     horizontal clip end   = 19,
                     vertical clip start   = 11,
                     vertical clip end     = 19]
-        \parseSgf{\sgfH}
+        \parseSgfFile{sgf/2.sgf}
       \end{goban}
     }
   \end{figure}
 
-
   \begin{figure}
     \begin{minipage}[c]{0.5\linewidth}
-      % \includegraphics[width=\textwidth]{sgf/sgf_screenshot.png}
       \begin{goban}[board dimension       = 8,
                     board size            = 19,
                     scale                 = 1,
@@ -70,18 +110,18 @@
                     horizontal clip end   = 19,
                     vertical clip start   = 11,
                     vertical clip end     = 19]
-        \parseSgf{\sgfH}
+        \parseSgfFile{sgf/1.solution.sgf}
       \end{goban}
-
+      \caption*{1}
     \end{minipage}\hfill
     \begin{minipage}[c]{0.5\linewidth}
+      \vspace{-0.5cm}
       \small A captura da pedra branca configura uma forma chamada \emph{ponnuki}, que é o número mínimo de pedras para se capturar uma pedra adversária, quando ela não está nem no canto e nem na borda. (Note que a pedra branca será retirada do tabuleiro.)
     \end{minipage}
   \end{figure}
 
   \begin{figure}
     \begin{minipage}[c]{0.5\textwidth}
-      % \includegraphics[width=\textwidth]{sgf/sgf_screenshot.png}
       \begin{goban}[board dimension       = 8,
                     board size            = 19,
                     scale                 = 1,
@@ -90,15 +130,13 @@
                     horizontal clip end   = 19,
                     vertical clip start   = 11,
                     vertical clip end     = 19]
-        \parseSgf{\sgfH}
+        \parseSgfFile{sgf/2.solution.sgf}
       \end{goban}
-
+      \caption*{2}
     \end{minipage}\hfill
     \begin{minipage}[c]{0.5\textwidth}
-      \emph{Dia. 1.} Playing at 1 is great. Isn't it?
-      % \caption{
-      %   bakdfhjaldskjfla
-      % }
+      \vspace{-0.5cm}
+      \small Ao escapar com esta pedra, Preto vai de 1 liberdade para 3, o que é bastante eficiente, isto é, 2 liberdades por movimento.
     \end{minipage}
   \end{figure}
 \end{document}
