@@ -198,7 +198,7 @@
 \newcommand{\drawStone}[3]{
   \pgfmathsetmacro{\xCoord}{\step * (#2 - 1)}
   \pgfmathsetmacro{\yCoord}{\step * (#3 - 1)}
-  \pgfmathsetmacro{\outlineWidth}{\step * 0.95}
+  \pgfmathsetmacro{\outlineWidth}{\step * 1.15}
   \pgfmathsetmacro{\stoneRadius}{\step * \ifStrEq{black}{#1}{0.99}{0.95} / 2}
   
   \draw (\shapeLabelX, \shapeLabelY) node[
