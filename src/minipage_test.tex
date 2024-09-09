@@ -31,7 +31,7 @@
 \newcounter{problemCounter}
 \setcounter{problemCounter}{1}
 
-\newcommand\problemDiagram{
+\newcommand\problemDiagrams{
   \begin{figure}[ht]
     \centering
 
@@ -67,39 +67,10 @@
   \end{figure}
 }
 
-\begin{document}
-  \problemDiagram
+\newcounter{answerCounter}
+\setcounter{answerCounter}{1}
 
-  \begin{figure}[ht]
-    \centering
-
-    \subfloat[\large 1]{
-      \begin{goban}[board dimension       = 8,
-                    board size            = 19,
-                    scale                 = 1,
-                    outline line width    = 0.4mm,
-                    horizontal clip start = 11,
-                    horizontal clip end   = 19,
-                    vertical clip start   = 11,
-                    vertical clip end     = 19]
-        \parseSgfFile{sgf/1.sgf}
-      \end{goban}
-    }
-
-    \subfloat[\large 2]{
-      \begin{goban}[board dimension       = 8,
-                    board size            = 19,
-                    scale                 = 1,
-                    outline line width    = 0.4mm,
-                    horizontal clip start = 11,
-                    horizontal clip end   = 19,
-                    vertical clip start   = 11,
-                    vertical clip end     = 19]
-        \parseSgfFile{sgf/2.sgf}
-      \end{goban}
-    }
-  \end{figure}
-
+\newcommand\answerDiagrams[2]{
   \begin{figure}
     \begin{minipage}[c]{0.5\linewidth}
       \begin{goban}[board dimension       = 8,
@@ -115,8 +86,8 @@
       \caption*{1}
     \end{minipage}\hfill
     \begin{minipage}[c]{0.5\linewidth}
-      \vspace{-0.5cm}
-      \small A captura da pedra branca configura uma forma chamada \emph{ponnuki}, que é o número mínimo de pedras para se capturar uma pedra adversária, quando ela não está nem no canto e nem na borda. (Note que a pedra branca será retirada do tabuleiro.)
+      \vspace{-0.4cm}
+      \small #1
     \end{minipage}
   \end{figure}
 
@@ -135,8 +106,15 @@
       \caption*{2}
     \end{minipage}\hfill
     \begin{minipage}[c]{0.5\textwidth}
-      \vspace{-0.5cm}
-      \small Ao escapar com esta pedra, Preto vai de 1 liberdade para 3, o que é bastante eficiente, isto é, 2 liberdades por movimento.
+      \vspace{-0.4cm}
+      \small #2
     \end{minipage}
   \end{figure}
+}
+
+\begin{document}
+  \problemDiagrams
+  \answerDiagrams%
+   {A captura da pedra branca configura uma forma chamada \emph{ponnuki}, que é o número mínimo de pedras para se capturar uma pedra adversária, quando ela não está nem no canto e nem na borda. (Note que a pedra branca será retirada do tabuleiro.)}%
+   {Ao escapar com esta pedra, Preto vai de 1 liberdade para 3, o que é bastante eficiente, isto é, 2 liberdades por movimento.}%
 \end{document}
