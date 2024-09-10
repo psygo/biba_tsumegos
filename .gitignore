@@ -8,3 +8,4 @@ dist*/
 *.ps
 *.fls
 *.fdb_latexmk
+*.pdf

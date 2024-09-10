@@ -20,14 +20,6 @@
 
 \usepackage{./goban/goban}
 
-\usepackage{catchfile}
-
-% From [this question/answer](https://tex.stackexchange.com/a/726141/64441)
-\newcommand\parseSgfFile[1]{%
-  \CatchFileDef{\mysgf}{#1}{}%
-  \parseSgf{\mysgf}% 
-}
-
 \newcounter{problemCounter}
 \setcounter{problemCounter}{1}
 

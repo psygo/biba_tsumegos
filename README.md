@@ -1,7 +1,8 @@
-# LaTeX Go Tsumego
+# Tsumegos para Iniciantes
 
-A lot of what's here comes from this project: [@psygo/latex-go-diagrams-template](https://github.com/psygo/latex-go-diagrams-template).
+Muito do que está aqui foi desenvolvido neste outro projeto: [@psygo/latex-go-diagrams-template](https://github.com/psygo/latex-go-diagrams-template).
 
-## References
+## Referências
 
 - [@psygo/latex-go-diagrams-template](https://github.com/psygo/latex-go-diagrams-template)
+- [Minhas perguntas no LaTeX Stack Exchange](https://tex.stackexchange.com/users/64441/psygo?tab=questions)
