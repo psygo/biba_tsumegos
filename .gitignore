@@ -9,3 +9,4 @@ dist*/
 *.fls
 *.fdb_latexmk
 *.pdf
+*.toc
