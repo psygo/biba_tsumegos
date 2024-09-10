@@ -3,9 +3,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[portuguese]{babel}
-\usepackage{ebgaramond}
 
-\usepackage[paperheight   = 5.8in, % A6
+\usepackage[paperheight   = 5.2in, % ~A6
             paperwidth    = 4.1in,
             bindingoffset = 0.2in,
             left          = 0.2in,
@@ -14,99 +13,21 @@
             bottom        = 0.6in,
             footskip      = 0.25in]{geometry}
 
-\usepackage[labelformat = simple]{subfig}
-\captionsetup[subfloat]{captionskip=10pt}
-\renewcommand{\thesubfigure}{\relax} 
+% \usepackage[labelformat = simple]{subfig}
+% \captionsetup[subfloat]{captionskip=10pt}
+% \renewcommand{\thesubfigure}{\relax} 
 
 \usepackage{./goban/goban}
-
-\newcounter{problemCounter}
-\setcounter{problemCounter}{1}
-
-\newcommand\problemDiagrams{
-  \begin{figure}[ht]
-    \centering
-
-    \subfloat[\normalsize \theproblemCounter]{
-      \begin{goban}[board dimension       = 8,
-                    board size            = 19,
-                    scale                 = 1,
-                    outline line width    = 0.4mm,
-                    horizontal clip start = 11,
-                    horizontal clip end   = 19,
-                    vertical clip start   = 11,
-                    vertical clip end     = 19]
-        \parseSgfFile{sgf/\theproblemCounter.sgf}
-      \end{goban}
-    }
-    
-    \stepcounter{problemCounter}
-
-    \subfloat[\normalsize \theproblemCounter]{
-      \begin{goban}[board dimension       = 8,
-                    board size            = 19,
-                    scale                 = 1,
-                    outline line width    = 0.4mm,
-                    horizontal clip start = 11,
-                    horizontal clip end   = 19,
-                    vertical clip start   = 11,
-                    vertical clip end     = 19]
-        \parseSgfFile{sgf/\theproblemCounter.sgf}
-      \end{goban}
-    }
-
-    \stepcounter{problemCounter}
-  \end{figure}
-}
-
-\newcounter{answerCounter}
-\setcounter{answerCounter}{1}
-
-\newcommand\answerDiagrams[2]{
-  \begin{figure}
-    \begin{minipage}[c]{0.5\linewidth}
-      \begin{goban}[board dimension       = 8,
-                    board size            = 19,
-                    scale                 = 1,
-                    outline line width    = 0.4mm,
-                    horizontal clip start = 11,
-                    horizontal clip end   = 19,
-                    vertical clip start   = 11,
-                    vertical clip end     = 19]
-        \parseSgfFile{sgf/1.solution.sgf}
-      \end{goban}
-      \caption*{1}
-    \end{minipage}\hfill
-    \begin{minipage}[c]{0.5\linewidth}
-      \vspace{-0.4cm}
-      \small #1
-    \end{minipage}
-  \end{figure}
-
-  \begin{figure}
-    \begin{minipage}[c]{0.5\textwidth}
-      \begin{goban}[board dimension       = 8,
-                    board size            = 19,
-                    scale                 = 1,
-                    outline line width    = 0.4mm,
-                    horizontal clip start = 11,
-                    horizontal clip end   = 19,
-                    vertical clip start   = 11,
-                    vertical clip end     = 19]
-        \parseSgfFile{sgf/2.solution.sgf}
-      \end{goban}
-      \caption*{2}
-    \end{minipage}\hfill
-    \begin{minipage}[c]{0.5\textwidth}
-      \vspace{-0.4cm}
-      \small #2
-    \end{minipage}
-  \end{figure}
-}
+\usepackage{./diagrams}
 
 \begin{document}
   \problemDiagrams
   \answerDiagrams%
-   {A captura da pedra branca configura uma forma chamada \emph{ponnuki}, que é o número mínimo de pedras para se capturar uma pedra adversária, quando ela não está nem no canto e nem na borda. (Note que a pedra branca será retirada do tabuleiro.)}%
-   {Ao escapar com esta pedra, Preto vai de 1 liberdade para 3, o que é bastante eficiente, isto é, 2 liberdades por movimento.}%
+    {A captura da pedra branca configura uma forma chamada \emph{ponnuki}, que é o número mínimo de pedras para se capturar uma pedra adversária, quando ela não está nem no canto e nem na borda. (Note que a pedra branca será retirada do tabuleiro.)}%
+    {Ao escapar com esta pedra, Branco vai de 1 liberdade para 3, o que é bastante eficiente, isto é, 2 liberdades por movimento. Em lutas, liberdades são um bem crucial. Branco também expõe cortes no exterior preto.}%
+
+  \problemDiagrams
+  \answerDiagrams%
+    {A captura da pedra branca configura uma forma chamada \emph{ponnuki}, que é o número mínimo de pedras para se capturar uma pedra adversária, quando ela não está nem no canto e nem na borda. (Note que a pedra branca será retirada do tabuleiro.)}%
+    {Ao escapar com esta pedra, Branco vai de 1 liberdade para 3, o que é bastante eficiente, isto é, 2 liberdades por movimento. Em lutas, liberdades são um bem crucial. Branco também expõe cortes no exterior preto.}%
 \end{document}

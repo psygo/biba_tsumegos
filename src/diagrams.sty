@@ -1,0 +1,72 @@
+\newcounter{problemCounter}
+\setcounter{problemCounter}{1}
+
+\newcommand\problemDiagrams{
+  \begin{figure}[p]
+    \centering
+
+    \begin{goban}[board dimension       = 12,
+                  board size            = 19,
+                  scale                 = 1,
+                  outline line width    = 0.4mm,
+                  horizontal clip start = 11,
+                  horizontal clip end   = 19,
+                  vertical clip start   = 11,
+                  vertical clip end     = 19]
+      \parseSgfFile{sgf/\theproblemCounter.sgf}
+    \end{goban}
+
+    % \vspace{0.5cm}
+
+    % \caption*{É possível capturar a pedra branca?}
+    
+    \stepcounter{problemCounter}
+  \end{figure}
+}
+
+\newcounter{answerCounter}
+\setcounter{answerCounter}{1}
+
+\newcommand\answerDiagrams[2]{
+  \setcounter{answerCounter}{1}
+
+  \begin{figure}
+    \begin{minipage}[c]{0.5\linewidth}
+      \begin{goban}[board dimension       = 8,
+                    board size            = 19,
+                    scale                 = 1,
+                    outline line width    = 0.4mm,
+                    horizontal clip start = 11,
+                    horizontal clip end   = 19,
+                    vertical clip start   = 11,
+                    vertical clip end     = 19]
+        \parseSgfFile{sgf/1.solution.\theanswerCounter.sgf}
+      \end{goban}
+    \end{minipage}\hfill
+    \begin{minipage}[c]{0.5\linewidth}
+      \vspace{0.2cm}
+      \small #1
+    \end{minipage} 
+  \end{figure}
+
+  \stepcounter{answerCounter}
+
+  \begin{figure}
+    \begin{minipage}[c]{0.5\textwidth}
+      \begin{goban}[board dimension       = 8,
+                    board size            = 19,
+                    scale                 = 1,
+                    outline line width    = 0.4mm,
+                    horizontal clip start = 11,
+                    horizontal clip end   = 19,
+                    vertical clip start   = 11,
+                    vertical clip end     = 19]
+        \parseSgfFile{sgf/1.solution.\theanswerCounter.sgf}
+      \end{goban}
+    \end{minipage}\hfill
+    \begin{minipage}[c]{0.5\textwidth}
+      \vspace{0.2cm}
+      \small #2
+    \end{minipage}
+  \end{figure}
+}

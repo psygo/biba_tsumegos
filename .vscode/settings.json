@@ -8,5 +8,6 @@
         "**/*.synctex.gz": true,
         "**/*.fdb_latexmk": true,
     },
-    "editor.wordWrap": "on"
+    "editor.wordWrap": "on",
+    "latex-workshop.linting.chktex.enabled": false
 }
