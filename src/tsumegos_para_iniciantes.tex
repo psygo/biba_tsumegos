@@ -14,13 +14,21 @@
             footskip      = 0.25in]{geometry}
 
 \usepackage[labelformat = simple]{subfig}
-% \captionsetup[subfloat]{captionskip=10pt}
 \renewcommand{\thesubfigure}{\relax} 
 
 \usepackage{./goban/goban}
 \usepackage{./diagrams}
 
 \begin{document}
+  \tableofcontents
+  
+  \chapter{Prefácio}
+  
+  Há 3 pilares para se aprimorar no Go, qual seja o seu nível, desde iniciante até campeão mundial: jogar, revisar e praticar tsumegos.
+
+
+  \chapter{Captura}
+
   \problemDiagrams
   \answerDiagrams%
     {A captura da pedra branca configura uma forma chamada \emph{ponnuki}, que é o número mínimo de pedras para se capturar uma pedra adversária, quando ela não está nem no canto e nem na borda. (Note que a pedra branca será retirada do tabuleiro.)}%

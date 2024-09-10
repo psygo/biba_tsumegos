@@ -3,10 +3,23 @@
 
 \newcommand\problemDiagrams{
   \begin{figure}[t]
-    \vspace{-1cm}
+    \centering
+    \vspace{-0.15cm}
+    
+    \begin{tikzpicture}
+      \node[draw,
+            shape        = circle,
+            inner sep    = 2pt,
+            line width   = 0.03cm,
+            minimum size = 0.75cm] 
+        (char)
+        {\large \textbf{\theproblemCounter}};
+    \end{tikzpicture}
+    
+    \vspace{-0.3cm}
 
     \hbox{
-      \hspace{0.5cm}
+      \hspace{0.4cm}
       \begin{goban}[board dimension       = 14,
                     board size            = 19,
                     scale                 = 1,
@@ -21,7 +34,8 @@
 
     \vspace{0.25cm}
 
-    \caption*{É possível capturar a pedra branca?}
+    \captionsetup{width = .725\linewidth}
+    \caption*{É possível capturar a pedra branca? E caso façamos algo diferente?}
     
     \stepcounter{problemCounter}
   \end{figure}
