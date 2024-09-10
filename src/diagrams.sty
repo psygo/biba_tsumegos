@@ -2,23 +2,26 @@
 \setcounter{problemCounter}{1}
 
 \newcommand\problemDiagrams{
-  \begin{figure}[p]
-    \centering
+  \begin{figure}[t]
+    \vspace{-1cm}
 
-    \begin{goban}[board dimension       = 12,
-                  board size            = 19,
-                  scale                 = 1,
-                  outline line width    = 0.4mm,
-                  horizontal clip start = 11,
-                  horizontal clip end   = 19,
-                  vertical clip start   = 11,
-                  vertical clip end     = 19]
-      \parseSgfFile{sgf/\theproblemCounter.sgf}
-    \end{goban}
+    \hbox{
+      \hspace{0.5cm}
+      \begin{goban}[board dimension       = 14,
+                    board size            = 19,
+                    scale                 = 1,
+                    outline line width    = 0.4mm,
+                    horizontal clip start = 11,
+                    horizontal clip end   = 19,
+                    vertical clip start   = 11,
+                    vertical clip end     = 19]
+        \parseSgfFile{sgf/\theproblemCounter.sgf}
+      \end{goban}
+    }
 
-    % \vspace{0.5cm}
+    \vspace{0.25cm}
 
-    % \caption*{É possível capturar a pedra branca?}
+    \caption*{É possível capturar a pedra branca?}
     
     \stepcounter{problemCounter}
   \end{figure}
