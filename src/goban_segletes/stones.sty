@@ -1,0 +1,57 @@
+% From [this answer by @DavidCarlisle](https://tex.stackexchange.com/a/708876/64441).
+\newcommand\notwhite{black}
+\newcommand\notblack{white}
+
+% From [this answer by @Skillmon](https://tex.stackexchange.com/a/708866/64441).
+\ExplSyntaxOn
+  \cs_new_eq:NN \ifStrEq \str_if_eq:nnTF
+\ExplSyntaxOff
+
+% From [this answer by @DavidCarlisle](https://tex.stackexchange.com/a/708893/64441).
+\ExplSyntaxOn
+  \cs_generate_variant:Nn \int_from_alph:n {e}
+
+  \NewExpandableDocumentCommand{\stringToCoordX}{ m }{
+    \int_from_alph:e { \use_i:nn #1 }
+  }
+  \NewExpandableDocumentCommand{\stringToCoordY}{ m }{
+    \boardSize + 1 - ~\int_from_alph:e { \use_ii:nn #1 }
+  }
+\ExplSyntaxOff
+
+\newcommand{\setCoords}[1]{
+  \pgfmathsetmacro{\x}{\stringToCoordX{#1} - 1}
+  \pgfmathsetmacro{\y}{\stringToCoordY{#1} - 1}
+}
+
+\newcommand{\drawStoneFromSgfCoords}[2]{%
+  \setCoords{#2}
+  
+  \pgfmathsetmacro{\stoneRadius}{\step * \ifStrEq{black}{#1}{0.99}{0.91} / 2}
+  \pgfmathsetmacro{\outlineWidth}{\step * 1.15}
+
+  \draw[
+    draw = \UseName{not#1},
+    fill = #1,
+    minimum size = \step * 1cm,
+    line width = \outlineWidth
+  ]
+    (\x * \step, \y * \step)
+    circle [radius = \stoneRadius];
+}
+
+
+\newcommand{\drawMoveFromSgfCoords}[2]{
+  \expandafter\xdef\csname thecolorat#2\endcsname{#1}% SAVE COLOR AT #2
+  \drawStoneFromSgfCoords{#1}{#2}
+  \textLabel{#1}{#2}{\themoveCounter}
+
+  \stepMoveCounter
+}
+
+\newcounter{moveCounter}
+\setcounter{moveCounter}{1}
+
+\newcommand{\stepMoveCounter}{
+  \stepcounter{moveCounter}
+}
