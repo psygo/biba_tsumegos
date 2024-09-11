@@ -6,9 +6,11 @@
 %-----------------------------------------------------------
 
 \newcounter{problemCounter}
-\setcounter{problemCounter}{1}
+\setcounter{problemCounter}{0}
 
 \newcommand\problemDiagrams{
+  \stepcounter{problemCounter}
+
   \begin{figure}[t]
     \centering
     \vspace{-0.15cm}
@@ -43,8 +45,6 @@
 
     \captionsetup{width = .65\linewidth}
     \caption*{É possível capturar a pedra branca? E caso façamos algo diferente?}
-    
-    \stepcounter{problemCounter}
   \end{figure}
 }
 
@@ -66,7 +66,7 @@
                     horizontal clip end   = 19,
                     vertical clip start   = 11,
                     vertical clip end     = 19]
-        \parseSgfFile{sgf/1.solution.\theanswerCounter.sgf}
+        \parseSgfFile{sgf/\theproblemCounter.solution.\theanswerCounter.sgf}
       \end{goban}
     \end{minipage}\hfill
     \begin{minipage}[c]{0.475\textwidth}
@@ -87,7 +87,7 @@
                     horizontal clip end   = 19,
                     vertical clip start   = 11,
                     vertical clip end     = 19]
-        \parseSgfFile{sgf/1.solution.\theanswerCounter.sgf}
+        \parseSgfFile{sgf/\theproblemCounter.solution.\theanswerCounter.sgf}
       \end{goban}
     \end{minipage}\hfill
     \begin{minipage}[c]{0.475\textwidth}
