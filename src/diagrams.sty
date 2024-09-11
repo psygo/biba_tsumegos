@@ -1,3 +1,5 @@
+%-----------------------------------------------------------
+
 \usepackage[labelformat = simple]{subfig}
 \renewcommand{\thesubfigure}{\relax} 
 
@@ -37,14 +39,16 @@
       \end{goban}
     }
 
-    \vspace{0.25cm}
+    \vspace{0.2cm}
 
-    \captionsetup{width = .725\linewidth}
+    \captionsetup{width = .65\linewidth}
     \caption*{É possível capturar a pedra branca? E caso façamos algo diferente?}
     
     \stepcounter{problemCounter}
   \end{figure}
 }
+
+%-----------------------------------------------------------
 
 \newcounter{answerCounter}
 \setcounter{answerCounter}{1}
@@ -65,8 +69,8 @@
         \parseSgfFile{sgf/1.solution.\theanswerCounter.sgf}
       \end{goban}
     \end{minipage}\hfill
-    \begin{minipage}[c]{0.5\linewidth}
-      \vspace{0.2cm}
+    \begin{minipage}[c]{0.475\textwidth}
+      \vspace{0.4cm}
       \small #1
     \end{minipage} 
   \end{figure}
@@ -86,9 +90,11 @@
         \parseSgfFile{sgf/1.solution.\theanswerCounter.sgf}
       \end{goban}
     \end{minipage}\hfill
-    \begin{minipage}[c]{0.5\textwidth}
-      \vspace{0.2cm}
+    \begin{minipage}[c]{0.475\textwidth}
+      \vspace{0.4cm}
       \small #2
     \end{minipage}
   \end{figure}
 }
+
+%-----------------------------------------------------------
