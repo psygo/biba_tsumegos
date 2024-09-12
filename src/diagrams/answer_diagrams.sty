@@ -1,55 +1,3 @@
-%-----------------------------------------------------------
-
-\usepackage[labelformat = simple]{subfig}
-\renewcommand{\thesubfigure}{\relax} 
-
-%-----------------------------------------------------------
-
-\newcounter{problemCounter}
-\setcounter{problemCounter}{0}
-
-\newcommand\problemDiagrams{
-  \stepcounter{problemCounter}
-
-  \begin{figure}[t]
-    \centering
-    \vspace{-0.15cm}
-    
-    \begin{tikzpicture}
-      \node[draw,
-            shape        = circle,
-            inner sep    = 2pt,
-            line width   = 0.03cm,
-            minimum size = 0.75cm] 
-        (char)
-        {\large \textbf{\theproblemCounter}};
-    \end{tikzpicture}
-    
-    \vspace{-0.3cm}
-
-    \hbox{
-      \hspace{0.4cm}
-      \begin{goban}[board dimension       = 14,
-                    board size            = 19,
-                    scale                 = 1,
-                    outline line width    = 0.4mm,
-                    horizontal clip start = 11,
-                    horizontal clip end   = 19,
-                    vertical clip start   = 11,
-                    vertical clip end     = 19]
-        \parseSgfFile{sgf/\theproblemCounter.sgf}
-      \end{goban}
-    }
-
-    \vspace{0.2cm}
-
-    \captionsetup{width = .65\linewidth}
-    \caption*{É possível capturar a pedra branca? E caso façamos algo diferente?}
-  \end{figure}
-}
-
-%-----------------------------------------------------------
-
 \newcounter{answerCounter}
 \setcounter{answerCounter}{1}
 
@@ -96,5 +44,3 @@
     \end{minipage}
   \end{figure}
 }
-
-%-----------------------------------------------------------
