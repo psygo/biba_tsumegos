@@ -1,7 +1,7 @@
 \newcounter{problemCounter}
 \setcounter{problemCounter}{0}
 
-\newcommand\problemDiagrams{
+\newcommand\problemDiagrams[1]{
   \stepcounter{problemCounter}
 
   \begin{figure}[t]
@@ -37,6 +37,6 @@
     \vspace{0.2cm}
 
     \captionsetup{width = .65\linewidth}
-    \caption*{É possível capturar a pedra branca? E caso façamos algo diferente?}
+    \caption*{#1}
   \end{figure}
 }
