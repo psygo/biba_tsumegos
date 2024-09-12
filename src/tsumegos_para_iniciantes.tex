@@ -3,14 +3,14 @@
 
 \documentclass{book}
 
-\usepackage[paperheight   = 5.2in, % ~A6
-            paperwidth    = 4.1in,
-            bindingoffset = 0.2in,
-            left          = 0.2in,
-            right         = 0.3in,
-            top           = 0.6in,
-            bottom        = 0.6in,
-            footskip      = 0.25in]{geometry}
+\usepackage[paperheight   = 128mm, % ~A6
+            paperwidth    = 105mm,
+            bindingoffset = 5mm,
+            left          = 4.5mm,
+            right         = 9mm,
+            top           = 15.2mm,
+            bottom        = 15.2mm,
+            footskip      = 6.35mm]{geometry}
 
 \usepackage[portuguese]{babel}
 \usepackage{microtype}
@@ -18,13 +18,14 @@
 %-----------------------------------------------------------
 % LaTeX Formatting
 
+% TODO: Get rid of "Capítulo"
 \usepackage{titlesec}
 \titleformat{\chapter}[display]
     {\normalfont\huge\bfseries}
     {\chaptertitlename\ \thechapter}
     {20pt}
     {\Huge}
-\titlespacing*{\chapter}{0pt}{0pt}{20pt}
+\titlespacing*{\chapter}{0pt}{-20pt}{20pt}
 \raggedbottom
 \frenchspacing
 \usepackage{indentfirst}
