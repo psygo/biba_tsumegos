@@ -1,7 +1,7 @@
-\documentclass{book}
+%-----------------------------------------------------------
+% Document Configs
 
-\usepackage[portuguese]{babel}
-\usepackage{microtype}
+\documentclass{book}
 
 \usepackage[paperheight   = 5.2in, % ~A6
             paperwidth    = 4.1in,
@@ -12,8 +12,44 @@
             bottom        = 0.6in,
             footskip      = 0.25in]{geometry}
 
+\usepackage[portuguese]{babel}
+\usepackage{microtype}
+
+%-----------------------------------------------------------
+% LaTeX Formatting
+
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+    {\normalfont\huge\bfseries}
+    {\chaptertitlename\ \thechapter}
+    {20pt}
+    {\Huge}
+\titlespacing*{\chapter}{0pt}{0pt}{20pt}
+\raggedbottom
+\frenchspacing
+\usepackage{indentfirst}
+\usepackage[nottoc,numbib]{tocbibind}
+\addto\captionsportuguese{
+  \renewcommand{\contentsname}{Índice}
+}
+
+\usepackage[colorlinks  = true,
+            allcolors   = black,
+            pdfsubject  = {Go; Baduk; Weiqi},
+            pdftitle    = {Tsumegos para Inciantes - Volume 1 - Captura e Vida ou Morte},
+            pdfauthor   = {Philippe Fanaro},
+            pdfkeywords = {Go; Baduk; Weiqi; Tsumegos},
+            pdfproducer = {LaTeX},
+            pdfcreator  = {pdflatex; bibtex},
+            bookmarksnumbered]{hyperref}
+
+%-----------------------------------------------------------
+% Custom Packages
+
 \usepackage{./goban_segletes/goban}
 \usepackage{./diagrams/diagrams}
+
+%-----------------------------------------------------------
 
 \begin{document}
   \tableofcontents
