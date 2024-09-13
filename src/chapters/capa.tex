@@ -29,22 +29,37 @@
 
   %---------------------------------------------------------
 
-  \vspace*{.4cm}
+  \vspace*{-.2cm}
 
   %---------------------------------------------------------
   % Imagem
   
+  % \begin{figure}[h]
+  %   \centering
+  %   \begin{goban}[board dimension       = 9,
+  %                 board size            = 19,
+  %                 scale                 = 1,
+  %                 outline line width    = 0.4mm,
+  %                 horizontal clip start = 5,
+  %                 horizontal clip end   = 14.5,
+  %                 vertical clip start   = 5,
+  %                 vertical clip end     = 13.5]
+  %     \parseSgfFile{sgf/cover.sgf}
+  %   \end{goban}
+  % \end{figure}
+
+  % TODO: Horizontal centering looks weird
   \begin{figure}[h]
     \centering
-    \begin{goban}[board dimension       = 21.5,
-                  board size            = 19,
+    \begin{goban}[board dimension       = 4.75,
+                  board size            = 9,
                   scale                 = 1,
-                  outline line width    = 0.4mm,
-                  horizontal clip start = 8,
-                  horizontal clip end   = 11.5,
-                  vertical clip start   = 8,
-                  vertical clip end     = 10.5]
-      \parseSgfFile{sgf/cover.sgf}
+                  outline line width    = 0.3mm,
+                  horizontal clip start = 1,
+                  horizontal clip end   = 9,
+                  vertical clip start   = 1,
+                  vertical clip end     = 9]
+      \parseSgfFile{sgf/cover2.sgf}
     \end{goban}
   \end{figure}
 
@@ -55,7 +70,7 @@
   %---------------------------------------------------------
   % Autor
 
-  \Large{Philippe Fanaro}
+  \large{Philippe Fanaro}
 
   %---------------------------------------------------------
 \end{titlepage}
