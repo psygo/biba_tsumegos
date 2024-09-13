@@ -16,7 +16,35 @@
 
 % 3
 \problemDiagrams
-  {É possível capturar a pedra branca?}
+  {Agora a pedra branca está no centro. Ela ainda pode ser capturada?}
 \answerDiagrams
   {\emph{Correto.} A captura da pedra branca configura uma forma chamada \emph{ponnuki}, que é o nú-mero mínimo de pedras para se capturar uma pedra adversária, quando ela não está nem no canto e nem na borda. (Note que a pedra branca será retirada do tabuleiro.)}
-  {\emph{Incorreto.} Ao escapar com esta pedra, Branco vai de 1 liberdade para 3, o que é bastante eficiente, isto é, 2 liberdades por movimento; em lutas, liberdades são um bem crucial. Desta maneira, Branco também expõe os cortes A e B no exterior preto.}
+  {\emph{Variação.} Ao escapar com esta pedra, Branco vai de 1 liberdade para 3, o que é bastante eficiente, isto é, 2 liberdades por movimento; em lutas, liberdades são um bem crucial. Desta maneira, Branco também expõe os cortes A e B no exterior preto.}
+
+% 4
+\problemDiagrams
+  {Preto pode conectar suas pedras?}
+\answerDiagrams
+  {\emph{Correto.} Conectar as pedras zeraria as liberdades de todas as pedras do grupo, o que as automaticamente capturaria, ou seja, seria suicídio, uma jogada inválida.}
+  {\emph{Variação.} Branco tem sempre a opção de capturar ambas as pedras.}
+
+% 5
+\problemDiagrams
+  {Preto pode capturar as pedras brancas?}
+\answerDiagrams
+  {\emph{Correto.} Note que não é suicídio jogar em 1, pois a regra da captura possui precedência. Isto é, primeiro aplicamos a regra da captura, se possível, e, só depois, examinamos se é suicídio. E segue que, se algo for capturado, haverá mais de uma liberdade.}
+  {\emph{Variação.} Mais tarde, se Branco conseguir pedras no exterior, quem pode ser capturado é o Preto! Antes de 1, Preto poderia finalmente capturar o canto, e, dessa maneira, evitar de ser capturado.}
+
+% 6
+\problemDiagrams
+  {É possível capturar algo branco? Ou é suicídio?}
+\answerDiagrams
+  {\emph{Correto.} Sim, é possível capturar duas pedras brancas. A pedra preta que captura estará imediatamente em \emph{atari}, isto é, ela possuirá somente 1 liberdade, então Branco terá a opção de uma contra- ou recaptura.}
+  {\emph{Variação.} Caso Preto opte por não capturar, Branco pode salvar as pedras e deixar Preto com fraquezas no exterior. Isso não quer dizer que não capturar é um erro, pois pode haver outros movimentos mais importantes no tabuleiro.}
+
+% 7
+\problemDiagrams
+  {O grupo branco possui 2 pedras. Isso muda algo em relação à possibilidade de captura?}
+\answerDiagrams
+  {\emph{Correto.} Apesar de o grupo branco ter mais pedras, ele ainda possui somente 1 liberdade. Esta forma é conhecida como ``casco de tartaruga", que é o número mínimo de pedras necessário para se capturar 2 pedras. (Note que ambas as pedras brancas serão retiradas do tabuleiro.)}
+  {\emph{Variação.} Ao fugir, Branco não somente resgata suas pedras como expõe múltiplas fraquezas no exterior Preto.}

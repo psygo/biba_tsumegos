@@ -1,0 +1,31 @@
+\documentclass{book}
+
+\usepackage[paperheight   = 128mm, % ~A6
+            paperwidth    = 105mm,
+            bindingoffset = 5mm,
+            left          = 4.5mm,
+            right         = 9mm,
+            top           = 15.2mm,
+            bottom        = 15.2mm,
+            footskip      = 6.35mm]{geometry}
+
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+            {\normalfont\huge\bfseries}
+            {\thechapter}
+            {20pt}
+            {\Huge}
+\titlespacing*{\chapter}{0pt}{-10pt}{20pt}
+
+\begin{document}
+  \tableofcontents
+
+  \frontmatter
+    \chapter{Preface}
+
+  \mainmatter
+  \part{Liberties}
+    \chapter{Capture}
+  \part{Life \& Death}
+    \chapter{Life}
+\end{document}
