@@ -1,0 +1,61 @@
+\newcommand\coverRuler{
+  \rule{\textwidth}{1.6pt}\vspace*{-\baselineskip}\vspace*{2pt}
+  \rule{\textwidth}{0.4pt}
+}
+
+\begin{titlepage}
+  \centering
+  
+  \scshape % Small Caps
+
+  \vspace*{-1.5cm}
+  
+  %---------------------------------------------------------
+  % Título
+  
+  \coverRuler
+  
+  \vspace{0.7\baselineskip}
+  
+  \LARGE{Tsumegos para Iniciantes}\\
+  \vspace*{10pt}
+  \large{Volume 1}\\
+  \vspace*{10pt}
+  \large{Liberdades e Vida ou Morte}
+
+  \vspace{0.275\baselineskip}
+  
+  \coverRuler
+
+  %---------------------------------------------------------
+
+  \vspace*{.4cm}
+
+  %---------------------------------------------------------
+  % Imagem
+  
+  \begin{figure}[h]
+    \centering
+    \begin{goban}[board dimension       = 21.5,
+                  board size            = 19,
+                  scale                 = 1,
+                  outline line width    = 0.4mm,
+                  horizontal clip start = 8,
+                  horizontal clip end   = 11.5,
+                  vertical clip start   = 8,
+                  vertical clip end     = 10.5]
+      \parseSgfFile{sgf/cover.sgf}
+    \end{goban}
+  \end{figure}
+
+  %---------------------------------------------------------
+  
+  \vfill
+
+  %---------------------------------------------------------
+  % Autor
+
+  \Large{Philippe Fanaro}
+
+  %---------------------------------------------------------
+\end{titlepage}

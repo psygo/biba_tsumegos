@@ -1,31 +1,73 @@
+% \documentclass{book}
+
+% \usepackage[paperheight   = 128mm, % ~A6
+%             paperwidth    = 105mm,
+%             bindingoffset = 5mm,
+%             left          = 4.5mm,
+%             right         = 9mm,
+%             top           = 15.2mm,
+%             bottom        = 15.2mm,
+%             footskip      = 6.35mm]{geometry}
+
+% \usepackage{titlesec}
+% \titleformat{\chapter}[display]
+%             {\normalfont\huge\bfseries}
+%             {\thechapter}
+%             {20pt}
+%             {\Huge}
+% \titlespacing*{\chapter}{0pt}{-10pt}{20pt}
+
+% \begin{document}
+%   \tableofcontents
+
+%   \frontmatter
+%     \chapter{Preface}
+
+%   \mainmatter
+%   \part{Liberties}
+%     \chapter{Capture}
+%   \part{Life \& Death}
+%     \chapter{Life}
+% \end{document}
+
 \documentclass{book}
 
-\usepackage[paperheight   = 128mm, % ~A6
-            paperwidth    = 105mm,
-            bindingoffset = 5mm,
-            left          = 4.5mm,
-            right         = 9mm,
-            top           = 15.2mm,
-            bottom        = 15.2mm,
-            footskip      = 6.35mm]{geometry}
+\usepackage{lipsum}
 
-\usepackage{titlesec}
-\titleformat{\chapter}[display]
-            {\normalfont\huge\bfseries}
-            {\thechapter}
-            {20pt}
-            {\Huge}
-\titlespacing*{\chapter}{0pt}{-10pt}{20pt}
+\usepackage{titleps}
+
+\newpagestyle{mypagestyle}{%
+\headrule
+\sethead{}{\textit{\thechapter.\,–\,\chaptertitle}}{}
+\setfoot{}{\thepage}{}
+}%
+
+% \renewcommand{\chaptermark}[1]{%
+%   \markboth{\thechapter.\ #1}{}}
+% \renewcommand{\partname}{}
+% \usepackage{fancyhdr}
+% \pagestyle{fancy}
+% \fancyhead{}
+% \fancyhead[C]{\nouppercase{\textit{\leftmark}}}
+% \renewcommand\chaptermark[1]{\markboth{\thechapter\,.#1}{}}
+\usepackage[pagestyleset=KOMA-Script,headsepline,automark]{scrlayer-scrpage}
+\setkomafont{pagehead}{\itshape}% use italic instead of slanted page header
+\renewcommand*{\chaptermarkformat}{\thechapter--}%
+
+
+\author{Mickey Mouse}
+\title{A book}
+\date{\today}
 
 \begin{document}
-  \tableofcontents
+  \maketitle
 
   \frontmatter
-    \chapter{Preface}
+  \chapter{Preface}
 
   \mainmatter
-  \part{Liberties}
-    \chapter{Capture}
-  \part{Life \& Death}
-    \chapter{Life}
+  \part{Put the title here}
+    \chapter{First Lipsum}
+      \section{Sublipsum}
+        \lipsum[1-19]
 \end{document}

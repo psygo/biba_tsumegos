@@ -1,4 +1,4 @@
-\newcommand{\partialBoardClipping}{
+\newcommand\partialBoardClipping{
   \ifthenelse{
     \equal{\horClipStart}{-1} \AND
     \equal{\horClipEnd}{-1} \AND
@@ -7,9 +7,9 @@
   }{}{
     \tikzmath{
       \horStart = (-1.5 + \horClipStart) * \step;
-      \horEnd = (\horClipEnd) * \step;
+      \horEnd   = (\horClipEnd) * \step;
       \verStart = (-1.5 + \verClipStart) * \step;
-      \verEnd = (\verClipEnd) * \step;
+      \verEnd   = (\verClipEnd) * \step;
     }
 
     \clip (\horStart, \verStart) rectangle 

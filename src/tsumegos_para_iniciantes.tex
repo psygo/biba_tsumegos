@@ -33,6 +33,10 @@
 \raggedbottom
 \frenchspacing
 
+\renewcommand{\chaptermark}[1]{%
+  \markboth{\thechapter.\ #1}{}}
+\renewcommand{\partname}{}
+
 \usepackage[nottoc,numbib]{tocbibind}
 \addto\captionsportuguese{
   \renewcommand{\contentsname}{Índice}
@@ -60,6 +64,8 @@
 %-----------------------------------------------------------
 
 \begin{document}
+  \input{chapters/capa.tex}
+
   \tableofcontents
 
   \frontmatter
