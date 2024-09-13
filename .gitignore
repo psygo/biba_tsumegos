@@ -10,3 +10,4 @@ dist*/
 *.fdb_latexmk
 *.pdf
 *.toc
+*.out

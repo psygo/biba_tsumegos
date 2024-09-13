@@ -18,21 +18,22 @@
 %-----------------------------------------------------------
 % LaTeX Formatting
 
-% TODO: Get rid of "Capítulo"
 \usepackage{titlesec}
 \titleformat{\chapter}[display]
-    {\normalfont\huge\bfseries}
-    {\chaptertitlename\ \thechapter}
-    {20pt}
-    {\Huge}
-\titlespacing*{\chapter}{0pt}{-20pt}{20pt}
+            {\normalfont\huge\bfseries}
+            {\thechapter}
+            {20pt}
+            {\Huge}
+\titlespacing*{\chapter}{0pt}{-10pt}{20pt}
 \raggedbottom
 \frenchspacing
-\usepackage{indentfirst}
+
 \usepackage[nottoc,numbib]{tocbibind}
 \addto\captionsportuguese{
   \renewcommand{\contentsname}{Índice}
 }
+
+\usepackage{indentfirst}
 
 \usepackage[colorlinks  = true,
             allcolors   = black,
@@ -44,11 +45,13 @@
             pdfcreator  = {pdflatex; bibtex},
             bookmarksnumbered]{hyperref}
 
+
 %-----------------------------------------------------------
 % Custom Packages
 
 \usepackage{./goban_segletes/goban}
 \usepackage{./diagrams/diagrams}
+\usepackage{./utils}
 
 %-----------------------------------------------------------
 
@@ -59,5 +62,12 @@
   \input{chapters/prefacio.tex}
 
   \mainmatter
+  \part{Liberdades}
   \input{chapters/1_captura.tex}
+  \chapter{Resgate}
+  \chapter{Escadas}
+  \chapter{Redes}
+  \part{Vida ou Morte}
+  \chapter{Vida}
+  \chapter{Morte}
 \end{document}

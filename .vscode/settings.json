@@ -5,6 +5,7 @@
         "**/*.log": true,
         "**/*.ps": true,
         "**/*.fls": true,
+        "**/*.out": true,
         "**/*.synctex.gz": true,
         "**/*.fdb_latexmk": true,
         "**/dist/chapters": true,

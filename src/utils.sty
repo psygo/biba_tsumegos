@@ -1,0 +1,15 @@
+% From [this answer](https://tex.stackexchange.com/a/331068/64441).
+\newcommand\blankpage{
+  \clearpage
+  \begingroup
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \hypersetup{pageanchor=false}%
+    \clearpage
+  \endgroup
+}
+
+\newcommand\shref[2]{
+  \small{\href{#1}{\path{#2}}}
+}
