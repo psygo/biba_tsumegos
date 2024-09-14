@@ -34,33 +34,21 @@
   %---------------------------------------------------------
   % Imagem
   
-  % \begin{figure}[h]
-  %   \centering
-  %   \begin{goban}[board dimension       = 9,
-  %                 board size            = 19,
-  %                 scale                 = 1,
-  %                 outline line width    = 0.4mm,
-  %                 horizontal clip start = 5,
-  %                 horizontal clip end   = 14.5,
-  %                 vertical clip start   = 5,
-  %                 vertical clip end     = 13.5]
-  %     \parseSgfFile{sgf/cover.sgf}
-  %   \end{goban}
-  % \end{figure}
-
-  % TODO: Horizontal centering looks weird
   \begin{figure}[h]
     \centering
-    \begin{goban}[board dimension       = 4.75,
-                  board size            = 9,
-                  scale                 = 1,
-                  outline line width    = 0.3mm,
-                  horizontal clip start = 1,
-                  horizontal clip end   = 9,
-                  vertical clip start   = 1,
-                  vertical clip end     = 9]
-      \parseSgfFile{sgf/cover2.sgf}
-    \end{goban}
+    \hbox{
+      \hspace{1.15cm}
+      \begin{goban}[board dimension       = 4.95,
+                    board size            = 9,
+                    scale                 = 1,
+                    outline line width    = 0.3mm,
+                    horizontal clip start = 1,
+                    horizontal clip end   = 9,
+                    vertical clip start   = 1,
+                    vertical clip end     = 9]
+        \parseSgfFile{sgf/cover2.sgf}
+      \end{goban}
+    }
   \end{figure}
 
   %---------------------------------------------------------
