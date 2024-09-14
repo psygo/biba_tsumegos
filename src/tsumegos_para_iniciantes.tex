@@ -54,12 +54,20 @@
   \markboth{\thechapter.\ #1}{}}
 \renewcommand{\partname}{}
 
+% From [this question](https://tex.stackexchange.com/q/726389/64441)
+\usepackage{xpatch}
+\AtBeginDocument{\xpatchcmd{\NR@part}{\partname\nobreakspace}{}{}{}} % Removing "Part" from part titles
+\pagestyle{headings} % apply the change
+\makeatother
+
+% From [this question](https://tex.stackexchange.com/q/726389/64441)
 \usepackage{fancyhdr}
 \fancyhead{}
 \fancyhead[RE]{\slshape\nouppercase\leftmark}
 \fancyhead[LO]{\slshape\nouppercase\rightmark}
 \fancyhead[LE,RO]{\thepage}
 \fancyfoot{}
+\setlength{\headheight}{12.1638pt}
 \renewcommand\headrulewidth{0pt}
 \pagestyle{fancy}
 \makeatletter
@@ -81,11 +89,13 @@
 %-----------------------------------------------------------
 
 \begin{document}
+  % TODO: The cover should be standalone
   \input{chapters/capa.tex}
+
+  \frontmatter
 
   \tableofcontents
 
-  \frontmatter
   \input{chapters/prefacio.tex}
 
   \mainmatter

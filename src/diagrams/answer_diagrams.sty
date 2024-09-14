@@ -1,7 +1,7 @@
 \newcounter{answerCounter}
 \setcounter{answerCounter}{0}
 
-\newcommand\answerDiagram[1]{
+\newcommand\answerDiagram[3]{
   \stepcounter{answerCounter}
 
   \begin{figure}
@@ -14,19 +14,19 @@
                     horizontal clip end   = 19,
                     vertical clip start   = 11,
                     vertical clip end     = 19]
-        \parseSgfFile{sgf/\theproblemCounter.solution.\theanswerCounter.sgf}
+        \parseSgfFile{sgf/#1/#2.solution.\theanswerCounter.sgf}
       \end{goban}
     \end{minipage}\hfill
     \begin{minipage}[c]{0.5\linewidth}
       \vspace{0.465cm}
-      \small #1
+      \small #3
     \end{minipage} 
   \end{figure}
 }
 
-\newcommand\answerDiagrams[2]{
+\newcommand\answerDiagrams[4]{
   \setcounter{answerCounter}{0}
   
-  \answerDiagram{#1}
-  \answerDiagram{#2}
+  \answerDiagram{#1}{#2}{#3}
+  \answerDiagram{#1}{#2}{#4}
 }

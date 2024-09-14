@@ -3,3 +3,15 @@
 
 \usepackage{./diagrams/problem_diagram}
 \usepackage{./diagrams/answer_diagrams}
+
+\newcommand\problemAnswerDiagram[5]{
+  \problemDiagrams
+    {#1}
+    {#2}
+    {#3}
+  \answerDiagrams
+    {#1}
+    {#2}
+    {#4}
+    {#5}
+}
