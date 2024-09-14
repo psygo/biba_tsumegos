@@ -1,7 +1,7 @@
 \newcounter{problemCounter}
 \setcounter{problemCounter}{0}
 
-\newcommand\problemDiagrams[1]{
+\newcommand\problemDiagrams[3]{
   \stepcounter{problemCounter}
 
   \begin{figure}[t]
@@ -30,13 +30,13 @@
                     horizontal clip end   = 19,
                     vertical clip start   = 11,
                     vertical clip end     = 19]
-        \parseSgfFile{sgf/\theproblemCounter.sgf}
+        \parseSgfFile{sgf/#1/#2.sgf}
       \end{goban}
     }
 
     \vspace{0.2cm}
 
     \captionsetup{width = .65\linewidth}
-    \caption*{#1}
+    \caption*{#3}
   \end{figure}
 }
