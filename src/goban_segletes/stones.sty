@@ -1,3 +1,6 @@
+%-----------------------------------------------------------
+% Utils
+
 % From [this answer by @DavidCarlisle](https://tex.stackexchange.com/a/708876/64441).
 \newcommand\notwhite{black}
 \newcommand\notblack{white}
@@ -24,6 +27,16 @@
   \pgfmathsetmacro{\y}{\stringToCoordY{#1} - 1}
 }
 
+\newcounter{moveCounter}
+\setcounter{moveCounter}{1}
+
+\newcommand{\stepMoveCounter}{
+  \stepcounter{moveCounter}
+}
+
+%-----------------------------------------------------------
+% Draw Stone
+
 \newcommand{\drawStoneFromSgfCoords}[2]{%
   \setCoords{#2}
   
@@ -31,27 +44,23 @@
   \pgfmathsetmacro{\outlineWidth}{\step * 1.15}
 
   \draw[
-    draw = \UseName{not#1},
-    fill = #1,
+    draw         = \UseName{not#1},
+    fill         = #1,
     minimum size = \step * 1cm,
-    line width = \outlineWidth
+    line width   = \outlineWidth
   ]
     (\x * \step, \y * \step)
     circle [radius = \stoneRadius];
 }
 
-
 \newcommand{\drawMoveFromSgfCoords}[2]{
-  \expandafter\xdef\csname thecolorat#2\endcsname{#1}% SAVE COLOR AT #2
+  \expandafter\xdef\csname thecolorat#2\endcsname{#1} % Save color at #2
+
   \drawStoneFromSgfCoords{#1}{#2}
+
   \textLabel{#1}{#2}{\themoveCounter}
 
   \stepMoveCounter
 }
 
-\newcounter{moveCounter}
-\setcounter{moveCounter}{1}
-
-\newcommand{\stepMoveCounter}{
-  \stepcounter{moveCounter}
-}
+%-----------------------------------------------------------

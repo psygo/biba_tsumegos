@@ -1,5 +1,13 @@
+\newcommand\emptypage{
+  \newpage 
+  \ 
+  \newpage
+}
+
+% An unnumbered page.
 % From [this answer](https://tex.stackexchange.com/a/331068/64441).
 \newcommand\blankpage{
+  \pagenumbering{gobble}
   \clearpage
   \begingroup
     \null
