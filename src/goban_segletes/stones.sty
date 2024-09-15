@@ -39,9 +39,27 @@
 
 \newcommand{\drawStoneFromSgfCoords}[2]{%
   \setCoords{#2}
+
+  \pgfmathsetmacro{\xCoord}{\x * \step}
+  \pgfmathsetmacro{\yCoord}{\y * \step}
+
+  %---------------------------------------------------------
+  % Stone Background
+
+  \pgfmathsetmacro{\backgroundRadius}{\step * \ifStrEq{black}{#1}{1}{1.01} / 2}
   
-  \pgfmathsetmacro{\stoneRadius}{\step * \ifStrEq{black}{#1}{0.99}{0.91} / 2}
-  \pgfmathsetmacro{\outlineWidth}{\step * 1.15}
+  \draw (\xCoord, \yCoord) [
+    fill      = white,
+    draw      = white,
+    inner sep = 0pt,
+  ] 
+    circle [radius = \backgroundRadius];
+
+  %---------------------------------------------------------
+  % Stone
+
+  \pgfmathsetmacro{\stoneRadius}{\step * \ifStrEq{black}{#1}{0.99}{0.9125} / 2}
+  \pgfmathsetmacro{\outlineWidth}{\step * 1.3}
 
   \draw[
     draw         = \UseName{not#1},
@@ -49,8 +67,10 @@
     minimum size = \step * 1cm,
     line width   = \outlineWidth
   ]
-    (\x * \step, \y * \step)
+    (\xCoord, \yCoord)
     circle [radius = \stoneRadius];
+
+  %---------------------------------------------------------
 }
 
 \newcommand{\drawMoveFromSgfCoords}[2]{
