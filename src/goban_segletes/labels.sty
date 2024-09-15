@@ -1,43 +1,53 @@
-\newcommand\StoneColor[1]{% COMPLEMENTARY COLOR OF REFERENCED STONE
+\newcommand\StoneColor[1]{%
   \ifcsname thecolorat#1\endcsname
     \csname thecolorat#1\endcsname
   \else
-    white% COMPLEMENT OF DEFAULT LABEL COLOR WHEN NOT ATOP EXISTING STONE
+    white%
   \fi
 }
 
-\newcommand{\textLabel}[3]{%
-  \setCoords{#2}%
+\newcommand{\textLabel}[3]{
+  \setCoords{#2}
+
   \draw (\x * \step, \y * \step) 
-  node[
-    color = -\StoneColor{#2},
-    fill = \StoneColor{#2},
-    inner sep=1pt,
-    font  = \small\sffamily
-  ] {#3};
+    node[
+      color     = -\StoneColor{#2},
+      fill      = \StoneColor{#2},
+      inner sep = 1pt,
+      font      = \small\sffamily
+    ] {#3};
 }
 
 \newcommand{\crossLabel}[2]{
   \setCoords{#2}
+
   \draw (\x * \step, \y * \step) 
-  node[
-    color = -\StoneColor{#2},
-    fill = \StoneColor{#2},
-    inner sep=1pt
-  ] {$\times$};
+    node[
+      color     = -\StoneColor{#2},
+      fill      = \StoneColor{#2},
+      inner sep = 1pt
+    ] {$\times$};
 }
 
 \newcommand{\triangleLabel}[2]{
   \setCoords{#2}
+  
+  \draw (\x * \step, \y * \step) [
+    fill      = \StoneColor{#2},
+    draw      = \StoneColor{#2},
+    inner sep = 0pt,
+  ] circle [radius = \stoneRadius * 0.85cm];
+
+  % Shift the triangle label down a bit
   \draw (\x * \step, \y * \step) 
     node[
       isosceles triangle,
       draw                          = #1,
-      line width                    = 0.5mm,
+      line width                    = 0.35mm,
       color                         = -\StoneColor{#2},
-      fill                          = -\StoneColor{#2},
-      minimum height                = \step * 10,
-      minimum width                 = \step * 10,
+      fill                          = \StoneColor{#2},
+      minimum height                = \stoneRadius * 0.85cm,
+      minimum width                 = \stoneRadius * 0.85cm,
       rotate                        = 90,
       isosceles triangle apex angle = 60,
       inner sep                     = 0pt,
