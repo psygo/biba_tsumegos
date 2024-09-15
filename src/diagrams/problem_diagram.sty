@@ -1,24 +1,29 @@
 \newcounter{problemCounter}
 \setcounter{problemCounter}{0}
 
+\newcommand\problemNumber[1]{
+  \begin{tikzpicture}
+    \node[draw,
+          shape        = circle,
+          inner sep    = 2pt,
+          line width   = 0.03cm,
+          minimum size = 0.75cm] 
+      (char)
+      {\large \textbf{#1}};
+  \end{tikzpicture}
+}
+
 \newcommand\problemDiagrams[3]{
   \stepcounter{problemCounter}
 
   \begin{figure}[t]
     \centering
-    \vspace{-0.15cm}
+
+    \vspace{0.05cm}
     
-    \begin{tikzpicture}
-      \node[draw,
-            shape        = circle,
-            inner sep    = 2pt,
-            line width   = 0.03cm,
-            minimum size = 0.75cm] 
-        (char)
-        {\large \textbf{\theproblemCounter}};
-    \end{tikzpicture}
+    \problemNumber{\theproblemCounter}
     
-    \vspace{-0.3cm}
+    \vspace{-0.1cm}
 
     \hbox{
       \hspace{0.55cm}
@@ -34,7 +39,7 @@
       \end{goban}
     }
 
-    \vspace{0.2cm}
+    \vspace{0.275cm}
 
     \captionsetup{width = .65\linewidth}
     \caption*{#3}
