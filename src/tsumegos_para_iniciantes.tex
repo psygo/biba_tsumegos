@@ -15,7 +15,7 @@
             left          = 4.5mm,
             right         = 9mm,
             top           = 15.2mm,
-            bottom        = 15.2mm,
+            bottom        = 12.2mm,
             footskip      = 6.35mm]{geometry}
 
 \usepackage[T1]{fontenc}
@@ -91,6 +91,8 @@
 \begin{document}
   % TODO: The cover should be standalone
   \input{chapters/capa.tex}
+  \pagenumbering{gobble}
+  \blankpage
 
   \frontmatter
 
