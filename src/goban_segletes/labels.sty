@@ -9,7 +9,7 @@
 \newcommand{\textLabel}[3]{
   \setCoords{#2}
 
-  \fontfamily{cmr}
+  \fontfamily{lmr}
   
   \pgfmathsetmacro{\xCoord}{\x * \step}
   \pgfmathsetmacro{\yCoord}{\y * \step}
@@ -18,7 +18,7 @@
     node[
       color     = -\StoneColor{#2},
       fill      = \StoneColor{#2},
-      inner sep = 0.7pt,
+      inner sep = 0.9pt,
       font      = \small
     ] {#3};
 }

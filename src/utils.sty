@@ -18,6 +18,10 @@
   \endgroup
 }
 
-\newcommand\shref[2]{
-  \small{\href{#1}{\path{#2}}}
+\newcommand\shref[2]{%
+  \small\href{#1}{\path{#2}}%
+}
+
+\newcommand\textLmr[1]{%
+  {\fontfamily{lmr}\selectfont\footnotesize #1}%
 }
