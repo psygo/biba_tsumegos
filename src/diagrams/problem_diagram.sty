@@ -3,15 +3,15 @@
 
 \newcommand\problemNumber[1]{
   \begin{tikzpicture}
-    \fontfamily{cmr}
+    \fontfamily{lmr}
 
     \node[draw,
           shape        = circle,
-          inner sep    = 2pt,
-          line width   = 0.03cm,
-          minimum size = 0.75cm] 
+          inner sep    = 2.5pt,
+          line width   = 0.025cm,
+          minimum size = 0.45cm] 
       (char)
-      {\large \textbf{#1}};
+      {\normalsize \textmd{#1}};
   \end{tikzpicture}
 }
 
@@ -21,19 +21,14 @@
   \begin{figure}[t]
     \centering
 
-    \vspace{0.05cm}
-    
-    \problemNumber{\theproblemCounter}
-    
-    \vspace{-0.1cm}
+    \vspace{-0.5cm}
 
     \hbox{
-      \hspace{0.55cm}
       \begin{goban}[board dimension       = 14,
                     board size            = 19,
                     scale                 = 1,
                     outline line width    = 0.4mm,
-                    horizontal clip start = 11,
+                    horizontal clip start = 9,
                     horizontal clip end   = 19,
                     vertical clip start   = 11,
                     vertical clip end     = 19]
@@ -41,9 +36,17 @@
       \end{goban}
     }
 
-    \vspace{0.275cm}
-
-    \captionsetup{width = .65\linewidth}
-    \caption*{#3}
+    \vspace{0.675cm}
+    
+    \begin{minipage}[t]{0.22\linewidth}
+      \hbox{
+        \hspace{0.4cm}
+        \problemNumber{\theproblemCounter}
+      }
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.7425\linewidth}
+      \vspace{-0.67cm}
+      #3
+    \end{minipage}\hspace{0.5cm}
   \end{figure}
 }
