@@ -1,0 +1,59 @@
+\documentclass{book}
+
+\usepackage[paperheight   = 128mm, % ~A6
+            paperwidth    = 105mm,
+            bindingoffset = 5mm,
+            left          = 4.5mm,
+            right         = 9mm,
+            top           = 15.2mm,
+            bottom        = 12.2mm,
+            footskip      = 6.35mm]{geometry}
+
+\usepackage[T1]{fontenc}
+\usepackage[portuguese]{babel}
+
+%-----------------------------------------------------------
+% Problem Diagram
+
+\usepackage{tikz}
+
+\newcounter{problemCounter}
+\setcounter{problemCounter}{0}
+
+\newcommand\problemNumber[1]{
+  \begin{tikzpicture}
+    \fontfamily{lmr}
+
+    \node[draw,
+          shape        = circle,
+          inner sep    = 2.5pt,
+          line width   = 0.025cm,
+          minimum size = 0.45cm] 
+      (char)
+      {\normalsize \textmd{#1}};
+  \end{tikzpicture}
+}
+
+\newcommand\problemDiagram[1]{
+  \stepcounter{problemCounter}
+
+  \begin{figure}[t]
+    \centering
+
+    \begin{minipage}[t]{0.22\linewidth}
+      \hbox{
+        \problemNumber{\theproblemCounter}
+      }
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.7425\linewidth}
+      % \vspace{-0.67cm}
+      #1
+    \end{minipage}\hspace{0.5cm}
+  \end{figure}
+}
+
+%-----------------------------------------------------------
+
+\begin{document}
+  \problemDiagram{Here}
+\end{document}
