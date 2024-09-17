@@ -1,4 +1,5 @@
 dist*/
+*.DS_Store
 
 # LaTeX Stuff
 
@@ -11,3 +12,4 @@ dist*/
 *.pdf
 *.toc
 *.out
+*.synctex.gz
