@@ -12,5 +12,4 @@
         "**/*.toc": true,
     },
     "editor.wordWrap": "on",
-    "latex-workshop.linting.chktex.enabled": false
 }

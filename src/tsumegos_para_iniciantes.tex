@@ -1,3 +1,4 @@
+% TODO: Fix problem number and caption at the top of the minipage.
 %-----------------------------------------------------------
 % Document Configs
 
@@ -16,10 +17,11 @@
 \usepackage[portuguese]{babel}
 \usepackage{microtype}
 
-\usepackage[utf8]{inputenc}
 \usepackage{lmodern}
-\usepackage{ebgaramond}
 
+\usepackage{fontspec}
+% From [this comment](https://www.reddit.com/r/identifythisfont/comments/1fiahvg/comment/lngfilr/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)
+\setmainfont{Adobe Garamond Pro}
 
 %-----------------------------------------------------------
 % LaTeX Formatting
@@ -46,7 +48,7 @@
             {\huge}
 \titlespacing*{\chapter}
               {0pt}
-              {-10pt}
+              {-20pt}
               {20pt}
 
 \renewcommand{\chaptermark}[1]{%
