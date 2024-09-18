@@ -2,7 +2,15 @@
 \setcounter{problemCounter}{0}
 
 \newcommand\problemNumber[1]{
-  \begin{tikzpicture}[baseline=0pt]
+  \pgfmathsetmacro{\baselinePad}{
+    \ifnum\theproblemCounter>9 
+      2.25pt 
+    \else
+      0.25pt
+    \fi
+  }
+
+  \begin{tikzpicture}[baseline=\baselinePad]
     \fontfamily{lmr}
 
     \node[draw,
