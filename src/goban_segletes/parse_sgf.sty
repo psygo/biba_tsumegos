@@ -28,44 +28,44 @@
   \readlist*\Z{#1}%
 
   \foreachitem \Branch \in \Z[]{%
-  \foreachitem \Group \in \Z[\Branchcnt]{%
-    \foreachitem \Key \in \Z[\Branchcnt, \Groupcnt]{%
-     \if\relax\Key\relax% IF BLANK KEY & VALUE, SKIP
-     \else
-      \itemtomacro\Z[\Branchcnt, \Groupcnt, \Keycnt, 1]\KeyName
-      \if\relax\KeyName\relax% IF VALUE, BUT NO KEYNAME, USE RECENT KEYNAME
+    \foreachitem \Group \in \Z[\Branchcnt]{%
+      \foreachitem \Key \in \Z[\Branchcnt, \Groupcnt]{%
+        \if\relax\Key\relax% IF BLANK KEY & VALUE, SKIP
+        \else
+        \itemtomacro\Z[\Branchcnt, \Groupcnt, \Keycnt, 1]\KeyName
+        \if\relax\KeyName\relax% IF VALUE, BUT NO KEYNAME, USE RECENT KEYNAME
         \let\KeyName\MostRecentKeyname
-      \else
+        \else
         \xdef\MostRecentKeyname{\KeyName}%
-      \fi
-      \itemtomacro\Z[\Branchcnt, \Groupcnt, \Keycnt, 2, 1]\KeyValue
+        \fi
+        \itemtomacro\Z[\Branchcnt, \Groupcnt, \Keycnt, 2, 1]\KeyValue
 
-      \edef\tmp{{\csname thecolorof\KeyName\endcsname}{\KeyValue}}%
+        \edef\tmp{{\csname thecolorof\KeyName\endcsname}{\KeyValue}}%
 
-      \if\Keytypeof\KeyName M
+        \if\Keytypeof\KeyName M
         \expandafter\drawMoveFromSgfCoords\tmp
-      \fi
-      \if\Keytypeof\KeyName A
+        \fi
+        \if\Keytypeof\KeyName A
         \expandafter\drawStoneFromSgfCoords\tmp
-      \fi
-      \if\Keytypeof\KeyName K
+        \fi
+        \if\Keytypeof\KeyName K
         \expandafter\crossLabel\tmp
-      \fi
-      \if\Keytypeof\KeyName C
+        \fi
+        \if\Keytypeof\KeyName C
         \expandafter\circleLabel\tmp
-      \fi
-      \if\Keytypeof\KeyName T
+        \fi
+        \if\Keytypeof\KeyName T
         \expandafter\triangleLabel\tmp
-      \fi
-      \if\Keytypeof\KeyName S
+        \fi
+        \if\Keytypeof\KeyName S
         \expandafter\squareLabel\tmp
-      \fi
-      \if\Keytypeof\KeyName L
+        \fi
+        \if\Keytypeof\KeyName L
         \expandafter\textLabel\tmp{\Z[\Branchcnt, \Groupcnt, \Keycnt, 2, 2]} 
-      \fi
-     \fi
-    }
-  }%
+        \fi
+        \fi
+      }
+    }%
   }%
 }
 
