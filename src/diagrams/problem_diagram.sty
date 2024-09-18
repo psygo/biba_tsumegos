@@ -2,7 +2,7 @@
 \setcounter{problemCounter}{0}
 
 \newcommand\problemNumber[1]{
-  \begin{tikzpicture}[baseline=1.5pt]
+  \begin{tikzpicture}[baseline=0pt]
     \fontfamily{lmr}
 
     \node[draw,
@@ -30,7 +30,7 @@
                     outline line width    = 0.4mm,
                     horizontal clip start = 9,
                     horizontal clip end   = 19,
-                    vertical clip start   = 11,
+                    vertical clip start   = 9,
                     vertical clip end     = 19]
         \parseSgfFile{sgf/#1/#2.sgf}
       \end{goban}
@@ -38,7 +38,7 @@
 
     \vspace{0.675cm}
     
-    \begin{minipage}[t]{0.22\linewidth}
+    \begin{minipage}[t]{0.2\linewidth}
       \hbox{
         \hspace{0.4cm}
         \problemNumber{\theproblemCounter}

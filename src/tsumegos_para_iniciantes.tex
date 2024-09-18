@@ -5,12 +5,15 @@
 % Document Configs
 
 \documentclass{book}
+\renewcommand{\footnotesize}{\normalsize}
+\renewcommand{\normalsize}{\large}
+
 
 \usepackage[paperheight   = 148mm, % ~A6
             paperwidth    = 105mm,
             bindingoffset = 5mm,
-            left          = 2.5mm,
-            right         = 7mm,
+            left          = 3.75mm,
+            right         = 8mm,
             top           = 15.2mm,
             bottom        = 10.2mm,
             footskip      = 6.35mm]{geometry}
@@ -37,6 +40,7 @@
             pdfproducer = {LaTeX},
             pdfcreator  = {pdflatex; bibtex},
             bookmarksnumbered]{hyperref}
+\usepackage{xurl}
 
 \raggedbottom
 \frenchspacing

@@ -20,7 +20,8 @@
 \newenvironment{goban}[1][]{
   \pgfkeys{/phili/goban/.cd, #1}
 
-  \begin{tikzpicture}[scale = \scale, transform shape]
+  \begin{tikzpicture}[scale = \scale,
+                      transform shape]
     \calculateStep
 
     \partialBoardClipping
