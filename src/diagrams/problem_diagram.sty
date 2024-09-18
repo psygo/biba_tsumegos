@@ -6,7 +6,15 @@
     \ifnum\theproblemCounter>9 
       2.25pt 
     \else
-      0.25pt
+      1.75pt
+    \fi
+  }
+
+  \pgfmathsetmacro{\innerSep}{
+    \ifnum\theproblemCounter>9 
+      2.5pt 
+    \else
+      4pt
     \fi
   }
 
@@ -15,7 +23,7 @@
 
     \node[draw,
           shape        = circle,
-          inner sep    = 2.5pt,
+          inner sep    = \innerSep,
           line width   = 0.025cm,
           minimum size = 0.45cm] 
       (char)
@@ -48,7 +56,7 @@
     
     \begin{minipage}[t]{0.2\linewidth}
       \hbox{
-        \hspace{0.4cm}
+        \hspace{0.15cm}
         \problemNumber{\theproblemCounter}
       }
     \end{minipage}\hfill
