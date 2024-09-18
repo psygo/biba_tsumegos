@@ -11,7 +11,7 @@
           line width   = 0.025cm,
           minimum size = 0.45cm] 
       (char)
-      {\normalsize \textmd{#1}};
+      {\textmd{#1}};
   \end{tikzpicture}
 }
 
@@ -27,7 +27,7 @@
       \begin{goban}[board dimension       = 14,
                     board size            = 19,
                     scale                 = 1,
-                    outline line width    = 0.4mm,
+                    outline line width    = 0.55mm,
                     horizontal clip start = 9,
                     horizontal clip end   = 19,
                     vertical clip start   = 9,
@@ -45,8 +45,7 @@
       }
     \end{minipage}\hfill
     \begin{minipage}[t]{0.7\linewidth}
-      % \vspace{-0.4cm}
-      \large #3
+      #3
     \end{minipage}\hspace{0.7cm}
   \end{figure}
 }
