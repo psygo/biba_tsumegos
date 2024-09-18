@@ -1,3 +1,24 @@
 \chapter{Vida}
 
 \emptypage
+
+\problemAnswerDiagram
+  {vida}
+  {vida.1}
+  {Este exercício é uma das essências do Go. É possível permanecer incondicionalmente no tabuleiro?}
+  {\emph{Correto.} Sim, com 1, estabelecemos ``dois olhos'', o que impossibilita a captura do grupo. Branco precisaria jogar tanto em A quanto em B para capturar, mas ele só possui um movimento por turno, portanto, cada um deles será considerado suicídio!}
+  {\emph{Incorreto.} Preto talvez pense que seja possível capturar a pedra 1, mas ele morrerá primeiro. Note que, o melhor movimento do seu adversário (jogar 1 para viver como Preto) é também seu melhor movimento.}
+
+\problemAnswerDiagram
+  {vida}
+  {vida.2}
+  {Talvez o grupo estar na lateral e não no canto mude o seu status.}
+  {\emph{Correto.} Não, é exatamente a mesma forma do problema anterior.}
+  {\emph{Incorreto.} E o mesmo movimento para matar.}
+
+\problemAnswerDiagram
+  {vida}
+  {vida.3}
+  {Cercar 3 intersecções é insuficiente para viver, a não ser que seja seu turno. E se estivermos cercando de 4 a 5?}
+  {\emph{Correto.} Cercar 4 é suficiente, pois é impossível que Branco faça com que todo o espaço vire algo indivisível. Se Branco jogar em 3, Preto responderá em 2.}
+  {\emph{Incorreto.} Branco em 2 é uma tática ligeiramente mais avançada --- e que veremos em breve --- para criar um olho falso. Preto acaba efetivamente cercando somente 3 intersecções.}
