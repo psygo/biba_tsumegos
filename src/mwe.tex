@@ -1,7 +1,10 @@
-\documentclass{article}
+\documentclass{book}
+
+\usepackage{ifthen}
 
 \usepackage{tikz}
 \usetikzlibrary{shapes.geometric}
+\usetikzlibrary{math}
 \usepackage{listofitems}
 
 %-----------------------------------------------------------
@@ -185,15 +188,432 @@
 }
 
 %-----------------------------------------------------------
+% Grid
+
+\newcommand{\calculateStep}{
+  \pgfmathsetmacro{\step}{\boardDimension / (\boardSize - 1)} % chktex 1
+}
+
+% From [this answer by @UlrichDiez](https://tex.stackexchange.com/a/709341/64441).
+\pgfkeys{%
+  %---------------------------------------------------------
+  /phili/goGrid/.cd, 
+    %-------------------------------------------------------
+    % Dimensions
+    board dimension/.store in    = \boardDimension,
+    board dimension              = 10cm,
+    board size/.store in         = \boardSize,
+    board size                   = 19,
+    %-------------------------------------------------------
+    % Outline
+    outline line width/.store in = \boardOutlineWidth,
+    outline line width           = 0.7mm,
+  %---------------------------------------------------------
+  /phili/goban/.search also={/phili/goGrid},
+  /phili/goban/.cd,  
+    %-------------------------------------------------------
+    % Scale
+    scale/.store in              = \scale,
+    scale                        = 1,
+    %-------------------------------------------------------
+    % Partial Boards
+    horizontal clip start/.store in = \horClipStart,
+    horizontal clip start           = -1,
+    horizontal clip end/.store in   = \horClipEnd, % This is more like the width?
+    horizontal clip end             = -1,
+    vertical clip start/.store in   = \verClipStart,
+    vertical clip start             = -1,
+    vertical clip end/.store in     = \verClipEnd, % This is more like the height?
+    vertical clip end               = -1,
+  %---------------------------------------------------------
+}
+
+% Parameters
+%
+% - `board dimension` (in cm)
+% - `board size` (square)
+% 
+% Example: A 19x19 board with size 10cm x 10cm:
+%
+% ```tex
+% \goGrid[board dimension    = 10,
+%         board size         = 9,
+%         scale              = 1,
+%         outline line width = 0.5mm]
+% ```
+\newcommand{\goGrid}[1][]{
+  \pgfkeys{/phili/goGrid/.cd, #1}
+
+  \calculateStep
+
+  \draw[step=\step] (0, 0) grid
+    (\boardDimension, \boardDimension);
+  
+  \boardOutline{\boardDimension}
+
+  \drawHoshis
+}
+
+% Reference: [Drawing a Non-Jagged Grid Outline](https://tex.stackexchange.com/q/709298/64441)
+%
+% Parameters
+%
+% 1: dimension (in cm)
+% 
+% Example: `\boardOutline{10}`
+\newcommand{\boardOutline}[1]{
+  \draw[step       = #1,
+        line width = \boardOutlineWidth,
+        line cap   = rect] 
+    (0, 0) grid (#1, #1);
+}
+
+% Example: A 19x19 board with size 10cm x 10cm: `\drawHoshis`
+\newcommand{\drawHoshis}{
+  \tikzmath{
+    \hoshiRadius = \step * 0.125;
+    %
+    \centerHoshi = ceil(\boardSize / 2);
+    %
+    int \hoshiDistance;
+    if \boardSize<12 then {
+      \hoshiDistance = 3;
+    } else {
+      \hoshiDistance = 4;
+    };
+    %
+    \hoshiComplement = \boardSize - \hoshiDistance + 1;
+  }
+
+  \drawCenterHoshi
+  \drawCornerHoshis
+  \ifnum\boardSize>6\relax
+    \drawCornerHoshis
+  \fi
+  \ifthenelse{\isodd{\boardSize}}{
+    \ifnum\boardSize>13\relax
+      \drawSideHoshis
+    \fi
+  }{}
+}
+
+\newcommand{\drawCenterHoshi}{
+  \pgfmathsetmacro{\centerHoshiCoord}{(\centerHoshi - 1) * \step}
+
+  \filldraw (\centerHoshiCoord, \centerHoshiCoord)
+    circle [radius=\hoshiRadius];
+}
+
+\newcommand{\drawCornerHoshis}{
+  \def\cornerHoshisArray{%
+    {\hoshiDistance, \hoshiDistance},%
+    {\hoshiComplement, \hoshiDistance},%
+    {\hoshiDistance, \hoshiComplement },%
+    {\hoshiComplement, \hoshiComplement}%
+  }
+
+  \loopOverHoshis{\cornerHoshisArray}
+}
+
+\newcommand{\loopOverHoshis}[1]{
+  \foreach \sloc in #1 {
+    \pgfmathsetmacro{\hoshiCoordX}{\step * ({\sloc}[0] - 1)}
+    \pgfmathsetmacro{\hoshiCoordY}{\step * ({\sloc}[1] - 1)}
+
+    \filldraw (\hoshiCoordX, \hoshiCoordY)
+      circle [radius=\hoshiRadius];
+  }
+}
+
+\newcommand{\drawSideHoshis}{
+  \def\sideHoshisArray{%
+    {\hoshiDistance, \centerHoshi},%
+    {\centerHoshi, \hoshiComplement},%
+    {\centerHoshi, \hoshiDistance},%
+    {\hoshiComplement, \centerHoshi}%
+  }    
+
+  \loopOverHoshis{\sideHoshisArray}
+}
+
+%-----------------------------------------------------------
+% Goban Env
+
+\newcommand\partialBoardClipping{
+  \ifthenelse{
+    \equal{\horClipStart}{-1} \AND
+    \equal{\horClipEnd}{-1} \AND
+    \equal{\verClipStart}{-1} \AND
+    \equal{\verClipEnd}{-1}
+  }{}{
+    \tikzmath{
+      \horStart = (-1.5 + \horClipStart) * \step;
+      \horEnd   = (\horClipEnd) * \step;
+      \verStart = (-1.5 + \verClipStart) * \step;
+      \verEnd   = (\verClipEnd) * \step;
+    }
+
+    \clip (\horStart, \verStart) rectangle 
+          (\horEnd, \verEnd);
+  }
+}
+
+\newenvironment{goban}[1][]{
+  \pgfkeys{/phili/goban/.cd, #1}
+
+  \begin{tikzpicture}[scale = \scale,
+                      transform shape]
+    \calculateStep
+
+    \partialBoardClipping
+
+    \goGrid
+}{
+    \setcounter{moveCounter}{1}
+  \end{tikzpicture}
+}
+
+%-----------------------------------------------------------
+% Problem Diagram
+
+\newcounter{problemCounter}
+\setcounter{problemCounter}{0}
+
+\newcommand\problemNumber[1]{
+  \pgfmathsetmacro{\baselinePad}{
+    \ifnum\theproblemCounter>9 
+      2.25pt 
+    \else
+      1.75pt
+    \fi
+  }
+
+  \pgfmathsetmacro{\innerSep}{
+    \ifnum\theproblemCounter>9 
+      2.5pt 
+    \else
+      4pt
+    \fi
+  }
+
+  \begin{tikzpicture}[baseline=\baselinePad]
+    \fontfamily{lmr}
+
+    \node[draw,
+          shape        = circle,
+          inner sep    = \innerSep,
+          line width   = 0.025cm,
+          minimum size = 0.45cm] 
+      (char)
+      {\textmd{#1}};
+  \end{tikzpicture}
+}
+
+\newcommand\problemDiagram[3]{
+  \stepcounter{problemCounter}
+
+  \begin{figure}[t]
+    \centering
+
+    \vspace{-0.5cm}
+
+    \hbox{
+      \begin{goban}[board dimension       = 14,
+                    board size            = 19,
+                    scale                 = 1,
+                    outline line width    = 0.55mm,
+                    horizontal clip start = 9,
+                    horizontal clip end   = 19,
+                    vertical clip start   = 9,
+                    vertical clip end     = 19]
+        \parseSgfFile{sgf/#1/#2.sgf}
+      \end{goban}
+    }
+
+    \vspace{0.675cm}
+    
+    \begin{minipage}[t]{0.2\linewidth}
+      \hbox{
+        \hspace{0.15cm}
+        \problemNumber{\theproblemCounter}
+      }
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.7\linewidth}
+      #3
+    \end{minipage}\hspace{0.7cm}
+  \end{figure}
+}
+
+%-----------------------------------------------------------
+% Answer Diagrams
+
+\newcounter{answerCounter}
+\setcounter{answerCounter}{0}
+
+\newcommand\answerDiagram[3]{
+  \stepcounter{answerCounter}
+  
+  \begin{figure}
+    \vspace{0.5cm}
+
+    \begin{minipage}[c]{0.5\linewidth}
+      \begin{goban}[board dimension       = 8.3,
+                    board size            = 19,
+                    scale                 = 1,
+                    outline line width    = 0.425mm,
+                    horizontal clip start = 11,
+                    horizontal clip end   = 19,
+                    vertical clip start   = 11,
+                    vertical clip end     = 19]
+        \parseSgfFile{sgf/#1/#2.solution.\theanswerCounter.sgf}
+      \end{goban}
+    \end{minipage}\hfill
+    \begin{minipage}[c]{0.49\linewidth}
+      #3
+    \end{minipage} 
+  \end{figure}
+}
+
+\newcommand\answerDiagrams[4]{
+  \setcounter{answerCounter}{1}
+  
+  % \answerDiagram{#1}{#2}{#3}
+  \answerDiagram{#1}{#2}{#4}
+}
+
+%-----------------------------------------------------------
+% Diagrams
+
+\usepackage[labelformat = simple]{subfig}
+\renewcommand{\thesubfigure}{\relax} 
+
+\newcommand\problemAnswerDiagram[5]{
+  \problemDiagram
+    {#1}
+    {#2}
+    {#3}
+  \answerDiagrams
+    {#1}
+    {#2}
+    {#4}
+    {#5}
+}
+
+%-----------------------------------------------------------
+% Utils
+
+\newcommand\emptypage{
+  \newpage 
+  \ 
+  \newpage
+}
+
+% An unnumbered page.
+% From [this answer](https://tex.stackexchange.com/a/331068/64441).
+\newcommand\blankpage{
+  \pagenumbering{gobble}
+  \clearpage
+  \begingroup
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \hypersetup{pageanchor=false}%
+    \clearpage
+  \endgroup
+}
+
+\newcommand\shref[2]{%
+  \normalsize\href{#1}{\path{#2}}\normalsize%
+}
+
+%-----------------------------------------------------------
 
 \begin{document}
-  \begin{tikzpicture}
-    \draw[step=\step] (0, 0) grid (10, 10);
-    \parseSgfFile{sgf/captura/captura.9.solution.1.sgf}
-  \end{tikzpicture}
+  % \begin{tikzpicture}
+  %   \draw[step=\step] (0, 0) grid (10, 10);
+  %   \parseSgfFile{sgf/captura/captura.9.solution.1.sgf}
+  % \end{tikzpicture}
 
-  \begin{tikzpicture}
-    \draw[step=\step] (0, 0) grid (10, 10);
-    \parseSgfFile{sgf/captura/captura.7.solution.2.sgf}
-  \end{tikzpicture}
+  % \begin{tikzpicture}
+  %   \draw[step=\step] (0, 0) grid (10, 10);
+  %   \parseSgfFile{sgf/captura/captura.7.solution.2.sgf}
+  % \end{tikzpicture}
+
+  % \begin{goban}[board dimension       = 14,
+  %               board size            = 19,
+  %               scale                 = 1,
+  %               outline line width    = 0.55mm,
+  %               horizontal clip start = 9,
+  %               horizontal clip end   = 19,
+  %               vertical clip start   = 9,
+  %               vertical clip end     = 19]
+  %   \parseSgfFile{sgf/captura/captura.7.solution.2.sgf}
+  % \end{goban}
+
+  % \problemDiagram{captura}
+  %                {captura.7}
+  %                {Here}
+
+  % \answerDiagrams{captura}
+  %                {captura.7}
+  %                {Here}
+  %                {Here}
+
+  % \problemAnswerDiagram{captura}
+  %                       {captura.7}
+  %                       {Here}
+  %                       {Here}
+  %                       {Here}
+
+  % \input{chapters/capa.tex}
+  % % \blankpage
+
+  % \frontmatter
+
+  % \tableofcontents
+
+  % \chapter{Prefacio}
+  % % \input{chapters/prefacio.tex}
+
+  % \mainmatter
+  % \part{Liberdades}
+    % \chapter{Captura}
+    %   Here
+    %   Blah
+
+      \answerDiagrams{captura}
+                     {captura.7}
+                     {Here}
+                     {Here}
+
+      \answerDiagrams{captura}
+                     {captura.8}
+                     {Here}
+                     {Here}
+                     
+      \answerDiagrams{captura}
+                     {captura.7}
+                     {Here}
+                     {Here}
+      
+      % \problemAnswerDiagram
+      %   {captura}
+      %   {captura.8}
+      %   {Há uma pedra branca solitária no topo. O que Preto pode fazer com ela?}
+      %   {\emph{Correto.} Preto pode capturá-la e, assim, resolver o problem do corte que existia em A.}
+      %   {\emph{Incorreto.} Preto poderia ter capturado a pedra, o que resolveria o corte de uma maneira mais eficiente, sem jogar em seu próprio território. E esta defesa dá chances para que Branco conecte todas as suas pedras mais tarde.}
+
+      % \problemAnswerDiagram
+      %   {captura}
+      %   {captura.9}
+      %   {Capturas no canto são geralmente de extremo valor pois podem garantir não somente território, mas, também, o espaço vital de grupos, como veremos mais tarde nos exercícios de vida ou morte deste livro.}
+      %   {\emph{Correto.} A captura da pedra do canto limpa o canto para Preto, e ainda deixa a pedra A com somente 1 liberdade.}
+      %   {\emph{Incorreto.} Localmente pelo menos, não jogar aqui como Preto ajuda Branco a se estabilizar localmente, enquanto contra-ataca severamente.}
+
+      % \problemAnswerDiagram
+      %   {captura}
+      %   {captura.7}
+      %   {O grupo branco mais ao topo possui 2 pedras. Isso muda algo em relação à possibilidade de captura?}
+      %   {\emph{Correto.} Apesar de o grupo branco ter mais pedras, ele ainda possui somente 1 liberdade. Esta forma é conhecida como ``casco de tartaruga'', que é o número mínimo de pedras necessário para se capturar 2 pedras. Também era possível capturar com A. (Note que ambas as pedras brancas serão retiradas do tabuleiro.)}
+      %   {\emph{Variação.} Ao fugir, Branco não somente resgata suas pedras como expõe múltiplas fraquezas no exterior preto.}
 \end{document}
