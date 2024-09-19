@@ -1,0 +1,199 @@
+\documentclass{article}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric}
+\usepackage{listofitems}
+
+%-----------------------------------------------------------
+% Drawing Stones
+
+% From [this answer by @DavidCarlisle](https://tex.stackexchange.com/a/708876/64441).
+\newcommand\notwhite{black}
+\newcommand\notblack{white}
+
+% From [this answer by @DavidCarlisle](https://tex.stackexchange.com/a/708893/64441).
+\ExplSyntaxOn
+  \cs_generate_variant:Nn \int_from_alph:n {e}
+
+  \NewExpandableDocumentCommand{\stringToCoordX}{ m }{
+    \int_from_alph:e { \use_i:nn #1 }
+  }
+  \NewExpandableDocumentCommand{\stringToCoordY}{ m }{
+    \boardSize + 1 - ~\int_from_alph:e { \use_ii:nn #1 }
+  }
+\ExplSyntaxOff
+
+\newcommand{\setCoords}[1]{
+  \pgfmathsetmacro{\x}{\stringToCoordX{#1} - 1}
+  \pgfmathsetmacro{\y}{\stringToCoordY{#1} - 1}
+}
+
+\newcounter{moveCounter}
+\setcounter{moveCounter}{1}
+
+\newcommand{\stepMoveCounter}{
+  \stepcounter{moveCounter}
+}
+
+%-----------------------------------------------------------
+% Drawing Stones and Moves
+
+\newcommand{\drawStoneFromSgfCoords}[2]{%
+  \setCoords{#2}
+
+  \draw[draw = \UseName{not#1}, fill = #1, line width = 0.1mm]
+    (\x * \step, \y * \step)
+    circle [radius = 0.2575cm];
+}
+
+\newcommand{\drawMoveFromSgfCoords}[2]{
+  \expandafter\xdef\csname thecolorat#2\endcsname{#1}% SAVE COLOR AT #2
+  \drawStoneFromSgfCoords{#1}{#2}
+  \textLabel{#1}{#2}{\themoveCounter}
+
+  \stepMoveCounter
+}
+
+%-----------------------------------------------------------
+% Labels
+
+\newcommand\StoneColor[1]{% COMPLEMENTARY COLOR OF REFERENCED STONE
+  \ifcsname thecolorat#1\endcsname
+    \csname thecolorat#1\endcsname
+  \else
+    white% COMPLEMENT OF DEFAULT LABEL COLOR WHEN NOT ATOP EXISTING STONE
+  \fi
+}
+
+\newcommand{\textLabel}[3]{%
+  \setCoords{#2}%
+
+  \draw (\x * \step, \y * \step) 
+  node[
+    color     = -\StoneColor{#2},
+    inner sep = 1pt
+  ] {#3};
+}
+
+\newcommand{\triangleLabel}[2]{
+  \setCoords{#2}
+
+  \draw (\x * \step, \y * \step) 
+    node[
+      isosceles triangle,
+      draw                          = #1,
+      color                         = -\StoneColor{#2},
+      fill                          = \StoneColor{#2},
+      minimum height                = \step * 10,
+      minimum width                 = \step * 10,
+      line width                    = 0.5mm,
+      rotate                        = 90,
+      isosceles triangle apex angle = 60,
+      inner sep                     = 0pt,
+    ] {};
+}
+
+%-----------------------------------------------------------
+% SGF Parser
+
+% From [this answer by @StevenB.Segletes](https://tex.stackexchange.com/a/709014/64441).
+\long\def\Firstof#1#2\endFirstof{#1}
+
+\newcommand\thecolorofB{black}
+\newcommand\thecolorofAB{black}
+\newcommand\thecolorofW{white}
+\newcommand\thecolorofAW{white}
+\newcommand\thecolorofMA{white}
+\newcommand\thecolorofCR{white}
+\newcommand\thecolorofTR{white}
+\newcommand\thecolorofSQ{white}
+\newcommand\thecolorofLB{white}
+
+\long\def\Keytypeof#1{\csname thekeytypeof#1\endcsname}
+
+\newcommand\thekeytypeofB{M}  % black move
+\newcommand\thekeytypeofAB{A} % added (edited) black stone
+\newcommand\thekeytypeofW{M}  % white move
+\newcommand\thekeytypeofAW{A} % added (edited) white stone
+\newcommand\thekeytypeofMA{K} % cross (mark) label
+\newcommand\thekeytypeofCR{C} % circle label
+\newcommand\thekeytypeofTR{T} % triangle label
+\newcommand\thekeytypeofSQ{S} % square label
+\newcommand\thekeytypeofLB{L} % text label
+
+\newcommand{\parseSgf}[1]{%
+  \setsepchar{(||)/;/]/[/:}%
+  \readlist*\Z{#1}%
+
+  \foreachitem \Branch \in \Z[]{%
+  \foreachitem \Group \in \Z[\Branchcnt]{%
+    \foreachitem \Key \in \Z[\Branchcnt, \Groupcnt]{%
+     \if\relax\Key\relax% IF BLANK KEY & VALUE, SKIP
+     \else
+      \itemtomacro\Z[\Branchcnt, \Groupcnt, \Keycnt, 1]\KeyName
+      \if\relax\KeyName\relax% IF VALUE, BUT NO KEYNAME, USE RECENT KEYNAME
+        \let\KeyName\MostRecentKeyname
+      \else
+        \xdef\MostRecentKeyname{\KeyName}%
+      \fi
+      \itemtomacro\Z[\Branchcnt, \Groupcnt, \Keycnt, 2, 1]\KeyValue
+
+      \edef\tmp{{\csname thecolorof\KeyName\endcsname}{\KeyValue}}%
+
+      \if\Keytypeof\KeyName M
+        \expandafter\drawMoveFromSgfCoords\tmp
+      \fi
+      \if\Keytypeof\KeyName A
+        \expandafter\drawStoneFromSgfCoords\tmp
+      \fi
+      \if\Keytypeof\KeyName K
+        \expandafter\crossLabel\tmp
+      \fi
+      \if\Keytypeof\KeyName C
+        \expandafter\circleLabel\tmp
+      \fi
+      \if\Keytypeof\KeyName T
+        \expandafter\triangleLabel\tmp
+      \fi
+      \if\Keytypeof\KeyName S
+        \expandafter\squareLabel\tmp
+      \fi
+      \if\Keytypeof\KeyName L
+        \expandafter\textLabel\tmp{\Z[\Branchcnt, \Groupcnt, \Keycnt, 2, 2]} 
+      \fi
+     \fi
+    }
+  }%
+  }%
+}
+
+%-----------------------------------------------------------
+% Setup
+
+\pgfmathsetmacro{\boardDimension}{10}
+\pgfmathsetmacro{\boardSize}{19}
+\pgfmathsetmacro{\step}{\boardDimension / (\boardSize - 1)}
+
+%-----------------------------------------------------------
+
+\usepackage{catchfile}
+
+% From [this question/answer](https://tex.stackexchange.com/a/726141/64441)
+\newcommand\parseSgfFile[1]{%
+  \CatchFileDef{\mysgf}{#1}{}%
+  \parseSgf{\mysgf}% 
+}
+
+%-----------------------------------------------------------
+
+\begin{document}
+  \begin{tikzpicture}
+    \draw[step=\step] (0, 0) grid (10, 10);
+    \parseSgfFile{sgf/captura/captura.9.solution.1.sgf}
+  \end{tikzpicture}
+
+  \begin{tikzpicture}
+    \draw[step=\step] (0, 0) grid (10, 10);
+    \parseSgfFile{sgf/captura/captura.7.solution.2.sgf}
+  \end{tikzpicture}
+\end{document}
