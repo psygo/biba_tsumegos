@@ -37,12 +37,12 @@
 
   \pgfmathsetmacro{\yCoordLabelBackgroundShifted}{(\y * \step) + 0.000475cm}
 
-  % \draw (\xCoord, \yCoordLabelBackgroundShifted) [
-  %   fill      = \StoneColor{#2},
-  %   draw      = \StoneColor{#2},
-  %   inner sep = 0pt,
-  % ] 
-  %   circle [radius = \stoneRadius * 0.6375cm];
+  \draw (\xCoord, \yCoordLabelBackgroundShifted) [
+    fill      = \StoneColor{#2},
+    draw      = \StoneColor{#2},
+    inner sep = 0pt,
+  ] 
+    circle [radius = \stoneRadius * 0.6375cm];
 
   \pgfmathsetmacro{\yCoordLabelShifted}{(\y * \step) - 0.00065cm}
 
