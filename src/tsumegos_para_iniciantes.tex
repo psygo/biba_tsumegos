@@ -1,6 +1,6 @@
-% TODO: Find out why labels are behaving weirdly (maybe reduce the problem to Segletes' example with only the triangle or text label)
 % TODO: X Labels for the suicide problem
-% TODO: Separate life and death under techniques: two eyes, false eyes, dead shapes, and sekis (and sacrifice to the liberties part)
+% TODO: Better TOC colors
+% TODO: Put the TOC on only 1 page
 %-----------------------------------------------------------
 % Document Configs
 
@@ -53,7 +53,7 @@
             {\huge}
 \titlespacing*{\chapter}
               {0pt}
-              {-25pt}
+              {-20pt}
               {20pt}
 
 \renewcommand{\chaptermark}[1]{%
@@ -113,10 +113,13 @@
   \mainmatter
   \part{Liberdades}
     \input{chapters/captura.tex}
-    % \input{chapters/resgate.tex}
-    % \input{chapters/escadas.tex}
-    % \input{chapters/redes.tex}
+    \input{chapters/resgate.tex}
+    \input{chapters/escadas.tex}
+    \input{chapters/redes.tex}
+    \input{chapters/sacrificio.tex}
   \part{Vida ou Morte}
-    % \input{chapters/vida.tex}
-    % \input{chapters/morte.tex}
+    \input{chapters/dois_olhos.tex}
+    \input{chapters/olhos_falsos.tex}
+    \input{chapters/formas_mortas.tex}
+    \input{chapters/sekis.tex}
 \end{document}
