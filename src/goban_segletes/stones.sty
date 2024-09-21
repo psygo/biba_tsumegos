@@ -38,6 +38,7 @@
 % Draw Stone
 
 \newcommand{\drawStoneFromSgfCoords}[2]{%
+  \expandafter\edef\csname thecolorat#2\endcsname{#1} % Save color at #2
   \setCoords{#2}
 
   \pgfmathsetmacro{\xCoord}{\x * \step}
@@ -74,7 +75,7 @@
 }
 
 \newcommand{\drawMoveFromSgfCoords}[2]{
-  \expandafter\xdef\csname thecolorat#2\endcsname{#1} % Save color at #2
+  \expandafter\edef\csname thecolorat#2\endcsname{#1} % Save color at #2
 
   \drawStoneFromSgfCoords{#1}{#2}
 
