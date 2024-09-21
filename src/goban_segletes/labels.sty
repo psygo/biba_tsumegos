@@ -53,10 +53,25 @@
       color                         = -\StoneColor{#2},
       fill                          = \StoneColor{#2},
       line width                    = \stoneRadius * 1.55mm,
-      minimum height                = \stoneRadius * 0.85cm,
-      minimum width                 = \stoneRadius * 0.85cm,
+      minimum height                = \stoneRadius * 0.89cm,
+      minimum width                 = \stoneRadius * 0.89cm,
       rotate                        = 90,
       isosceles triangle apex angle = 60,
       inner sep                     = 0pt,
     ] {};
+}
+
+\newcommand{\crossLabel}[2]{
+  \setCoords{#2}
+  
+  \pgfmathsetmacro{\xCoord}{\x * \step}
+  \pgfmathsetmacro{\yCoord}{\y * \step}
+
+  \draw (\xCoord, \yCoord) 
+    node[
+      color     = -\StoneColor{#2},
+      fill      = \StoneColor{#2},
+      font      = \fontsize{9.75pt}{9pt}\selectfont,
+      inner sep = 0pt
+    ] {$\boldsymbol{\times}$};
 }
