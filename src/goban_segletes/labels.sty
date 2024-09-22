@@ -20,11 +20,13 @@
     inner sep = 0pt,
   ] 
     circle [radius = \stoneRadius * 0.6375cm];
+    
+  \pgfmathsetmacro{\fontSize}{\stoneRadius * 4.5 * 9.625pt}
 
   \draw (\xCoord, \yCoord) 
     node[
       color     = -\StoneColor{#2},
-      font      = \fontsize{9.625pt}{9pt}\selectfont,
+      font      = \fontsize{\fontSize}{9pt}\selectfont,
     ] {#3};
 }
 
