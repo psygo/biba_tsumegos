@@ -1,6 +1,5 @@
 % TODO: Better TOC colors
 % TODO: Put the TOC on only 1 page
-% TODO: Add a comment to the preface about the fact that it will take a little bit for the patterns of the game to seep into the reader's brain.
 %-----------------------------------------------------------
 % Document Configs
 
@@ -54,19 +53,14 @@
             {\huge}
 \titlespacing*{\chapter}
               {0pt}
-              {-20pt}
+              {-30pt}
               {20pt}
 
 \renewcommand{\chaptermark}[1]{%
   \markboth{\thechapter.\ #1}{}}
 \renewcommand{\partname}{}
 
-% From [this question](https://tex.stackexchange.com/q/726389/64441)
-\usepackage{xpatch}
-\AtBeginDocument{\xpatchcmd{\NR@part}{\partname\nobreakspace}{}{}{}} % Removing "Part" from part titles
-\pagestyle{headings} % apply the change
-\makeatother
-
+% Page Header
 % From [this question](https://tex.stackexchange.com/q/726389/64441)
 \usepackage{fancyhdr}
 \fancyhead{}
@@ -79,6 +73,12 @@
 \pagestyle{fancy}
 \makeatletter
 \renewcommand\chaptermark[1]{\markboth{\if@mainmatter\thechapter. \fi#1}{}}
+\makeatother
+
+% From [this question](https://tex.stackexchange.com/q/726389/64441)
+\usepackage{xpatch}
+\AtBeginDocument{\xpatchcmd{\NR@part}{\partname\nobreakspace}{}{}{}} % Removing "Part" from part titles
+\pagestyle{headings} % Apply the change
 \makeatother
 
 \usepackage[nottoc,numbib]{tocbibind}
@@ -114,9 +114,8 @@
   \mainmatter
   \part{Liberdades}
     % \input{chapters/captura.tex}
-    % \input{chapters/resgate.tex}
-    % \input{chapters/escadas.tex}
-    \input{chapters/redes.tex}
+    \input{chapters/escadas.tex}
+    % \input{chapters/redes.tex}
     % \input{chapters/sacrificio.tex}
   \part{Vida ou Morte}
     % \input{chapters/dois_olhos.tex}
