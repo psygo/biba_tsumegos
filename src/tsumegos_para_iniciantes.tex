@@ -1,5 +1,3 @@
-% TODO: Better TOC colors
-% TODO: Put the TOC on only 1 page
 %-----------------------------------------------------------
 % Document Configs
 
@@ -28,7 +26,7 @@
 \setmainfont{Adobe Garamond Pro}
 
 %-----------------------------------------------------------
-% LaTeX Formatting
+% URLs
 
 \usepackage[colorlinks  = true,
             allcolors   = black,
@@ -41,9 +39,23 @@
             bookmarksnumbered]{hyperref}
 \usepackage{xurl}
 
-\raggedbottom
-\frenchspacing
-\usepackage{indentfirst}
+%-----------------------------------------------------------
+% TOC
+
+\usepackage{tocloft}
+\renewcommand\cftchapfont{\mdseries}
+\renewcommand\cftchappagefont{\mdseries}
+\renewcommand{\cfttoctitlefont}{\bfseries\huge}
+\setlength{\cftbeforetoctitleskip}{-25pt}
+\setlength{\cftaftertoctitleskip}{15pt}
+
+\usepackage[nottoc,numbib]{tocbibind}
+\addto\captionsportuguese{
+  \renewcommand{\contentsname}{Índice}
+}
+
+%-----------------------------------------------------------
+% Chapter and Part Titles
 
 \usepackage{titlesec}
 \titleformat{\chapter}[display]
@@ -53,14 +65,22 @@
             {\huge}
 \titlespacing*{\chapter}
               {0pt}
-              {-30pt}
+              {-20pt}
               {20pt}
 
 \renewcommand{\chaptermark}[1]{%
   \markboth{\thechapter.\ #1}{}}
 \renewcommand{\partname}{}
 
+% From [this question](https://tex.stackexchange.com/q/726389/64441)
+\usepackage{xpatch}
+\AtBeginDocument{\xpatchcmd{\NR@part}{\partname\nobreakspace}{}{}{}} % Removing "Part" from part titles
+\pagestyle{headings} % Apply the change
+\makeatother
+
+%-----------------------------------------------------------
 % Page Header
+
 % From [this question](https://tex.stackexchange.com/q/726389/64441)
 \usepackage{fancyhdr}
 \fancyhead{}
@@ -75,22 +95,21 @@
 \renewcommand\chaptermark[1]{\markboth{\if@mainmatter\thechapter. \fi#1}{}}
 \makeatother
 
-% From [this question](https://tex.stackexchange.com/q/726389/64441)
-\usepackage{xpatch}
-\AtBeginDocument{\xpatchcmd{\NR@part}{\partname\nobreakspace}{}{}{}} % Removing "Part" from part titles
-\pagestyle{headings} % Apply the change
-\makeatother
-
-\usepackage[nottoc,numbib]{tocbibind}
-\addto\captionsportuguese{
-  \renewcommand{\contentsname}{Índice}
-}
+%-----------------------------------------------------------
+% Figures
 
 % Forcing figure floats into being at the top of the page.
 % From [this answer](https://tex.stackexchange.com/a/66270/64441)
 \makeatletter
 \setlength{\@fptop}{0.0cm}
 \makeatother
+
+%-----------------------------------------------------------
+% Other Stuff
+
+\raggedbottom
+\frenchspacing
+\usepackage{indentfirst}
 
 %-----------------------------------------------------------
 % Custom Packages
@@ -113,13 +132,13 @@
 
   \mainmatter
   \part{Liberdades}
-    % \input{chapters/captura.tex}
+    \input{chapters/captura.tex}
     \input{chapters/escadas.tex}
-    % \input{chapters/redes.tex}
-    % \input{chapters/sacrificio.tex}
+    \input{chapters/redes.tex}
+    \input{chapters/sacrificio.tex}
   \part{Vida ou Morte}
-    % \input{chapters/dois_olhos.tex}
-    % \input{chapters/olhos_falsos.tex}
-    % \input{chapters/formas_mortas.tex}
-    % \input{chapters/vida_mutua.tex}
+    \input{chapters/dois_olhos.tex}
+    \input{chapters/olhos_falsos.tex}
+    \input{chapters/formas_mortas.tex}
+    \input{chapters/vida_mutua.tex}
 \end{document}
