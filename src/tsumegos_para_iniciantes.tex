@@ -1,5 +1,6 @@
 % TODO: Mention the Japanese term for dead shapes (nakade)
 % TODO: Add empty pages after each chapter
+% TODO: Create a "\part" macro to avoid repetition before and after chapters
 %-----------------------------------------------------------
 % Size Configs
 
@@ -130,24 +131,24 @@
 %-----------------------------------------------------------
 
 \begin{document}
-  % \input{chapters/capa.tex}
+  \input{chapters/capa.tex}
   \blankpage
 
   \frontmatter
 
   \tableofcontents
 
-  % \input{chapters/prefacio.tex}
+  \input{chapters/prefacio.tex}
 
   \mainmatter
   \part{Liberdades}
     \input{chapters/captura.tex}
-    % \input{chapters/escadas.tex}
-    % \input{chapters/redes.tex}
-    % \input{chapters/sacrificio.tex}
+    \input{chapters/escadas.tex}
+    \input{chapters/redes.tex}
+    \input{chapters/sacrificio.tex}
   \part{Vida ou Morte}
-    % \input{chapters/dois_olhos.tex}
-    % \input{chapters/olhos_falsos.tex}
-    % \input{chapters/formas_mortas.tex}
-    % \input{chapters/vida_mutua.tex}
+    \input{chapters/dois_olhos.tex}
+    \input{chapters/olhos_falsos.tex}
+    \input{chapters/formas_mortas.tex}
+    \input{chapters/vida_mutua.tex}
 \end{document}
