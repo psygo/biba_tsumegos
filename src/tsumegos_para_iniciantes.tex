@@ -1,4 +1,8 @@
 % TODO: Improve the diameter of the Black stones
+% TODO: Segment the capture chapters into more granular techniques
+% TODO: Connecting/Disconnecting Problems
+% TODO: Add joseki with 2 cuts + ladder problem
+% TODO: Ko Problems
 %-----------------------------------------------------------
 % Size Configs
 
@@ -109,9 +113,7 @@
 \makeatother
 
 % Due to a TeX limit of only 18 outstanding floats...
-% See [this answer for more info](https://tex.stackexchange.com/a/101093/64441).
-% \usepackage{morefloats} 
-
+% See [this answer for more info](https://tex.stackexchange.com/a/241006/64441).
 \extrafloats{100}
 
 %-----------------------------------------------------------
@@ -142,8 +144,8 @@
 
   \mainmatter
   \part{Liberdades}
-    \input{chapters/captura.tex}
-    % \input{chapters/escadas.tex}
+    % \input{chapters/captura.tex}
+    \input{chapters/escadas.tex}
     % \input{chapters/redes.tex}
     % \input{chapters/sacrificio.tex}
   \part{Vida ou Morte}
