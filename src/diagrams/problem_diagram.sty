@@ -1,3 +1,10 @@
+\makeatletter
+\newcommand{\customLabel}[2]{%
+   \protected@write \@auxout {}{\string \newlabel {#1}{{#2}{\thepage}{#2}{#1}{}} }%
+   \hypertarget{#1}{}
+}
+\makeatother
+
 \newcounter{problemCounter}
 \setcounter{problemCounter}{0}
 
@@ -6,7 +13,7 @@
     \ifnum\theproblemCounter>9 
       2.25pt 
     \else
-      1.75pt
+      1.25pt
     \fi
   }
 
@@ -63,5 +70,7 @@
     \begin{minipage}[t]{0.7\linewidth}
       #3
     \end{minipage}\hspace{0.7cm}
+    
+    \customLabel{#2}{\theproblemCounter}
   \end{figure}
 }

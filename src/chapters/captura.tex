@@ -8,7 +8,7 @@
   {É possível capturar a pedra branca? (Em livros de tsumegos, costuma-se padronizar sempre Preto a jogar.)}
   {\emph{Correto.} Sim, é possível capturar a pedra branca diretamente, já que ela só possui 1 liberdade. (Note que a pedra branca será retirada do tabuleiro.)}
   {\emph{Variação.} Mesmo se Branco tentar resgatar ou contra-capturar a pedra preta, sua pedra do canto ainda possui somente 1 liberdade e pode ser capturada.}
-
+  
 \problemAnswerDiagram
   {captura}
   {captura.2}
@@ -89,7 +89,7 @@
 \problemAnswerDiagram
   {captura}
   {captura.14}
-  {Esta é a situação que gera, com frequência, os cenários dos 2 problemas anteriores.}
+  {Esta é a situação que gera, com frequência, os cenários dos 2 problemas anteriores. Este é um padrão bastante comum no Go.}
   {\emph{Correto.} Preto captura a pedra da segunda linha pois ela não tem como estender suas liberdades. Este padrão é um dos principais motivos por invasões na segunda linha raramente funcionarem.}
   {\emph{Variação.} Branco não tem como salvar suas pedras.}
 
@@ -106,6 +106,27 @@
   {Preto precisa proteger dois lados ao mesmo tempo. É mesmo possível?}
   {\emph{Correto.} As pedras pretas A possuem liberdades o suficiente.}
   {\emph{Incorreto.} Branco não só garante o canto como o mata o grupo inteiro.}
+
+\problemAnswerDiagram
+  {captura}
+  {captura.19}
+  {Preto está quase conseguindo conectar seus grupos.}
+  {\emph{Correto.} Branco não consegue fugir.}
+  {\emph{Incorreto.} A intenção foi boa, mas a execução falhou.}
+
+\problemAnswerDiagram
+  {captura}
+  {captura.20}
+  {Preto pode se fortalecer um pouco mais enquanto ataca Branco.}
+  {\emph{Correto.} Preto retira o olho branco, garante mais pontos, e ainda protege um de seus cortes.}
+  {\emph{Incorreto.} Mais tarde, ou mesmo em breve, Branco pode garantir um olho e expor os cortes A e B ao mesmo tempo.}
+
+\problemAnswerDiagram
+  {captura}
+  {captura.21}
+  {É imprescindível contar as liberdades dos grupos que participam de lutas.}
+  {\emph{Correto.} Preto consegue capturar as pedras de corte.}
+  {\emph{Incorreto.} Em geral, quando uma sequência não funciona, o melhor é simplesmente não jogá-la. Se jogamos 1 e percebemos que não funciona, é melhor não jogar 3 ou 5. No mínimo, poderíamos utilizar 1, 3 e 5 como ameaças de ko no futuro.}
 
 \problemAnswerDiagram
   {captura}

@@ -4,6 +4,8 @@ Muito do que está aqui foi desenvolvido neste outro projeto: [@psygo/latex-go-d
 
 ## Desenvolvimento
 
+### VS Code
+
 Para trabalhar com a extensão [LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) do VS Code e escolher uma receita diference, e.g. LuaLaTeX, [é mais fácil fazê-lo manualmente](https://tex.stackexchange.com/a/726655/64441) e utilizar esta configuração para que fique registrado depois da primeira vez configurada:
 
 ```json
