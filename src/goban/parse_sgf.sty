@@ -1,3 +1,4 @@
+% From [this answer by @StevenB.Segletes](https://tex.stackexchange.com/a/709014/64441).
 \long\def\Firstof#1#2\endFirstof{#1}
 
 \newcommand\thecolorofB{black}
@@ -22,22 +23,6 @@
 \newcommand\thekeytypeofSQ{S} % square label
 \newcommand\thekeytypeofLB{L} % text label
 
-% \ignoreemptyitems
-
-% \newif\ifsgfNumbering
-
-% \pgfkeys{%
-%   /phili/parseSgf/.cd, 
-%     sgf/.store in    = \sgf,
-%     sgf              = ,
-%     numbering/.is if = sgfNumbering,
-%     numbering        = true,
-% }
-
-% From [this](https://tex.stackexchange.com/a/709014/64441),
-% [this](https://tex.stackexchange.com/a/709324/64441),
-% and [this](https://tex.stackexchange.com/a/709159/64441)
-% answers by @StevenB.Segletes.
 \newcommand{\parseSgf}[1]{%
   \setsepchar{(||)/;/]/[/:}%
   \readlist*\Z{#1}%
@@ -45,40 +30,40 @@
   \foreachitem \Branch \in \Z[]{%
     \foreachitem \Group \in \Z[\Branchcnt]{%
       \foreachitem \Key \in \Z[\Branchcnt, \Groupcnt]{%
-       \if\relax\Key\relax% IF BLANK KEY & VALUE, SKIP
-       \else
+        \if\relax\Key\relax% IF BLANK KEY & VALUE, SKIP
+        \else
         \itemtomacro\Z[\Branchcnt, \Groupcnt, \Keycnt, 1]\KeyName
         \if\relax\KeyName\relax% IF VALUE, BUT NO KEYNAME, USE RECENT KEYNAME
-          \let\KeyName\MostRecentKeyname
+        \let\KeyName\MostRecentKeyname
         \else
-          \xdef\MostRecentKeyname{\KeyName}%
+        \xdef\MostRecentKeyname{\KeyName}%
         \fi
         \itemtomacro\Z[\Branchcnt, \Groupcnt, \Keycnt, 2, 1]\KeyValue
 
         \edef\tmp{{\csname thecolorof\KeyName\endcsname}{\KeyValue}}%
 
         \if\Keytypeof\KeyName M
-          \expandafter\drawMoveFromSgfCoords\tmp
+        \expandafter\drawMoveFromSgfCoords\tmp
         \fi
         \if\Keytypeof\KeyName A
-          \expandafter\drawStoneFromSgfCoords\tmp
+        \expandafter\drawStoneFromSgfCoords\tmp
         \fi
         \if\Keytypeof\KeyName K
-          \expandafter\crossLabel\tmp
+        \expandafter\crossLabel\tmp
         \fi
         \if\Keytypeof\KeyName C
-          \expandafter\circleLabel\tmp
+        \expandafter\circleLabel\tmp
         \fi
         \if\Keytypeof\KeyName T
-          \expandafter\triangleLabel\tmp
+        \expandafter\triangleLabel\tmp
         \fi
         \if\Keytypeof\KeyName S
-          \expandafter\squareLabel\tmp
+        \expandafter\squareLabel\tmp
         \fi
         \if\Keytypeof\KeyName L
-          \expandafter\textLabel\tmp{\Z[\Branchcnt, \Groupcnt, \Keycnt, 2, 2]} 
+        \expandafter\textLabel\tmp{\Z[\Branchcnt, \Groupcnt, \Keycnt, 2, 2]} 
         \fi
-       \fi
+        \fi
       }
     }%
   }%

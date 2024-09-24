@@ -1,5 +1,5 @@
 %-----------------------------------------------------------
-% Helpers
+% Utils
 
 % From [this answer by @DavidCarlisle](https://tex.stackexchange.com/a/708876/64441).
 \newcommand\notwhite{black}
@@ -10,6 +10,23 @@
   \cs_new_eq:NN \ifStrEq \str_if_eq:nnTF
 \ExplSyntaxOff
 
+% From [this answer by @DavidCarlisle](https://tex.stackexchange.com/a/708893/64441).
+\ExplSyntaxOn
+  \cs_generate_variant:Nn \int_from_alph:n {e}
+
+  \NewExpandableDocumentCommand{\stringToCoordX}{ m }{
+    \int_from_alph:e { \use_i:nn #1 }
+  }
+  \NewExpandableDocumentCommand{\stringToCoordY}{ m }{
+    \boardSize + 1 - ~\int_from_alph:e { \use_ii:nn #1 }
+  }
+\ExplSyntaxOff
+
+\newcommand{\setCoords}[1]{
+  \pgfmathsetmacro{\x}{\stringToCoordX{#1} - 1}
+  \pgfmathsetmacro{\y}{\stringToCoordY{#1} - 1}
+}
+
 \newcounter{moveCounter}
 \setcounter{moveCounter}{1}
 
@@ -17,334 +34,52 @@
   \stepcounter{moveCounter}
 }
 
-% Adapted from [this answer by @DavidCarlisle](https://tex.stackexchange.com/a/708893/64441).
-\ExplSyntaxOn
-  \cs_generate_variant:Nn \int_from_alph:n {e}
-
-  \newcommand\stringToCoordX[1]{
-    \int_from_alph:e{\use_i:nn#1}
-  }
-  \newcommand\stringToCoordY[1]{
-    \boardSize + 1 - ~\int_from_alph:e{\use_ii:nn#1}
-  }
-\ExplSyntaxOff
-
 %-----------------------------------------------------------
-% Labels
+% Draw Stone
 
-% TODO: add SGF coords as parameter
-\pgfkeys{%
-  /phili/labelBackground/.cd, 
-    fill color/.store in = \labelBackgroundFillColor,
-    fill color           = black,
-    x/.store in          = \labelBackgroundX,
-    x                    = \xCoord,
-    y/.store in          = \labelBackgroundY,
-    y                    = \yCoord,
-    size/.store in       = \labelBackgroundSize,
-    size                 = \stoneRadius * 0.6 cm,
-}
+\newcommand{\drawStoneFromSgfCoords}[2]{%
+  \expandafter\edef\csname thecolorat#2\endcsname{#1} % Save color at #2
+  \setCoords{#2}
 
-\newcommand{\labelBackground}[1][]{
-  \pgfkeys{/phili/labelBackground/.cd, #1}
+  \pgfmathsetmacro{\xCoord}{\x * \step}
+  \pgfmathsetmacro{\yCoord}{\y * \step}
 
-  \draw (\labelBackgroundX, \labelBackgroundY) [
-    fill      = \labelBackgroundFillColor,
-    draw      = \labelBackgroundFillColor,
+  %---------------------------------------------------------
+  % Stone Background
+
+  \pgfmathsetmacro{\backgroundRadius}{\step * \ifStrEq{black}{#1}{1}{1.01} / 2}
+  
+  \draw (\xCoord, \yCoord) [
+    fill      = white,
+    draw      = white,
     inner sep = 0pt,
-  ] circle [radius = \labelBackgroundSize];
-}
+  ] 
+    circle [radius = \backgroundRadius];
 
-\pgfkeys{%
-  /phili/shapeLabel/.cd, 
-    outline color/.store in = \shapeLabelOutlineColor,
-    outline color           = black,
-    outline width/.store in = \shapeLabelOutlineWidth,
-    outline width           = 0.45mm,
-    fill color/.store in    = \shapeLabelFillColor,
-    fill color              = white,
-    x/.store in             = \shapeLabelX,
-    x                       = \xCoord,
-    y/.store in             = \shapeLabelY,
-    y                       = \yCoord,
-    shape size/.store in    = \shapeLabelSize,
-    shape size              = \stoneRadius * 0.75 cm,
-}
+  %---------------------------------------------------------
+  % Stone
 
-\newcommand{\triangleLabel}[1][]{
-  \pgfkeys{/phili/shapeLabel/.cd, #1}
-  
-  \labelBackground[fill color = \shapeLabelFillColor,
-                   x          = \shapeLabelX,
-                   y          = \shapeLabelY,
-                   size       = \shapeLabelSize * 1.05]
-  \draw (\shapeLabelX, \shapeLabelY) 
-    node[
-      isosceles triangle,
-      draw                          = \shapeLabelOutlineColor,
-      line width                    = \shapeLabelOutlineWidth,
-      fill                          = \shapeLabelFillColor,
-      minimum height                = \shapeLabelSize,
-      minimum width                 = \shapeLabelSize,
-      rotate                        = 90,
-      isosceles triangle apex angle = 60,
-      inner sep                     = 0pt,
-    ] {};
-}
+  \pgfmathsetmacro{\stoneRadius}{\step * \ifStrEq{black}{#1}{0.99}{0.9125} / 2}
+  \pgfmathsetmacro{\outlineWidth}{\step * 1.3}
 
-\newcommand{\squareLabel}[1][]{
-  \pgfkeys{/phili/shapeLabel/.cd, #1}
-
-  \labelBackground[fill color = \shapeLabelFillColor,
-                   x          = \shapeLabelX,
-                   y          = \shapeLabelY,
-                   size       = \shapeLabelSize * 1.05]
-  \draw (\shapeLabelX, \shapeLabelY) node[
-    draw         = \shapeLabelOutlineColor,
-    line width   = \shapeLabelOutlineWidth,
-    fill         = \shapeLabelFillColor,
-    minimum size = \shapeLabelSize,
-    inner sep    = 0pt,
-  ] {}; 
-}
-
-\newcommand{\circleLabel}[1][]{
-  \pgfkeys{/phili/shapeLabel/.cd, #1}
-
-  \labelBackground[fill color = \shapeLabelFillColor,
-                   x          = \shapeLabelX,
-                   y          = \shapeLabelY,
-                   size       = \shapeLabelSize * 0.8]
   \draw[
-    draw       = \shapeLabelOutlineColor,
-    line width = \shapeLabelOutlineWidth,
-    fill       = \shapeLabelFillColor,
-    inner sep  = 0pt,
-  ]
-    (\shapeLabelX, \shapeLabelY)
-    circle [radius = \shapeLabelSize / 2];
-}
-
-\pgfkeys{%
-  /phili/textLabel/.cd, 
-    font color/.store in       = \textLabelFontColor,
-    font color                 = black,
-    background color/.store in = \textLabelBackgroundColor,
-    background color           = white,
-    font size/.store in        = \textLabelFontSize,
-    font size                  = 10pt,
-    font family/.store in      = \textLabelFontFamily,
-    font family                = ,
-    text/.store in             = \textLabelText,
-    text                       = A,
-    x/.store in                = \textLabelX,
-    x                          = \xCoord,
-    y/.store in                = \textLabelY,
-    y                          = \yCoord,
-}
-
-\newcommand{\textLabel}[1][]{
-  \pgfkeys{/phili/textLabel/.cd, #1}
-  
-  \def\textLabelFont{\fontsize{\textLabelFontSize}{0} \textLabelFontFamily}
-  \pgfmathsetmacro{\fontCorrectedX}{\textLabelX - 0.1 * \step}
-
-  \labelBackground[fill color = \textLabelBackgroundColor,
-                   x          = \textLabelX,
-                   y          = \textLabelY,
-                   size       = \textLabelFontSize * 0.5]
-  \draw (\fontCorrectedX, \yCoord)
-    node[
-      font  = \textLabelFont\small,
-      % font size = 20pt,
-      color = \textLabelFontColor,
-    ] {\hspace{-0.4em} \textLabelText};
-}
-
-\pgfkeys{%
-  /phili/crossLabel/.cd, 
-    color/.store in = \crossLabelColor,
-    color           = black,
-    size/.store in  = \crossLabelSize,
-    size            = 10pt,
-    x/.store in     = \crossLabelX,
-    x               = \xCoord,
-    y/.store in     = \crossLabelY,
-    y               = \yCoord,
-}
-
-\newcommand{\crossLabel}[1][]{
-  \pgfkeys{/phili/crossLabel/.cd, #1}
-
-  \pgfmathsetmacro{\fontCorrectedX}{\textLabelX - 0.1 * \step}
-  \def\crossLabelFont{\fontsize{\crossLabelSize}{0} \sffamily}
-
-  \draw (\fontCorrectedX, \crossLabelY) 
-    node[
-      color = \crossLabelColor,
-      font  = \crossLabelFont,
-    ] {X};
-}
-
-%-----------------------------------------------------------
-% Drawing Moves and Stones
-
-% Parameters
-%
-% 1: stone color (black or white)
-% 2: X Coordinate
-% 3: Y Coordinate
-% 
-% Example: `\drawStone{black}{2}{3}`
-\newcommand{\drawStone}[3]{
-  \pgfmathsetmacro{\xCoord}{\step * (#2 - 1)}
-  \pgfmathsetmacro{\yCoord}{\step * (#3 - 1)}
-  \pgfmathsetmacro{\outlineWidth}{\step * 1.15}
-  \pgfmathsetmacro{\stoneRadius}{\step * \ifStrEq{black}{#1}{0.99}{0.91} / 2}
-  
-  \draw (\shapeLabelX, \shapeLabelY) node[
-    % draw         = \shapeLabelOutlineColor,
-    % line width   = \shapeLabelOutlineWidth,
-    fill         = white,
+    draw         = \UseName{not#1},
+    fill         = #1,
     minimum size = \step * 1cm,
-    inner sep    = 0pt,
-  ] {}; 
-
-  \draw[
-    draw       = \UseName{not#1},
-    fill       = #1, 
-    line width = \outlineWidth,
+    line width   = \outlineWidth
   ]
     (\xCoord, \yCoord)
     circle [radius = \stoneRadius];
+
+  %---------------------------------------------------------
 }
 
-\pgfkeys{/phili/stone/.cd, 
-  color/.store in = \stoneColor,
-  color           = black,
-  x/.store in     = \stoneXCoord,
-  x               = 0,
-  y/.store in     = \stoneYCoord,
-  y               = 0,
-}
+\newcommand{\drawMoveFromSgfCoords}[2]{
+  \drawStoneFromSgfCoords{#1}{#2}
 
-% Parameters
-%
-% - color
-% - x coordinate
-% - y coordinate
-% 
-% Example:
-%
-% ```tex
-% \stone[color = black,
-%        x     = 3,
-%        y     = 3]
-% ```
-\newcommand{\stone}[1][]{
-  \pgfkeys{/phili/stone/.cd, #1}
-
-  \drawStone{\stoneColor}{\stoneXCoord}{\stoneYCoord}
-}
-
-% Parameters
-%
-% 1: stone color (black or white)
-% 2: X Coordinate
-% 3: Y Coordinate
-% 
-% Example: `\drawMove{black}{2}{3}`
-\newcommand{\drawMove}[3]{
-  \drawStone{#1}{#2}{#3}
-  \textLabel[text             = \themoveCounter,
-             font color       = \UseName{not#1},
-             background color = #1]
+  \textLabel{#1}{#2}{\themoveCounter}
 
   \stepMoveCounter
 }
-
-% Parameters
-%
-% - color
-% - x coordinate
-% - y coordinate
-% 
-% Example:
-%
-% ```tex
-% \move[color = black,
-%       x     = 3,
-%       y     = 3]
-% ```
-\newcommand{\move}[1][]{
-  \pgfkeys{/phili/stone/.cd, #1}
-
-  \drawMove{\stoneColor}{\stoneXCoord}{\stoneYCoord}
-}
-
-%-----------------------------------------------------------
-% Draw from SGF Coords
-
-% It works with both lower and uppercase coordinates.
-%
-% Parameters
-%
-% 1: stone color (black or white)
-% 2: SGF Coordinates
-% 
-% Example: `\drawStoneFromSgfCoords{black}{ab}`
-\newcommand{\drawStoneFromSgfCoords}[2]{
-  \drawStone{#1}{\stringToCoordX{#2}}{\stringToCoordY{#2}}
-}
-
-% It works with both lower and uppercase coordinates.
-%
-% Parameters
-%
-% 1: move color (black or white)
-% 2: SGF Coordinates
-% 
-% Example: `\drawMoveFromSgfCoords{black}{ab}`
-\newcommand{\drawMoveFromSgfCoords}[2]{
-  \drawMove{#1}{\stringToCoordX{#2}}{\stringToCoordY{#2}}
-}
-
-% From [this answer by @JasperHabicht](https://tex.stackexchange.com/a/708961/64441).
-%
-% Parameters
-%
-% 1: array of {<black | white>, <coordinates}
-%
-% Example usage: `drawStonesFromSgfCoords{{black, ab}, {white, cd}}`
-\ExplSyntaxOn
-  \NewExpandableDocumentCommand{\drawStonesFromSgfCoords}{ m }{
-    \clist_set:Nn \l_tmpa_clist { #1 }
-    \clist_map_inline:Nn \l_tmpa_clist {
-      \clist_set:Nn \l_tmpb_clist { ##1 }
-      \clist_pop:NN \l_tmpb_clist \l_tmpa_tl 
-      \clist_pop:NN \l_tmpb_clist \l_tmpb_tl 
-      \exp_args:Noo \drawStoneFromSgfCoords { \l_tmpa_tl } { \l_tmpb_tl }
-    }
-  }
-\ExplSyntaxOff
-
-% From [this answer by @JasperHabicht](https://tex.stackexchange.com/a/708961/64441).
-%
-% Parameters
-%
-% 1: array of {<black | white>, <coordinates}
-%
-% Example usage: `drawMovesFromSgfCoords{{black, ab}, {white, cd}}`
-\ExplSyntaxOn
-  \NewExpandableDocumentCommand{\drawMovesFromSgfCoords}{ m }{
-    \clist_set:Nn \l_tmpa_clist { #1 }
-    \clist_map_inline:Nn \l_tmpa_clist {
-      \clist_set:Nn \l_tmpb_clist { ##1 }
-      \clist_pop:NN \l_tmpb_clist \l_tmpa_tl 
-      \clist_pop:NN \l_tmpb_clist \l_tmpb_tl 
-      \exp_args:Noo \drawMoveFromSgfCoords { \l_tmpa_tl } { \l_tmpb_tl }
-    }
-  }
-\ExplSyntaxOff
 
 %-----------------------------------------------------------

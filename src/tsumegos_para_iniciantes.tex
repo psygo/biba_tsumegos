@@ -1,7 +1,5 @@
-% TODO: Add empty pages after each chapter
-% TODO: Create a "\part" macro to avoid repetition before and after chapters
 % TODO: Improve the number sizing for lower than 10
-% TODO: Get rid of the 2 goban packages.
+% TODO: Add labels to problem diagrams (e.g. from connect and die to sacrifice)
 %-----------------------------------------------------------
 % Size Configs
 
@@ -125,7 +123,7 @@
 %-----------------------------------------------------------
 % Custom Packages
 
-\usepackage{./goban_segletes/goban}
+\usepackage{./goban/goban}
 \usepackage{./diagrams/diagrams}
 \usepackage{./utils}
 
@@ -144,9 +142,6 @@
   \mainmatter
   \part{Liberdades}
     \input{chapters/captura.tex}
-      \emptypage
-      \emptypage
-      \emptypage
     \input{chapters/captura.tex}
     % \input{chapters/escadas.tex}
     % \input{chapters/redes.tex}

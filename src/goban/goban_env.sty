@@ -1,4 +1,4 @@
-\newcommand{\partialBoardClipping}{
+\newcommand\partialBoardClipping{
   \ifthenelse{
     \equal{\horClipStart}{-1} \AND
     \equal{\horClipEnd}{-1} \AND
@@ -7,9 +7,9 @@
   }{}{
     \tikzmath{
       \horStart = (-1.5 + \horClipStart) * \step;
-      \horEnd = (\horClipEnd) * \step;
+      \horEnd   = (\horClipEnd) * \step;
       \verStart = (-1.5 + \verClipStart) * \step;
-      \verEnd = (\verClipEnd) * \step;
+      \verEnd   = (\verClipEnd) * \step;
     }
 
     \clip (\horStart, \verStart) rectangle 
@@ -20,7 +20,8 @@
 \newenvironment{goban}[1][]{
   \pgfkeys{/phili/goban/.cd, #1}
 
-  \begin{tikzpicture}[scale = \scale, transform shape]
+  \begin{tikzpicture}[scale = \scale,
+                      transform shape]
     \calculateStep
 
     \partialBoardClipping
@@ -30,3 +31,4 @@
     \setcounter{moveCounter}{1}
   \end{tikzpicture}
 }
+
