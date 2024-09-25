@@ -7,148 +7,152 @@
 %-----------------------------------------------------------
 % Size Configs
 
-\documentclass{book}
 
-\usepackage[paperheight   = 148mm, % ~A6
-            paperwidth    = 105mm,
-            bindingoffset = 5mm,
-            left          = 3.75mm,
-            right         = 8mm,
-            top           = 15.2mm,
-            bottom        = 13.2mm,
-            footskip      = 6.35mm]{geometry}
+\input{config.tex}
 
-%-----------------------------------------------------------
-% Fonts
 
-\renewcommand{\footnotesize}{\normalsize}
-\renewcommand{\normalsize}{\fontsize{12pt}{13pt}}
+% \documentclass{book}
 
-\usepackage[T1]{fontenc}
-\usepackage[portuguese]{babel}
-\usepackage{microtype}
+% \usepackage[paperheight   = 148mm, % ~A6
+%             paperwidth    = 105mm,
+%             bindingoffset = 5mm,
+%             left          = 3.75mm,
+%             right         = 8mm,
+%             top           = 15.2mm,
+%             bottom        = 13.2mm,
+%             footskip      = 6.35mm]{geometry}
 
-\usepackage{lmodern}
+% %-----------------------------------------------------------
+% % Fonts
 
-\usepackage{fontspec}
-% From [this comment](https://www.reddit.com/r/identifythisfont/comments/1fiahvg/comment/lngfilr/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)
-\setmainfont{Adobe Garamond Pro}
+% \renewcommand{\footnotesize}{\normalsize}
+% \renewcommand{\normalsize}{\fontsize{12pt}{13pt}}
 
-%-----------------------------------------------------------
-% URLs
+% \usepackage[T1]{fontenc}
+% \usepackage[portuguese]{babel}
+% \usepackage{microtype}
 
-\usepackage[colorlinks  = true,
-            allcolors   = black,
-            pdfsubject  = {Go; Baduk; Weiqi},
-            pdftitle    = {Tsumegos para Inciantes - Volume 1 - Captura e Vida ou Morte},
-            pdfauthor   = {Philippe Fanaro},
-            pdfkeywords = {Go; Baduk; Weiqi; Tsumegos},
-            pdfproducer = {LaTeX},
-            pdfcreator  = {pdflatex; bibtex},
-            bookmarksnumbered]{hyperref}
-\usepackage{xurl}
+% \usepackage{lmodern}
 
-%-----------------------------------------------------------
-% TOC
+% \usepackage{fontspec}
+% % From [this comment](https://www.reddit.com/r/identifythisfont/comments/1fiahvg/comment/lngfilr/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)
+% \setmainfont{Adobe Garamond Pro}
 
-\usepackage{tocloft}
-\renewcommand\cftchapfont{\mdseries}
-\renewcommand\cftchappagefont{\mdseries}
-\renewcommand{\cfttoctitlefont}{\bfseries\huge}
-\setlength{\cftbeforetoctitleskip}{-25pt}
-\setlength{\cftaftertoctitleskip}{15pt}
+% %-----------------------------------------------------------
+% % URLs
 
-\usepackage[nottoc,numbib]{tocbibind}
-\addto\captionsportuguese{
-  \renewcommand{\contentsname}{Índice}
-}
+% \usepackage[colorlinks  = true,
+%             allcolors   = black,
+%             pdfsubject  = {Go; Baduk; Weiqi},
+%             pdftitle    = {Tsumegos para Inciantes - Volume 1 - Captura e Vida ou Morte},
+%             pdfauthor   = {Philippe Fanaro},
+%             pdfkeywords = {Go; Baduk; Weiqi; Tsumegos},
+%             pdfproducer = {LaTeX},
+%             pdfcreator  = {pdflatex; bibtex},
+%             bookmarksnumbered]{hyperref}
+% \usepackage{xurl}
 
-%-----------------------------------------------------------
-% Chapter and Part Titles
+% %-----------------------------------------------------------
+% % TOC
 
-\usepackage{titlesec}
-\titleformat{\chapter}[display]
-            {\normalfont\huge\bfseries}
-            {\thechapter}
-            {20pt}
-            {\huge}
-\titlespacing*{\chapter}
-              {0pt}
-              {-20pt}
-              {20pt}
+% \usepackage{tocloft}
+% \renewcommand\cftchapfont{\mdseries}
+% \renewcommand\cftchappagefont{\mdseries}
+% \renewcommand{\cfttoctitlefont}{\bfseries\huge}
+% \setlength{\cftbeforetoctitleskip}{-25pt}
+% \setlength{\cftaftertoctitleskip}{15pt}
 
-\renewcommand{\chaptermark}[1]{%
-  \markboth{\thechapter.\ #1}{}}
-\renewcommand{\partname}{}
+% \usepackage[nottoc,numbib]{tocbibind}
+% \addto\captionsportuguese{
+%   \renewcommand{\contentsname}{Índice}
+% }
 
-% From [this question](https://tex.stackexchange.com/q/726389/64441)
-\usepackage{xpatch}
-\AtBeginDocument{\xpatchcmd{\NR@part}{\partname\nobreakspace}{}{}{}} % Removing "Part" from part titles
-\pagestyle{headings} % Apply the change
-\makeatother
+% %-----------------------------------------------------------
+% % Chapter and Part Titles
 
-%-----------------------------------------------------------
-% Page Header
+% \usepackage{titlesec}
+% \titleformat{\chapter}[display]
+%             {\normalfont\huge\bfseries}
+%             {\thechapter}
+%             {20pt}
+%             {\huge}
+% \titlespacing*{\chapter}
+%               {0pt}
+%               {-20pt}
+%               {20pt}
 
-% From [this question](https://tex.stackexchange.com/q/726389/64441)
-\usepackage{fancyhdr}
-\fancyhead{}
-\fancyhead[LE, RO]{\slshape\nouppercase\rightmark}
-\fancyhead[LO,RE]{\selectfont\slshape\nouppercase\leftmark}
-\fancyhead[LE,RO]{\thepage}
-\fancyfoot{}
-\setlength{\headheight}{12.80502pt}
-\renewcommand\headrulewidth{0pt}
-\pagestyle{fancy}
-\makeatletter
-\renewcommand\chaptermark[1]{\markboth{\if@mainmatter\thechapter. \fi#1}{}}
-\makeatother
+% \renewcommand{\chaptermark}[1]{%
+%   \markboth{\thechapter.\ #1}{}}
+% \renewcommand{\partname}{}
 
-%-----------------------------------------------------------
-% Figures
+% % From [this question](https://tex.stackexchange.com/q/726389/64441)
+% \usepackage{xpatch}
+% \AtBeginDocument{\xpatchcmd{\NR@part}{\partname\nobreakspace}{}{}{}} % Removing "Part" from part titles
+% \pagestyle{headings} % Apply the change
+% \makeatother
 
-% Forcing figure floats into being at the top of the page.
-% From [this answer](https://tex.stackexchange.com/a/66270/64441)
-\makeatletter
-\setlength{\@fptop}{0.0cm}
-\makeatother
+% %-----------------------------------------------------------
+% % Page Header
 
-% Due to a TeX limit of only 18 outstanding floats...
-% See [this answer for more info](https://tex.stackexchange.com/a/241006/64441).
-\extrafloats{100}
+% % From [this question](https://tex.stackexchange.com/q/726389/64441)
+% \usepackage{fancyhdr}
+% \fancyhead{}
+% \fancyhead[LE, RO]{\slshape\nouppercase\rightmark}
+% \fancyhead[LO,RE]{\selectfont\slshape\nouppercase\leftmark}
+% \fancyhead[LE,RO]{\thepage}
+% \fancyfoot{}
+% \setlength{\headheight}{12.80502pt}
+% \renewcommand\headrulewidth{0pt}
+% \pagestyle{fancy}
+% \makeatletter
+% \renewcommand\chaptermark[1]{\markboth{\if@mainmatter\thechapter. \fi#1}{}}
+% \makeatother
 
-%-----------------------------------------------------------
-% Other Stuff
+% %-----------------------------------------------------------
+% % Figures
 
-\raggedbottom
-\frenchspacing
-\usepackage{indentfirst}
+% % Forcing figure floats into being at the top of the page.
+% % From [this answer](https://tex.stackexchange.com/a/66270/64441)
+% \makeatletter
+% \setlength{\@fptop}{0.0cm}
+% \makeatother
 
-%-----------------------------------------------------------
-% Custom Packages
+% % Due to a TeX limit of only 18 outstanding floats...
+% % See [this answer for more info](https://tex.stackexchange.com/a/241006/64441).
+% \extrafloats{100}
 
-\usepackage{./goban/goban}
-\usepackage{./diagrams/diagrams}
-\usepackage{./utils}
+% %-----------------------------------------------------------
+% % Other Stuff
 
-%-----------------------------------------------------------
+% \raggedbottom
+% \frenchspacing
+% \usepackage{indentfirst}
+
+% %-----------------------------------------------------------
+% % Custom Packages
+
+% \usepackage{./goban/goban}
+% \usepackage{./diagrams/diagrams}
+% \usepackage{./utils}
+
+% %-----------------------------------------------------------
 
 \begin{document}
-  \input{chapters/capa.tex}
+  % \input{chapters/capa.tex}
   \blankpage
 
   \frontmatter
 
   \tableofcontents
 
-  \input{chapters/prefacio.tex}
+  % \input{chapters/prefacio.tex}
 
   \mainmatter
   \part{Liberdades}
-    \input{chapters/captura.tex}
+    % \input{chapters/captura.tex}
     % \input{chapters/escadas.tex}
     % \input{chapters/redes.tex}
-    % \input{chapters/sacrificio.tex}
+    \input{chapters/sacrificio.tex}
   \part{Vida ou Morte}
     % \input{chapters/dois_olhos.tex}
     % \input{chapters/olhos_falsos.tex}
