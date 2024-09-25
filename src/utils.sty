@@ -1,3 +1,6 @@
+%-----------------------------------------------------------
+% Pages
+
 \newcommand\emptypage{
   \newpage 
   \ 
@@ -18,6 +21,19 @@
   \endgroup
 }
 
+\newcommand\clearedpage{
+  \clearpage
+  \begingroup
+    \null
+    \clearpage
+  \endgroup
+}
+
+%-----------------------------------------------------------
+% Links
+
 \newcommand\shref[2]{%
   \normalsize\href{#1}{\path{#2}}\normalsize%
 }
+
+%-----------------------------------------------------------
