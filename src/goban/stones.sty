@@ -47,7 +47,7 @@
   %---------------------------------------------------------
   % Stone Background
 
-  \pgfmathsetmacro{\backgroundRadius}{\step * \ifStrEq{black}{#1}{1}{1.01} / 2}
+  \pgfmathsetmacro{\backgroundRadius}{\step * \ifStrEq{black}{#1}{1}{1.0} / 2}
   
   \draw (\xCoord, \yCoord) [
     fill      = white,
@@ -59,7 +59,7 @@
   %---------------------------------------------------------
   % Stone
 
-  \pgfmathsetmacro{\stoneRadius}{\step * \ifStrEq{black}{#1}{0.99}{0.9125} / 2}
+  \pgfmathsetmacro{\stoneRadius}{\step * \ifStrEq{black}{#1}{0.996}{0.9125} / 2}
   \pgfmathsetmacro{\outlineWidth}{\step * 1.3}
 
   \draw[
