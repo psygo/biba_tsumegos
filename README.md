@@ -17,3 +17,4 @@ Um livro de Go para iniciantes que foca em uma progressão estruturada, e em uma
   - [Minhas perguntas no LaTeX Stack Exchange](https://tex.stackexchange.com/users/64441/psygo?tab=questions)
   - [A resposta com o parser basicamente completo de Segletes](https://tex.stackexchange.com/a/709698/64441)
   - [Using LaTeX Workshop with LuaLaTeX or XeLaTeX](https://tex.stackexchange.com/a/726655/64441)
+  - [Publishing a Fixed Layout Book on Kindle](https://tex.stackexchange.com/q/727421/64441)
