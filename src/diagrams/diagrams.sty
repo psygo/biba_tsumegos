@@ -4,14 +4,43 @@
 \usepackage{./diagrams/problem_diagram}
 \usepackage{./diagrams/answer_diagrams}
 
-\newcommand\problemAnswerDiagram[5]{
+\pgfkeys{%
+  /phili/problemAnswer/.cd, 
+    sgf folder/.store in      = \sgfFolder,
+    sgf folder                = ,
+    sgf filename/.store in    = \sgfFilename,
+    sgf filename              = ,
+    problem text/.store in    = \problemText,
+    problem text              = ,
+    answer text one/.store in = \answerTextOne,
+    answer text one           = ,
+    answer text two/.store in = \answerTextTwo,
+    answer text two           = ,
+    answer diagram clip vert/.store in = \answerDiagramClipVert,
+    answer diagram clip vert           = 11,
+}
+
+\newcommand\problemAnswerDiagram[1][]{
+  \pgfkeys{/phili/problemAnswer/.cd, #1} 
+  
   \problemDiagram
-    {#1}
-    {#2}
-    {#3}
+    {\sgfFolder}
+    {\sgfFilename}
+    {\problemText}
   \answerDiagrams
-    {#1}
-    {#2}
-    {#4}
-    {#5}
+    {\sgfFolder}
+    {\sgfFilename}
+    {\answerTextOne}
+    {\answerTextTwo}
+    {\answerDiagramClipVert}
+
+  % \problemDiagram
+  %   {#1}
+  %   {#2}
+  %   {#3}
+  % \answerDiagrams
+  %   {#1}
+  %   {#2}
+  %   {#4}
+  %   {#5}
 }

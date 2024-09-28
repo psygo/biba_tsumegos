@@ -1,33 +1,35 @@
 \newcounter{answerCounter}
 \setcounter{answerCounter}{0}
 
-\newcommand\answerDiagram[3]{
+\newcommand\answerDiagram[4]{
   \stepcounter{answerCounter}
   
   \begin{figure}
-    \vspace{0.5cm}
+    \ifnum#4>9 
+      \vspace{0.35cm}
+    \fi
 
-    \begin{minipage}[c]{0.5\linewidth}
-      \begin{goban}[board dimension       = 8.3,
+    \begin{minipage}[c]{0.49\linewidth}
+      \begin{goban}[board dimension       = 9,
                     board size            = 19,
                     scale                 = 1,
                     outline line width    = 0.425mm,
-                    horizontal clip start = 11,
+                    horizontal clip start = 12,
                     horizontal clip end   = 19,
-                    vertical clip start   = 11,
+                    vertical clip start   = #4,
                     vertical clip end     = 19]
         \parseSgfFile{sgf/#1/#2.solution.\theanswerCounter.sgf}
       \end{goban}
     \end{minipage}\hfill
-    \begin{minipage}[c]{0.49\linewidth}
+    \begin{minipage}[c]{0.51\linewidth}
       #3
     \end{minipage} 
   \end{figure}
 }
 
-\newcommand\answerDiagrams[4]{
+\newcommand\answerDiagrams[5]{
   \setcounter{answerCounter}{0}
   
-  \answerDiagram{#1}{#2}{#3}
-  \answerDiagram{#1}{#2}{#4}
+  \answerDiagram{#1}{#2}{#3}{#5}
+  \answerDiagram{#1}{#2}{#4}{#5}
 }
