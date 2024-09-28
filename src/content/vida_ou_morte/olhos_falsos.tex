@@ -10,33 +10,6 @@
   answer text two = {\emph{Incorreto.} Se Branco conseguir jogar em 1, a vida é incondicional.},
 ]
 
-\problemAnswerDiagram[%
-  sgf folder               = vida_ou_morte/olhos_falsos,
-  sgf filename             = olhos_falsos.9,
-  problem text             = {Branco está bem perto de viver.},
-  answer text one          = {\emph{Correto.} Não há mais como fazer dois olhos.},
-  answer text two          = {\emph{Incorreto.} Se Branco conseguir jogar em 1, a vida é incondicional.},
-  answer diagram clip vert = 10,
-]
-
-\problemAnswerDiagram[%
-  sgf folder               = vida_ou_morte/olhos_falsos,
-  sgf filename             = olhos_falsos.10,
-  problem text             = {Branco está bem perto de viver.},
-  answer text one          = {\emph{Correto.} Não há mais como fazer dois olhos.},
-  answer text two          = {\emph{Incorreto.} Se Branco conseguir jogar em 1, a vida é incondicional.},
-  answer diagram clip vert = 9,
-]
-
-\problemAnswerDiagram[%
-  sgf folder               = vida_ou_morte/olhos_falsos,
-  sgf filename             = olhos_falsos.11,
-  problem text             = {Branco está bem perto de viver.},
-  answer text one          = {\emph{Correto.} Não há mais como fazer dois olhos.},
-  answer text two          = {\emph{Incorreto.} Se Branco conseguir jogar em 1, a vida é incondicional.},
-  answer diagram clip vert = 9,
-]
-
 % \problemAnswerDiagram
 %   {vida_ou_morte/olhos_falsos}
 %   {olhos_falsos.5}
@@ -85,3 +58,30 @@
 %   {Por onde falsificar um olho primeiro?}
 %   {\emph{Correto.} Branco não consegue estabelecer um segundo olho no canto.}
 %   {\emph{Incorreto.} Ao garantir o ponto vital de 2, que era a resposta para Preto, Branco garante miai de A ou B para seu segundo olho.}
+
+\problemAnswerDiagram[%
+  sgf folder               = vida_ou_morte/olhos_falsos,
+  sgf filename             = olhos_falsos.9,
+  problem text             = {Branco jogou em A pois pensou que precisava viver, mas é o suficiente?},
+  answer text one          = {\emph{Correto.} Aplicando um sacrifício, conseguimos reduzir a forma de olho a uma forma morta de 3 espaços. Note que 6 pedras na segunda linha não são o suficiente para viver.},
+  answer text two          = {\emph{Incorreto.} Se simplesmente bloquearmos, Branco consegue 4 espaços, o que é suficiente para viver.},
+  answer diagram clip vert = 10,
+]
+
+\problemAnswerDiagram[%
+  sgf folder               = vida_ou_morte/olhos_falsos,
+  sgf filename             = olhos_falsos.10,
+  problem text             = {Preto está no limiar entre a vida e a morte.},
+  answer text one          = {\emph{Correto.} Tanto Preto A quanto B funcionariam para crar um espaço de 4 intersecções. Ou seja, 7 pedras na segunda linha vivem, caso Preto jogue primeiro.},
+  answer text two          = {\emph{Incorreto.} Jogar em 1 vai sofrer com uma técnica de sacrifício.},
+  answer diagram clip vert = 9,
+]
+
+\problemAnswerDiagram[%
+  sgf folder               = vida_ou_morte/olhos_falsos,
+  sgf filename             = olhos_falsos.11,
+  problem text             = {Um problema um pouco diferente. Preto precisa de mais um movimento para viver?},
+  answer text one          = {\emph{Correto.} Preto pode fazer tenuki! Não há como reduzir o espaço interno para menos de 4 intersecções, isto é, 8 pedras na segunda linha já configura um grupo vivo.},
+  answer text two          = {\emph{Incorreto.} Preto 1 é um movimento bastante pequeno de fim de jogo.},
+  answer diagram clip vert = 9,
+]

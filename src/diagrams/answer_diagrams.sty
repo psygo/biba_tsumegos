@@ -15,7 +15,7 @@
       \vspace{0.30cm}
     \fi
 
-    \begin{minipage}[c]{0.49\linewidth}
+    \begin{minipage}[c]{0.5\linewidth}
       \begin{goban}[board dimension       = 9,
                     board size            = 19,
                     scale                 = 1,
@@ -27,7 +27,14 @@
         \parseSgfFile{sgf/#1/#2.solution.\theanswerCounter.sgf}
       \end{goban}
     \end{minipage}\hfill
-    \begin{minipage}[c]{0.51\linewidth}
+    \begin{minipage}[c]{0.5\linewidth}
+      \ifnum#4=10
+        \vspace{0.35cm}
+      \fi
+      \ifnum#4=9
+        \vspace{0.45cm}
+      \fi
+
       #3
     \end{minipage} 
   \end{figure}
