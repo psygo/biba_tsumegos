@@ -25,18 +25,18 @@
 \begin{document}
   \setlength\parindent{0ex}
 
-  \begin{adjustwidth}{0.5cm}{0.5cm}
+  \begin{adjustwidth}{0.6cm}{0.6cm}
     \begin{center}
-      \huge{\textsc\TheMainTitle}
+      \LARGE{\textsc\TheMainTitle}
       
-      \vspace*{0.2cm}
+      \vspace*{0.3cm}
       
       \large{\textsc\TheSubTitle}
     \end{center}
     
-    \vspace*{0.8cm}
+    \vspace*{0.9cm}
     
-    \BackDescription % chktex 1
+    \BackDescription
 
     \vspace*{0.1cm}
 
@@ -47,14 +47,11 @@
     \AuthorBio % chktex 1
   \end{adjustwidth}
 
-  \hspace{3cm}
-  \vspace{0.3cm}
-
   \ifthenelse{\isnamedefined{PrintISBN}}{
     \IfFileExists{ISBN.png}{
       \ifthenelse{\isnamedefined{PrintPrice}}{
-        \vspace*{-22.5mm}\hspace*{62.5mm}
-        \includegraphics[width=50mm]{ISBN.png}
+        \vspace*{10mm}\hspace*{47.25mm}
+        \includegraphics[width=35mm]{ISBN.png}
       }{
         \ifthenelse{\isnamedefined{PrintISBN}}{
           \vspace*{-32mm}\hspace*{65mm}
