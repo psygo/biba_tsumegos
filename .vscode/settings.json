@@ -10,6 +10,7 @@
         "**/*.fdb_latexmk": true,
         "**/dist/chapters": true,
         "**/*.toc": true,
+        "**/*.txss": true,
     },
     "editor.wordWrap": "on",
 }

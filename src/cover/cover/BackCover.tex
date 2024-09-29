@@ -1,0 +1,72 @@
+\documentclass{scrartcl}
+
+\input{../BookParameters.tex}
+
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{pagecolor}
+\usepackage{changepage}
+
+\geometry{
+  paperheight   = 148mm, % ~A6
+  paperwidth    = 105mm,
+  bindingoffset = 5mm,
+  left          = 3.75mm,
+  right         = 8mm,
+  top           = 15.2mm,
+  bottom        = 13.2mm,
+  footskip      = 6.35mm
+}
+
+\pagestyle{empty}
+
+% ---------------------------------------------------------------------------
+
+\begin{document}
+  \setlength\parindent{0ex}
+
+  \begin{adjustwidth}{0.5cm}{0.5cm}
+    \begin{center}
+      \huge{\textsc\TheMainTitle}
+      
+      \vspace*{0.2cm}
+      
+      \large{\textsc\TheSubTitle}
+    \end{center}
+    
+    \vspace*{0.8cm}
+    
+    \BackDescription % chktex 1
+
+    \vspace*{0.1cm}
+
+    \noindent\rule[0.1pt]{\linewidth}{0.25pt}
+
+    \vspace*{0.25cm}
+
+    \AuthorBio % chktex 1
+  \end{adjustwidth}
+
+  \hspace{3cm}
+  \vspace{0.3cm}
+
+  \ifthenelse{\isnamedefined{PrintISBN}}{
+    \IfFileExists{ISBN.png}{
+      \ifthenelse{\isnamedefined{PrintPrice}}{
+        \vspace*{-22.5mm}\hspace*{62.5mm}
+        \includegraphics[width=50mm]{ISBN.png}
+      }{
+        \ifthenelse{\isnamedefined{PrintISBN}}{
+          \vspace*{-32mm}\hspace*{65mm}
+          \includegraphics[width=55mm]{ISBN.png}
+        }{}
+      }
+    }{
+      \ifthenelse{\isnamedefined{PrintISBN}}{
+         \vspace*{-32mm}\hspace*{55mm}
+         *MISSING ISBN.png BARCODE*
+      }{}
+    }
+  }{}
+\end{document}
+
