@@ -2,51 +2,61 @@
 
 \emptypage
 
-\problemAnswerDiagram
-  {vida_ou_morte/dois_olhos}
-  {dois_olhos.1}
-  {Este exercício é uma das essências do Go. É possível permanecer incondicionalmente no tabuleiro?}
-  {\emph{Correto.} Sim, com 1, estabelecemos ``dois olhos'', o que impossibilita a captura do grupo. Branco precisaria jogar tanto em A quanto em B para capturar, mas ele só possui um movimento por turno, portanto, cada um deles será considerado suicídio!}
-  {\emph{Incorreto.} Preto talvez pense que seja possível capturar a pedra 1, mas ele morrerá primeiro. Note que, o melhor movimento do seu adversário (jogar 1 para viver como Preto) é também seu melhor movimento.}
+\problemAnswerDiagram[%
+  sgf folder      = vida_ou_morte/dois_olhos,
+  sgf filename    = dois_olhos.1,
+  problem text    = {Este exercício é uma das essências do Go. É possível permanecer incondicionalmente no tabuleiro?},
+  answer text one = {\emph{Correto.} Sim, com 1, estabelecemos ``dois olhos'', o que impossibilita a captura do grupo. Branco precisaria jogar tanto em A quanto em B para capturar, mas ele só possui um movimento por turno, portanto, cada um deles será considerado suicídio!},
+  answer text two = {\emph{Incorreto.} Preto talvez pense que seja possível capturar a pedra 1, mas ele morrerá primeiro. Note que, o melhor movimento do seu adversário (jogar 1 para viver como Preto) é também seu melhor movimento.},
+]
 
-\problemAnswerDiagram
-  {vida_ou_morte/dois_olhos}
-  {dois_olhos.2}
-  {Talvez o grupo estar na lateral, e não no canto, mude o seu status.}
-  {\emph{Correto.} Não, é exatamente a mesma forma do problema anterior.}
-  {\emph{Incorreto.} E o mesmo movimento para matar.}
+\problemAnswerDiagram[%
+  sgf folder      = vida_ou_morte/dois_olhos,
+  sgf filename    = dois_olhos.2,
+  problem text    = {Talvez o grupo estar na lateral, e não no canto, mude o seu status.},
+  answer text one = {\emph{Correto.} Não, é exatamente a mesma forma do problema anterior.},
+  answer text two = {\emph{Incorreto.} E o mesmo movimento para matar.},
+]
 
-\problemAnswerDiagram
-  {vida_ou_morte/dois_olhos}
-  {dois_olhos.3}
-  {Cercar 3 intersecções é insuficiente para viver, a não ser que seja seu turno. E se estivermos cercando de 4 a 5?}
-  {\emph{Correto.} Cercar 4 é suficiente, pois é impossível que Branco faça com que todo o espaço vire algo indivisível. Se Branco jogar em 3, Preto responderá em 2.}
-  {\emph{Incorreto.} Branco em 2 é uma tática ligeiramente mais avançada --- e que veremos em breve --- para criar um olho falso. Preto acaba efetivamente cercando somente 3 intersecções.}
+\problemAnswerDiagram[%
+  sgf folder      = vida_ou_morte/dois_olhos,
+  sgf filename    = dois_olhos.3,
+  problem text    = {Cercar 3 intersecções é insuficiente para viver, a não ser que seja seu turno. E se estivermos cercando de 4 a 5?},
+  answer text one = {\emph{Correto.} Cercar 4 é suficiente, pois é impossível que Branco faça com que todo o espaço vire algo indivisível. Se Branco jogar em 3, Preto responderá em 2.},
+  answer text two = {\emph{Incorreto.} Branco em 2 é uma tática ligeiramente mais avançada --- e que veremos mais a fundo em breve --- para criar um olho falso. Preto acaba efetivamente cercando somente 3 intersecções.},
+]
 
-\problemAnswerDiagram
-  {vida_ou_morte/dois_olhos}
-  {dois_olhos.6}
-  {Preto precisa de mais um movimento no canto para garantir sua vida?}
-  {\emph{Correto.} Sim, é preciso reforçar, pois é preciso criar dois espaços separados.}
-  {\emph{Incorreto.} Branco pode impossibilitar a separação do espaço interno, efetivamente criando um olho grande, o que é insuficiente para Preto viver.}
+\problemAnswerDiagram[%
+  sgf folder      = vida_ou_morte/dois_olhos,
+  sgf filename    = dois_olhos.6,
+  problem text    = {Preto precisa de mais um movimento no canto para garantir sua vida?},
+  answer text one = {\emph{Correto.} Sim, é preciso reforçar, para criar dois espaços dissociados.},
+  answer text two = {\emph{Incorreto.} Branco pode impossibilitar a separação do espaço interno, efetivamente criando um olho grande mas único, o que é insuficiente para Preto viver.},
+]
 
-\problemAnswerDiagram
-  {vida_ou_morte/dois_olhos}
-  {dois_olhos.8}
-  {Esta é uma outra forma que aparece com frequência em partidas. Como completá-la para que viva?}
-  {\emph{Correto.} Preto configurará um olho no extremo canto, e outro na diagonal.}
-  {\emph{Incorreto.} Se Preto jogar algo diferente, ou caso Branco possa jogar, o ponto vital continua o mesmo.}
+\problemAnswerDiagram[%
+  sgf folder      = vida_ou_morte/dois_olhos,
+  sgf filename    = dois_olhos.8,
+  problem text    = {Esta é uma outra forma que aparece com frequência em partidas. Como completá-la para que viva?},
+  answer text one = {\emph{Correto.} Preto configurará um olho no extremo canto, e outro na diagonal.},
+  answer text two = {\emph{Incorreto.} Se Preto jogar algo diferente, ou caso Branco possa jogar, o ponto vital continua o mesmo.},
+]
 
-\problemAnswerDiagram
-  {vida_ou_morte/dois_olhos}
-  {dois_olhos.5}
-  {Pode não parecer a princípio, mas esta é uma variação do problema anterior.}
-  {\emph{Correto.} É basicamente a mesma forma do problema anterior.}
-  {\emph{Incorreto.} Ao descer, Branco pega o bom movimento preto para si, e faz com que o espaço interno não possa ser dissociado.}
+\problemAnswerDiagram[%
+  sgf folder      = vida_ou_morte/dois_olhos,
+  sgf filename    = dois_olhos.5,
+  problem text    = {Pode não parecer a princípio, mas esta é uma variação do problema anterior.},
+  answer text one = {\emph{Correto.} É basicamente a mesma forma do problema anterior.},
+  answer text two = {\emph{Incorreto.} Ao descer, Branco pega o bom movimento preto para si, e faz com que o espaço interno não possa ser dissociado.},
+]
 
-\problemAnswerDiagram
-  {vida_ou_morte/dois_olhos}
-  {dois_olhos.7}
-  {Se Preto não tomar cuidado, cairá em uma grande armadilha.}
-  {\emph{Correto.} Preto precisa recuar. Branco não consegue resgatar a pedra A, pois as pedras B estariam sob atari.}
-  {\emph{Incorreto.} Preto se põe em atari e entra em colapso.}
+\problemAnswerDiagram[%
+  sgf folder      = vida_ou_morte/dois_olhos,
+  sgf filename    = dois_olhos.7,
+  problem text    = {Se Preto não tomar cuidado, cairá em uma grande armadilha.},
+  answer text one = {\emph{Correto.} Preto precisa recuar. Branco não consegue resgatar a pedra A, pois as pedras B estariam sob atari.},
+  answer text two = {\emph{Incorreto.} Preto se põe em atari e entra em colapso.},
+]
+
+\clearedpage
+\clearedpage
