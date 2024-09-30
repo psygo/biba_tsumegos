@@ -2,44 +2,53 @@
 
 \emptypage
 
-\problemAnswerDiagram
-  {vida_ou_morte/vida_mutua}
-  {vida_mutua.1}
-  {Se Preto conseguir resgatar as pedras marcadas, ele fará pontos?}
-  {\emph{Correto.} Já que nenhum dos lados conseguirá jogar em A ou B, já que é auto-atari, ninguém faz pontos nesta região. Grupos que permanecem no tabuleiro sem pontos, em geral, são chamados de vida mútua, ou, mais comumente, \emph{seki}.}
-  {\emph{Variação.} Se Branco conseguir conectar aqui, finalmente, ele fará pontos. No caso, serão 8 pontos.}
+\problemAnswerDiagram[%
+  sgf folder      = vida_ou_morte/vida_mutua,
+  sgf filename    = vida_mutua.1,
+  problem text    = {Se Preto conseguir resgatar as pedras marcadas, ele fará pontos?},
+  answer text one = {\emph{Correto.} Já que nenhum dos lados conseguirá jogar em A ou B, já que é auto-atari, ninguém faz pontos nesta região. Grupos que permanecem no tabuleiro sem pontos, em geral, são chamados de vida mútua, ou, mais comumente, \emph{seki}.},
+  answer text two = {\emph{Variação.} Se Branco conseguir conectar aqui, finalmente, ele fará pontos. No caso, serão 8 pontos.},
+]
 
-\problemAnswerDiagram
-  {vida_ou_morte/vida_mutua}
-  {vida_mutua.2}
-  {Qual é a melhor maneira de Preto resolver a situação das pedras prestes a serem capturadas?}
-  {\emph{Correto.} Ao cortar, Preto estabelece um olho e impossibilita que Branco consiga colocá-lo sob atari com A, pois seria auto-atari para Branco.}
-  {\emph{Variação.} É sempre possível fazer tenuki. Branco então terá a possibilidade de fazer 11 pontos.}
+\problemAnswerDiagram[%
+  sgf folder      = vida_ou_morte/vida_mutua,
+  sgf filename    = vida_mutua.2,
+  problem text    = {Qual é a melhor maneira de Preto resolver a situação das pedras prestes a serem capturadas?},
+  answer text one = {\emph{Correto.} Ao cortar, Preto estabelece um olho e impossibilita que Branco consiga colocá-lo sob atari com A, pois seria auto-atari para Branco.},
+  answer text two = {\emph{Variação.} É sempre possível fazer tenuki. Branco então terá a possibilidade de fazer 11 pontos.},
+]
 
-\problemAnswerDiagram
-  {vida_ou_morte/vida_mutua}
-  {vida_mutua.3}
-  {Aqui há mais valor do que somente um seki.}
-  {\emph{Correto.} Se Preto jogar em A, será um seki. Mas por que não fazer pontos quando podemos capturar tudo com 1?}
-  {\emph{Variação.} Se Branco jogar em 1, já que Preto não pode mais jogar em A, Branco capturará toda a região! Preto estaria em atari se jogasse em B nessa situação. Branco A também funcionaria, ao invés de 1.}
+\problemAnswerDiagram[%
+  sgf folder      = vida_ou_morte/vida_mutua,
+  sgf filename    = vida_mutua.3,
+  problem text    = {Aqui há mais valor do que somente um seki.},
+  answer text one = {\emph{Correto.} Se Preto jogar em A, será um seki. Mas por que não fazer pontos quando podemos capturar tudo com 1?},
+  answer text two = {\emph{Variação.} Se Branco jogar em 1, já que Preto não pode mais jogar em A, Branco capturará toda a região! Preto estaria em atari se jogasse em B nessa situação. Branco A também funcionaria, ao invés de 1.},
+]
 
-\problemAnswerDiagram
-  {vida_ou_morte/vida_mutua}
-  {vida_mutua.4}
-  {No canto, sekis podem ser um pouco mais estranhos ou peculiares. Inclusive, há outras maneiras ainda mais raras de se permanecer no tabuleiro, como duplos e triplos kos, e ``vidas eternas''.}
-  {\emph{Correto.} Branco não pode fazer nada no canto pois seria auto-atari. Mas Preto não conseguirá capturar nada, então ninguém faz pontos.}
-  {\emph{Incorreto.} Branco joga no ponto-chave preto e estabelece um olho. Quando quiser, ele poderá jogar em A ou B para capturar as pedras pretas.}
+\problemAnswerDiagram[%
+  sgf folder      = vida_ou_morte/vida_mutua,
+  sgf filename    = vida_mutua.4,
+  problem text    = {No canto, sekis podem ser um pouco mais estranhos ou peculiares. Inclusive, há outras maneiras ainda mais raras de se permanecer no tabuleiro, como duplos e triplos kos, e ``vidas eternas''.},
+  answer text one = {\emph{Correto.} Branco não pode fazer nada no canto pois seria auto-atari. Mas Preto não conseguirá capturar nada, então ninguém faz pontos.},
+  answer text two = {\emph{Incorreto.} Branco joga no ponto-chave preto e estabelece um olho. Quando quiser, ele poderá jogar em A ou B para capturar as pedras pretas.},
+]
 
-\problemAnswerDiagram
-  {vida_ou_morte/vida_mutua}
-  {vida_mutua.5}
-  {Estudar formas mortas é de extrema importância.}
-  {\emph{Correto.} A não ser em caso específico no canto conhecido como ``bent four in the corner'', ou quatro curvado no canto, a forma de 4 pedras que existiria no caso de Branco jogar A ou B não é forma morta. Mas Preto não pode jogar em A ou B, caso contrário teríamos realmente uma forma morta de 3 pedras.}
-  {\emph{Incorreto.} Ao jogar em 1, Branco forçará Preto a se conectar em A mais tarde, devido ao atari de B.}
+\problemAnswerDiagram[%
+  sgf folder      = vida_ou_morte/vida_mutua,
+  sgf filename    = vida_mutua.5,
+  problem text    = {Estudar formas mortas é de extrema importância.},
+  answer text one = {\emph{Correto.} A não ser em caso específico no canto conhecido como ``bent four in the corner'', ou quatro curvado no canto, a forma de 4 pedras que existiria no caso de Branco jogar A ou B não é forma morta. Mas Preto não pode jogar em A ou B, caso contrário teríamos realmente uma forma morta de 3 pedras.},
+  answer text two = {\emph{Incorreto.} Ao jogar em 1, Branco forçará Preto a se conectar em A mais tarde, devido ao atari de B.},
+]
 
-\problemAnswerDiagram
-  {vida_ou_morte/vida_mutua}
-  {vida_mutua.6}
-  {Preto conseguiu a pedra marcada em algum momento, o que possibilitou uma sequência de redução de fim de jogo. Como finalizá-la?}
-  {\emph{Correto.} Branco termina em seki. Ou seja, seu canto, que teria basicamente 6 pontos, agora foi zerado.}
-  {\emph{Incorreto.} Se Preto tentar outra coisa, Branco capturará o canto inteiro.}
+\problemAnswerDiagram[%
+  sgf folder      = vida_ou_morte/vida_mutua,
+  sgf filename    = vida_mutua.6,
+  problem text    = {Preto conseguiu a pedra marcada em algum momento, o que possibilitou uma sequência de redução de fim de jogo. Como finalizá-la?},
+  answer text one = {\emph{Correto.} Branco termina em seki. Ou seja, seu canto, que teria basicamente 6 pontos, agora foi zerado.},
+  answer text two = {\emph{Incorreto.} Se Preto tentar outra coisa, Branco capturará o canto inteiro.},
+]
+
+\clearedpage
+\clearedpage
