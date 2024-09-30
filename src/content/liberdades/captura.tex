@@ -2,68 +2,77 @@
 
 \emptypage
 
-\problemAnswerDiagram
-  {liberdades/captura}
-  {captura.1}
-  {É possível capturar a pedra branca? (Em livros de tsumegos, costuma-se padronizar sempre Preto a jogar.)}
-  {\emph{Correto.} Sim, é possível capturar a pedra branca diretamente, já que ela só possui 1 liberdade. (Note que a pedra branca será retirada do tabuleiro.)}
-  {\emph{Variação.} Mesmo se Branco tentar resgatar ou contra-capturar a pedra preta, sua pedra do canto ainda possui somente 1 liberdade e pode ser capturada.}
-  
-\problemAnswerDiagram
-  {liberdades/captura}
-  {captura.2}
-  {E se a pedra branca estiver no lado ao invés do canto, ainda é possível capturá-la?}
-  {\emph{Correto.} Branco não deveria jogar 2, pois não há para onde fugir. Suas pedras terão sempre 1 liberdade, e vão colidir com o canto esquerdo no final.}
-  {\emph{Variação.} Preto pode sempre fazer \emph{tenuki}, isto é, ignorar movimentos locais e jogar em outro lugar, mas aí é Branco quem poderá capturar a pedra preta.}
+\problemAnswerDiagram[%
+  sgf folder      = liberdades/captura,
+  sgf filename    = captura.1,
+  problem text    = {É possível capturar a pedra branca? (Em livros de tsumegos, costuma-se padronizar sempre Preto a jogar.)},
+  answer text one = {\emph{Correto.} Sim, é possível capturar a pedra branca diretamente, já que ela só possui 1 liberdade. (Note que a pedra branca será retirada do tabuleiro.)},
+  answer text two = {\emph{Variação.} Mesmo se Branco tentar resgatar ou contra-capturar a pedra preta, sua pedra do canto ainda possui somente 1 liberdade e pode ser capturada.},
+]
 
-\problemAnswerDiagram
-  {liberdades/captura}
-  {captura.3}
-  {Agora a pedra branca está no centro. Ela ainda pode ser capturada?}
-  {\emph{Correto.} A captura da pedra branca configura uma forma chamada \emph{ponnuki}, que é o número mínimo de pedras para se capturar uma pedra adversária, quando ela não está nem no canto e nem na borda. (Note que a pedra branca será retirada do tabuleiro.)}
-  {\emph{Variação.} Ao escapar com esta pedra, Branco vai de 1 liberdade para 3, o que é bastante eficiente, isto é, 2 liberdades por movimento; em lutas, liberdades são talvez o bem mais crucial. Desta maneira, Branco também expõe os cortes A e B no exterior preto.}
+\problemAnswerDiagram[%
+  sgf folder      = liberdades/captura,
+  sgf filename    = captura.2,
+  problem text    = {E se a pedra branca estiver no lado ao invés do canto, ainda é possível capturá-la?},
+  answer text one = {\emph{Correto.} Branco não deveria jogar 2, pois não há para onde fugir. Suas pedras terão sempre 1 liberdade, e vão colidir com o canto esquerdo no final.},
+  answer text two = {\emph{Variação.} Preto pode sempre fazer \emph{tenuki}, isto é, ignorar movimentos locais e jogar em outro lugar, mas aí é Branco quem poderá capturar a pedra preta.},
+]
 
-\problemAnswerDiagram
-  {liberdades/captura}
-  {captura.8}
-  {Há uma pedra branca solitária no topo. O que Preto pode fazer com ela?}
-  {\emph{Correto.} Preto pode capturá-la e, assim, resolver o problem do corte que existia em A.}
-  {\emph{Incorreto.} Preto poderia ter capturado a pedra, o que resolveria o corte de uma maneira mais eficiente, sem jogar em seu próprio território. E esta defesa dá chances para que Branco conecte todas as suas pedras mais tarde.}
+\problemAnswerDiagram[%
+  sgf folder      = liberdades/captura,
+  sgf filename    = captura.3,
+  problem text    = {Agora a pedra branca está no centro. Ela ainda pode ser capturada?},
+  answer text one = {\emph{Correto.} A captura da pedra branca configura uma forma chamada \emph{ponnuki}, que é o número mínimo de pedras para se capturar uma pedra adversária, quando ela não está nem no canto e nem na borda. (Note que a pedra branca será retirada do tabuleiro.)},
+  answer text two = {\emph{Variação.} Ao escapar com esta pedra, Branco vai de 1 liberdade para 3, o que é bastante eficiente, isto é, 2 liberdades por movimento; em lutas, liberdades são talvez o bem mais crucial. Desta maneira, Branco também expõe os cortes A e B no exterior preto.},
+]
 
-\problemAnswerDiagram
-  {liberdades/captura}
-  {captura.9}
-  {Capturas no canto são geralmente de extremo valor pois podem garantir não somente território, mas, também, o espaço vital de grupos, como veremos mais tarde nos exercícios de vida ou morte deste livro.}
-  {\emph{Correto.} A captura da pedra do canto limpa o canto para Preto, e ainda deixa a pedra A com somente 1 liberdade.}
-  {\emph{Incorreto.} Localmente pelo menos, não jogar aqui como Preto ajuda Branco a se estabilizar localmente, enquanto contra-ataca severamente.}
+\problemAnswerDiagram[%
+  sgf folder      = liberdades/captura,
+  sgf filename    = captura.8,
+  problem text    = {Há uma pedra branca solitária no topo. O que Preto pode fazer com ela?},
+  answer text one = {\emph{Correto.} Preto pode capturá-la e, assim, resolver o problem do corte que existia em A.},
+  answer text two = {\emph{Incorreto.} Preto poderia ter capturado a pedra, o que resolveria o corte de uma maneira mais eficiente, sem jogar em seu próprio território. E esta defesa dá chances para que Branco conecte todas as suas pedras mais tarde.},
+]
 
-\problemAnswerDiagram
-  {liberdades/captura}
-  {captura.7}
-  {O grupo branco mais ao topo possui 2 pedras. Isso muda algo em relação à possibilidade de captura?}
-  {\emph{Correto.} Apesar de o grupo branco ter mais pedras, ele ainda possui somente 1 liberdade. Esta forma é conhecida como ``casco de tartaruga'', que é o número mínimo de pedras necessário para se capturar 2 pedras. Também era possível capturar com A. (Note que ambas as pedras brancas serão retiradas do tabuleiro.)}
-  {\emph{Variação.} Ao fugir, Branco não somente resgata suas pedras como expõe múltiplas fraquezas no exterior preto.}
+\problemAnswerDiagram[%
+  sgf folder      = liberdades/captura,
+  sgf filename    = captura.9,
+  problem text    = {Capturas no canto são geralmente de extremo valor pois podem garantir não somente território, mas, também, o espaço vital de grupos, como veremos mais tarde nos exercícios de vida ou morte deste livro.},
+  answer text one = {\emph{Correto.} A captura da pedra do canto limpa o canto para Preto, e ainda deixa a pedra A com somente 1 liberdade.},
+  answer text two = {\emph{Incorreto.} Localmente pelo menos, não jogar aqui como Preto ajuda Branco a se estabilizar, enquanto contra-ataca severamente.},
+]
 
-\problemAnswerDiagram
-  {liberdades/captura}
-  {captura.10}
-  {Ambos os lados estão, localmente, em uma situação crítica.}
-  {\emph{Correto.} Preto captura dois pontos, praticamente garante o canto, e a pedra marcada é indiretamente engolida.}
-  {\emph{Variação.} Branco reverte para uma captura para si, e o grupo preto agora está flutuando e instável.}
+\problemAnswerDiagram[%
+  sgf folder      = liberdades/captura,
+  sgf filename    = captura.7,
+  problem text    = {O grupo branco mais ao topo possui 2 pedras. Isso muda algo em relação à possibilidade de captura?},
+  answer text one = {\emph{Correto.} Apesar de o grupo branco ter mais pedras, ele ainda possui somente 1 liberdade. Esta forma é conhecida como ``casco de tartaruga'', que é o número mínimo de pedras necessário para se capturar 2 pedras. Também era possível capturar com A. (Note que ambas as pedras brancas serão retiradas do tabuleiro.)},
+  answer text two = {\emph{Variação.} Ao fugir, Branco não somente resgata suas pedras como expõe múltiplas fraquezas no exterior preto.},
+]
 
-\problemAnswerDiagram
-  {liberdades/captura}
-  {captura.23}
-  {Há mais de 1 grupo preto prestes a ser capturado.}
-  {\emph{Correto.} Preto captura as principais pedras de corte e resolve todos os seus problemas.}
-  {\emph{Incorreto.} Resgatar pedras diretamente é muitas vezes o melhor momento. Mas por que resgatar se podemos corrigir capturando diretamente?}
+\problemAnswerDiagram[%
+  sgf folder      = liberdades/captura,
+  sgf filename    = captura.10,
+  problem text    = {Ambos os lados estão, localmente, em uma situação crítica.},
+  answer text one = {\emph{Correto.} Preto captura dois pontos, praticamente garante o canto, e a pedra marcada é indiretamente engolida.},
+  answer text two = {\emph{Variação.} Branco reverte para uma captura para si, e o grupo preto agora está flutuando e instável.},
+]
 
-\problemAnswerDiagram
-  {liberdades/captura}
-  {captura.24}
-  {Preto já está basicamente seguro, mas uma captura nesta região não somente seriam pontos, mas, também, um possível ataque contra Branco.}
-  {\emph{Correto.} Preto captura tudo basicamente.}
-  {\emph{Incorreto.} Se Branco tiver a chance, com 1, ele basicamente estará vivo, pois a pedra A é engolida automaticamente. Além disso, o corte em B agora é possível.}
+\problemAnswerDiagram[%
+  sgf folder      = liberdades/captura,
+  sgf filename    = captura.23,
+  problem text    = {Há mais de 1 grupo preto prestes a ser capturado.},
+  answer text one = {\emph{Correto.} Preto captura as principais pedras de corte e resolve todos os seus problemas.},
+  answer text two = {\emph{Incorreto.} Resgatar pedras diretamente é muitas vezes o melhor momento. Mas por que resgatar se podemos corrigir capturando diretamente?},
+]
+
+\problemAnswerDiagram[%
+  sgf folder      = liberdades/captura,
+  sgf filename    = captura.24,
+  problem text    = {Preto já está basicamente seguro, mas uma captura nesta região não somente representaria muitos pontos, mas, também, um possível ataque contra Branco.},
+  answer text one = {\emph{Correto.} Preto captura tudo basicamente.},
+  answer text two = {\emph{Incorreto.} Se Branco tiver a chance, com 1, ele basicamente estará vivo, pois a pedra A é engolida automaticamente. Além disso, o corte em B agora está disponível.},
+]
 
 \clearedpage
 \clearedpage
