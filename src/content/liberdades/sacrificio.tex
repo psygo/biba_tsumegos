@@ -2,44 +2,54 @@
 
 \emptypage
 
-\problemAnswerDiagram
-  {liberdades/sacrificio}
-  {sacrificio.1}
-  {Já entramos em técnicas de captura bastante avançadas. E esta técnica especificamente é devastadora localmente caso consigamos aplicá-la.}
-  {\emph{Correto.} Com um sacrifício, forçamos Preto a se colocar em atari. Esta técnica em que sacrificamos uma pedra para deixar Preto imediatamente em atari é chamada de ``snapback'' em inglês, o que pode ser traduzido talvez como ``ricochete'' em português.}
-  {\emph{Continuação.} Em seguida, capturamos diretamente. Tipicamente, esta técnica é tão potente que Branco deveria ter jogado em A ao invés de B, caso B tenha sido a última jogada branca.}
+\problemAnswerDiagram[%
+  sgf folder      = liberdades/sacrificio,
+  sgf filename    = sacrificio.1,
+  problem text    = {Já entramos em técnicas de captura bastante avançadas. E esta técnica especificamente é devastadora localmente caso consigamos aplicá-la.},
+  answer text one = {\emph{Correto.} Com um sacrifício, forçamos Preto a se colocar em atari. Esta técnica em que sacrificamos uma pedra para deixar Preto imediatamente em atari é chamada de ``snapback'' em inglês, o que pode ser traduzido talvez como ``ricochete'' em português.},
+  answer text two = {\emph{Continuação.} Em seguida, capturamos diretamente. Tipicamente, esta técnica é tão potente que Branco deveria ter jogado em A ao invés de B, caso B tenha sido a última jogada branca.},
+]
 
-\problemAnswerDiagram
-  {liberdades/sacrificio}
-  {sacrificio.2}
-  {Branco parece ter se esquecido de algo.}
-  {\emph{Correto.} Preto pode capturar duas pedras brancas através de um sacrifício inicial. Note também que a captura termina com a pedra A possibilitando uma outra futura captura em B, portanto, se Branco quiser proteger o canto, terá que conectar em B ainda.}
-  {\emph{Variação.} Branco pode proteger com 1 ou A, mas A geralmente leva a mais forma de olho localmente, o que pode ser importante no futuro.}
+\problemAnswerDiagram[%
+  sgf folder      = liberdades/sacrificio,
+  sgf filename    = sacrificio.2,
+  problem text    = {Branco parece ter se esquecido de algo.},
+  answer text one = {\emph{Correto.} Preto pode capturar duas pedras brancas através de um sacrifício inicial. Note também que a captura termina com a pedra A possibilitando uma outra futura captura em B, portanto, se Branco quiser proteger o canto, terá que conectar em B ainda.},
+  answer text two = {\emph{Variação.} Branco pode proteger com 1 ou A, mas A geralmente leva a mais forma de olho localmente, o que pode ser importante no futuro.},
+]
 
-\problemAnswerDiagram
-  {liberdades/sacrificio}
-  {sacrificio.6}
-  {Branco achou que já tinha bastante forma de olho, o suficiente para pelo menos 2 olhos.}
-  {\emph{Correto.} Ao capturar com 1, o grupo à direita não possui espaço o suficiente para 2 olhos, então o grupo inteiro morre.}
-  {\emph{Variação.} Se Branco tivesse respondido com uma conexão, o resultado seria um ko ainda, Branco não vive incondicionalmente.}
+\problemAnswerDiagram[%
+  sgf folder      = liberdades/sacrificio,
+  sgf filename    = sacrificio.6,
+  problem text    = {Branco achou que já tinha bastante forma de olho, o suficiente para pelo menos 2 olhos.},
+  answer text one = {\emph{Correto.} Ao capturar com 1, o grupo à direita não possui espaço o suficiente para 2 olhos, então o grupo inteiro morre.},
+  answer text two = {\emph{Variação.} Se Branco tivesse respondido com uma conexão, o resultado seria um ko ainda, Branco não vive incondicionalmente.},
+]
 
-\problemAnswerDiagram
-  {liberdades/sacrificio}
-  {sacrificio.3}
-  {Um problema não muito simples, mas, com boa técnica, conseguiremos simplificá-lo drasticamente.}
-  {\emph{Correto.} Mais uma vez, em problemas simétricos, o eixo de simetria, o meio, é sempre um excelente indício. Neste caso, ao jogar no meio conseguimos aplicar um sacrifício por ambos os lados.}
-  {\emph{Incorreto.} Preto não consegue conectar em A pois seria suicídio, portanto, os dois olhos já estão configurados.}
+\problemAnswerDiagram[%
+  sgf folder      = liberdades/sacrificio,
+  sgf filename    = sacrificio.3,
+  problem text    = {Um problema não muito simples, mas, com boa técnica, conseguiremos simplificá-lo drasticamente.},
+  answer text one = {\emph{Correto.} Mais uma vez, em problemas simétricos, o eixo de simetria, o meio, é sempre um excelente indício. Neste caso, ao jogar no meio conseguimos aplicar um sacrifício por ambos os lados.},
+  answer text two = {\emph{Incorreto.} Preto não consegue conectar em A pois seria suicídio, portanto, os dois olhos já estão configurados.},
+]
 
-\problemAnswerDiagram
-  {liberdades/sacrificio}
-  {sacrificio.4}
-  {Uma situação um pouco mais delicada. Será que a mesma técnica funciona?}
-  {\emph{Correto.} Aqui, é melhor capturar diretamente, pois Preto possui problemas de liberdades no exterior com a forma marcada.}
-  {\emph{Subótimo.} Caso Preto foque em otimizar o fim de jogo, Branco consegue movimentos forçados no centro, o que será muito provavelmente muito mais valioso do que o lucro preto no topo.}
+\problemAnswerDiagram[%
+  sgf folder      = liberdades/sacrificio,
+  sgf filename    = sacrificio.4,
+  problem text    = {Uma situação um pouco mais delicada. Será que a mesma técnica funciona?},
+  answer text one = {\emph{Correto.} Aqui, é melhor capturar diretamente, pois Preto possui problemas de liberdades no exterior com a forma marcada.},
+  answer text two = {\emph{Subótimo.} Caso Preto foque em otimizar o fim de jogo, Branco consegue movimentos forçados no centro, o que será muito provavelmente muito mais valioso do que o lucro preto no topo.},
+]
 
-\problemAnswerDiagram
-  {liberdades/sacrificio}
-  {sacrificio.5}
-  {Se você conseguir resolver este problema em uma partida real, com certeza, os espectadores ficarão impressionados.}
-  {\emph{Correto.} Branco não consegue resgatar suas pedras se Preto cortar em 1.}
-  {\emph{Incorreto.} Branco toma para si o ponto-chave para a captura.}
+
+\problemAnswerDiagram[%
+  sgf folder      = liberdades/sacrificio,
+  sgf filename    = sacrificio.5,
+  problem text    = {Se você conseguir resolver este problema em uma partida real, com certeza, os espectadores ficarão impressionados.},
+  answer text one = {\emph{Correto.} Branco não consegue resgatar suas pedras se Preto cortar em 1.},
+  answer text two = {\emph{Incorreto.} Branco toma para si o ponto-chave para a captura.},
+]
+
+\clearedpage
+\clearedpage
