@@ -6,6 +6,8 @@
   \fi
 }
 
+\usepackage{xstring}
+
 \newcommand{\textLabel}[3]{
   \setCoords{#2}
 
@@ -21,7 +23,20 @@
   ] 
     circle [radius = \stoneRadius * 0.6375cm];
     
-  \pgfmathsetmacro{\fontSize}{\stoneRadius * 4.375 * 9.625pt}
+  \pgfmathsetmacro{\fontSizeMultiplier}{
+    % From [this answer](https://tex.stackexchange.com/a/50131/64441).
+    \if\relax\detokenize\expandafter{\romannumeral-0#3}\relax
+      \ifnum#3>9
+        3.75
+      \else
+        4.375
+      \fi
+    \else
+      4.375
+    \fi
+  }
+
+  \pgfmathsetmacro{\fontSize}{\stoneRadius * \fontSizeMultiplier * 9.625pt}
 
   \draw (\xCoord, \yCoord) 
     node[
