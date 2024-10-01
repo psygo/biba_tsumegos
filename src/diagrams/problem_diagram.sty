@@ -10,10 +10,14 @@
 
 \newcommand\problemNumber[1]{
   \pgfmathsetmacro{\baselinePad}{
-    \ifnum\theproblemCounter>9 
-      2.25pt 
+    \ifnum\theproblemCounter>99
+      3.25pt 
     \else
-      1.95pt
+      \ifnum\theproblemCounter>9
+        1.85pt
+      \else
+        1.95pt
+      \fi
     \fi
   }
 
@@ -21,18 +25,32 @@
     \ifnum\theproblemCounter>9 
       2.5pt 
     \else
-      4pt
+      3.5pt
+    \fi
+  }
+
+  \pgfmathsetmacro{\fontSize}{
+    \ifnum\theproblemCounter>99
+      11pt
+    \else
+      \ifnum\theproblemCounter>9
+        12pt
+      \else
+        12pt
+      \fi
     \fi
   }
 
   \begin{tikzpicture}[baseline=\baselinePad]
     \fontfamily{lmr}
 
-    \node[draw,
-          shape        = circle,
-          inner sep    = \innerSep,
-          line width   = 0.025cm,
-          minimum size = 0.45cm] 
+    \node[
+      draw,
+      shape        = circle,
+      inner sep    = \innerSep,
+      line width   = 0.025cm,
+      font         = \fontsize{\fontSize}{9pt}\selectfont,
+    ] 
       (char)
       {\textmd{#1}};
   \end{tikzpicture}
@@ -61,9 +79,21 @@
 
     \vspace{0.675cm}
     
+    \pgfmathsetmacro{\leftPad}{
+      \ifnum\theproblemCounter>99
+        0.03
+      \else
+        \ifnum\theproblemCounter>9
+          0.08
+        \else
+          0.09
+        \fi
+      \fi
+    }
+    
     \begin{minipage}[t]{0.2\linewidth}
       \hbox{
-        \hspace{0.15cm}
+        \hspace{\leftPad cm}
         \problemNumber{\theproblemCounter}
       }
     \end{minipage}\hfill
