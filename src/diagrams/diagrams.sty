@@ -16,12 +16,14 @@
     answer text one                    = ,
     answer text two/.store in          = \answerTextTwo,
     answer text two                    = ,
+    answer diagram clip vert/.default  = 11,
     answer diagram clip vert/.store in = \answerDiagramClipVert,
-    answer diagram clip vert           = 11,
+    answer diagram clip vert              ,
 }
 
 \newcommand\problemAnswerDiagram[1][]{
-  \pgfkeys{/phili/problemAnswer/.cd, #1} 
+  % For more info, check [this answer](https://tex.stackexchange.com/a/85760/64441).
+  \pgfkeys{/phili/problemAnswer/.cd, answer diagram clip vert, #1} 
   
   \problemDiagram
     {\sgfFolder}
