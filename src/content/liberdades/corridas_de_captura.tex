@@ -2,5 +2,46 @@
 
 \emptypage
 
+\problemAnswerDiagram[%
+  sgf folder      = liberdades/corridas_de_captura,
+  sgf filename    = corridas_de_captura.1,
+  problem text    = {Corridas de captura --- ou, em japonês, \emph{semeai} --- são provavelmente o tópico de leitura mais complexo no Go. Porém, há princípios que simplificam drasticamente sua complexidade.},
+  answer text one = {\emph{Correto.} Manter-se conectado aumenta o número de liberdades para Preto e, assim, pode-se ganhar a corrida.},
+  answer text two = {\emph{Incorreto.} Se simplesmente tentarmos diminuir as liberdades brancas por fora, o que é um outro e muito bom princípio, desta vez, não funcionará. É preciso checar se o princípio funciona, ao invés de jogá-lo diretamente.},
+]
+
+\problemAnswerDiagram[%
+  sgf folder               = liberdades/corridas_de_captura,
+  sgf filename             = corridas_de_captura.2,
+  problem text             = {Aqui, temos um outro princípio muito importante. Qual?},
+  answer text one          = {\emph{Correto.} Este é o princípio de ``olho vs sem olho''. Em geral, o grupo que possui olho guarda as liberdades internas para si, garantindo uma grande vantagem na corrida. Por exemplo, Branco não pode se aproximar em A depois de Preto 1.},
+  answer text two          = {\emph{Variação.} Se Branco puder jogar, pode ganhar a corrida fazendo retirando o olho ao fazer atari.},
+  answer diagram clip vert = 10,
+]
+
+\problemAnswerDiagram[%
+  sgf folder      = liberdades/corridas_de_captura,
+  sgf filename    = corridas_de_captura.3,
+  problem text    = {Uma possível armadilha para quem está vendo isto pela primeira vez.},
+  answer text one = {\emph{Correto.} Preto impossibilita que Branco jogue A ou B, pois seria auto-atari. Este tipo de movimento que trava o adversário com atari é outra técnica muito útil.},
+  answer text two = {\emph{Incorreto.} Ao bloquear com 2, Branco põe Preto em atari.},
+]
+
+\problemAnswerDiagram[%
+  sgf folder      = liberdades/corridas_de_captura,
+  sgf filename    = corridas_de_captura.4,
+  problem text    = {Tente combinar múltiplas das técnicas que vimos até aqui.},
+  answer text one = {\emph{Correto.} Em primeiro lugar, vemos que Preto possui um olho, ou seja, as liberdades internas são mais provavelmente pretas, mas só se jogarmos algo para reduzir as liberdades brancas. Note que parece restar um ko, mas este ko pode ser clareado no final da partida, é um privilégio preto.},
+  answer text two = {\emph{Incorreto.} Preto 1 parece similar à resposta, mas Branco bloqueia e chegamos a um impasse local, uma vida mútua, o que veremos mais à frente. Preto não poderá jogar em A, ambos os grupos permanecem no tabuleiro, sem fazer pontos.},
+]
+
+\problemAnswerDiagram[%
+  sgf folder      = liberdades/corridas_de_captura,
+  sgf filename    = corridas_de_captura.5,
+  problem text    = {Precisamos de uma heurística nova?},
+  answer text one = {\emph{Correto.} Ao fazer um olho, reduzimos o problema a ``olho vs sem olho''. Branco não consegue se aproximar por lugar nenhum, Preto pode capturar quando quiser.},
+  answer text two = {\emph{Incorreto.} Saber que há a possibilidade de ko é uma técnica muito útil, mas desnecessária e errada aqui. Além disso, este é um ko em que Branco captura primeiro e, se Preto perder, Branco captura em A, fazendo olho e colocando B sob atari.},
+]
+
 \clearedpage
 \clearedpage
