@@ -43,5 +43,45 @@
   answer text two = {\emph{Incorreto.} Saber que há a possibilidade de ko é uma técnica muito útil, mas desnecessária e errada aqui. Além disso, este é um ko em que Branco captura primeiro e, se Preto perder, Branco captura em A, fazendo olho e colocando B sob atari.},
 ]
 
+\problemAnswerDiagram[%
+  sgf folder      = liberdades/corridas_de_captura,
+  sgf filename    = corridas_de_captura.6,
+  problem text    = {Já vimos a técnica de captura a ser aplicada, mas não no contexto de corridas de captura.},
+  answer text one = {\emph{Correto.} Preto captura e recaptura para configurar um olho falso branco.},
+  answer text two = {\emph{Continuação.} Já que somente Preto possui olho, a corrida é garantida para Preto.},
+]
+
+\problemAnswerDiagram[%
+  sgf folder      = liberdades/corridas_de_captura,
+  sgf filename    = corridas_de_captura.7,
+  problem text    = {Parece ser uma corrida bastante específica, mas este tipo de forma é bastante recorrente em partidas.},
+  answer text one = {\emph{Correto.} Preto garante um olho para expandir suas liberdades e começar a reduzir as liberdades brancas por fora.},
+  answer text two = {\emph{Incorreto.} Se Preto tentar reduzir as liberdades diretamente, é colocado em atari. Jogar em A parece um ko, mas Preto será capturado diretamente.},
+]
+
+\problemAnswerDiagram[%
+  sgf folder      = liberdades/corridas_de_captura,
+  sgf filename    = corridas_de_captura.8,
+  problem text    = {Uma das técnicas de capítulos anteriores.},
+  answer text one = {\emph{Correto.} Com um sacrifício, forçamos Preto a basicamente colidir com a lateral, reduzindo uma liberdade e garantindo a corrida.},
+  answer text two = {\emph{Incorreto.} Sem o sacrifício, Branco acaba com uma liberdade extra.},
+]
+
+\problemAnswerDiagram[%
+  sgf folder      = liberdades/corridas_de_captura,
+  sgf filename    = corridas_de_captura.9,
+  problem text    = {Vamos revisitar o conceito de ``olho vs sem olho''. Preto pode partir para uma corrida de liberdades difícil em A ou simplesmente se conectar em B.},
+  answer text one = {\emph{Correto.} Apesar de que Preto não possui olho, há liberdades suficientes para ganhar a corrida.},
+  answer text two = {\emph{Incorreto.} Branco vive, salvando um grupo grnade, enquanto Preto não ganha muita coisa localmente, no máximo, sente.},
+]
+
+\problemAnswerDiagram[%
+  sgf folder      = liberdades/corridas_de_captura,
+  sgf filename    = corridas_de_captura.10,
+  problem text    = {Há uma pequena mudança agora. Será que é ainda a mesma resposta?},
+  answer text one = {\emph{Correto.} Desta vez, Preto precisa se conectar, pois não ganhará a corrida.},
+  answer text two = {\emph{Incorreto.} Já que Preto precisa se conectar em 3 antes de reduzir a liberdade de 5, Branco consegue um movimento a mais no exterior, o que muda completamente a corrida. Esta é uma das mágicas do canto, essencial para a leitura de corridas. Preto não conseguirá mais jogar em A pois será auto-atari.},
+]
+
 \clearedpage
 \clearedpage
