@@ -4,8 +4,16 @@
 
 \problemAnswerDiagram[%
   sgf folder      = liberdades/corridas_de_captura,
-  sgf filename    = corridas_de_captura.1,
+  sgf filename    = corridas_de_captura.11,
   problem text    = {Corridas de captura --- ou, em japonês, \emph{semeai} --- são provavelmente o tópico de leitura mais complexo no Go. Porém, há princípios que simplificam drasticamente sua complexidade.},
+  answer text one = {\emph{Correto.} O princípio primordial é com certeza reduzir as liberdades por fora, isto é, pelas liberdades não mútuas dos grupos dentro corrida.},
+  answer text two = {\emph{Incorreto.} Preencher as liberdades mútuas primeiro é como fazer auto-atari.},
+]
+
+\problemAnswerDiagram[%
+  sgf folder      = liberdades/corridas_de_captura,
+  sgf filename    = corridas_de_captura.1,
+  problem text    = {Mais um princípio essencial. Consegue percebê-lo?},
   answer text one = {\emph{Correto.} Manter-se conectado aumenta o número de liberdades para Preto e, assim, pode-se ganhar a corrida.},
   answer text two = {\emph{Incorreto.} Se simplesmente tentarmos diminuir as liberdades brancas por fora, o que é um outro e muito bom princípio, desta vez, não funcionará. É preciso checar se o princípio funciona, ao invés de jogá-lo diretamente.},
 ]
@@ -13,7 +21,7 @@
 \problemAnswerDiagram[%
   sgf folder               = liberdades/corridas_de_captura,
   sgf filename             = corridas_de_captura.2,
-  problem text             = {Aqui, temos um outro princípio muito importante. Qual?},
+  problem text             = {A terceira receita.},
   answer text one          = {\emph{Correto.} Este é o princípio de ``olho vs sem olho''. Em geral, o grupo que possui olho guarda as liberdades internas para si, garantindo uma grande vantagem na corrida. Por exemplo, Branco não pode se aproximar em A depois de Preto 1.},
   answer text two          = {\emph{Variação.} Se Branco puder jogar, pode ganhar a corrida fazendo retirando o olho ao fazer atari.},
   answer diagram clip vert = 10,
@@ -72,7 +80,7 @@
   sgf filename    = corridas_de_captura.9,
   problem text    = {Vamos revisitar o conceito de ``olho vs sem olho''. Preto pode partir para uma corrida de liberdades difícil em A ou simplesmente se conectar em B.},
   answer text one = {\emph{Correto.} Apesar de que Preto não possui olho, há liberdades suficientes para ganhar a corrida.},
-  answer text two = {\emph{Incorreto.} Branco vive, salvando um grupo grnade, enquanto Preto não ganha muita coisa localmente, no máximo, sente.},
+  answer text two = {\emph{Incorreto.} Branco vive, salvando um grupo grande, enquanto Preto não ganha muita coisa localmente, no máximo, sente.},
 ]
 
 \problemAnswerDiagram[%
@@ -81,6 +89,22 @@
   problem text    = {Há uma pequena mudança agora. Será que é ainda a mesma resposta?},
   answer text one = {\emph{Correto.} Desta vez, Preto precisa se conectar, pois não ganhará a corrida.},
   answer text two = {\emph{Incorreto.} Já que Preto precisa se conectar em 3 antes de reduzir a liberdade de 5, Branco consegue um movimento a mais no exterior, o que muda completamente a corrida. Esta é uma das mágicas do canto, essencial para a leitura de corridas. Preto não conseguirá mais jogar em A pois será auto-atari.},
+]
+
+\problemAnswerDiagram[%
+  sgf folder      = liberdades/corridas_de_captura,
+  sgf filename    = corridas_de_captura.12,
+  problem text    = {Esta é uma técnica bastante avançada, mas extremamente útil, e não tão incomum.},
+  answer text one = {\emph{Correto.} Com a diagonal de 1, Preto impossibilita que Branco jogue em A ou B, o que efetivamente mantém o mesmo número de liberdades e retira 1 do grupo branco.},
+  answer text two = {\emph{Incorreto.} Começar reduzindo as liberdades por for é um excelente princípio, mas não funcionará aqui.},
+]
+
+\problemAnswerDiagram[%
+  sgf folder      = liberdades/corridas_de_captura,
+  sgf filename    = corridas_de_captura.13,
+  problem text    = {Há várias possibilidades. Mas é possível eliminá-las rapidamente.},
+  answer text one = {\emph{Correto.} Ao jogar Preto 1, Branco não consegue fazer mais nada, pois seria auto-atari.},
+  answer text two = {\emph{Incorreto.} Preto não possui o tempo de descer, é preciso reduzir as liberdades brancas o mais rápido possível.},
 ]
 
 \clearedpage
