@@ -60,11 +60,28 @@
 ]
 
 \problemAnswerDiagram[%
+  sgf folder               = liberdades/sacrificio,
+  sgf filename             = sacrificio.8,
+  problem text             = {Dependendo de onde começamos, podemos chegar a um erro.},
+  answer text one          = {\emph{Correto.} Branco não consegue salvar o grupo de pedras de corte.},
+  answer text two          = {\emph{Incorreto.} Branco não pode salvar as pedras marcadas, mas isso pouco importa, pois as pedras de corte de maior valor estão mais à direita. Não é um fracasso total, mas, certamente, uma sequência subótima.},
+  answer diagram clip vert = 10,
+]
+
+\problemAnswerDiagram[%
   sgf folder      = liberdades/sacrificio,
-  sgf filename    = sacrificio.8,
-  problem text    = {Dependendo de onde começamos, podemos chegar a um erro.},
-  answer text one = {\emph{Correto.} Branco não consegue salvar o grupo de pedras de corte.},
-  answer text two = {\emph{Incorreto.} Branco não pode salvar as pedras marcadas, mas isso pouco importa, pois as pedras de corte de maior valor estão mais à direita. Não é um fracasso total, mas, certamente, uma sequência subótima.},
+  sgf filename    = sacrificio.9,
+  problem text    = {Depois de Preto jogar 1, Branco discorda e tenta desconectar os grupos. Como prosseguir?},
+  answer text one = {\emph{Correto.} Branco não deveria tentar uma desconexão. A sequência acaba em um ricochete.},
+  answer text two = {\emph{Variação.} O máximo que Branco consegue é resgatar a pedra somente.},
+]
+
+\problemAnswerDiagram[%
+  sgf folder      = liberdades/sacrificio,
+  sgf filename    = sacrificio.10,
+  problem text    = {Branco está tentando reduzir o território preto do canto. Qual é a resposta ótima?},
+  answer text one = {\emph{Correto.} Bloquear em 1 utiliza o ricochete como proteção, e pedra marcada ainda fica em atari.},
+  answer text two = {\emph{Incorreto.} Uma resposta assim seria subótima na imensa maioria dos casos. Isso só seria uma opção caso Preto estivesse com problemas de liberdades no exterior.},
 ]
 
 \clearedpage
