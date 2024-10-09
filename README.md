@@ -1,10 +1,10 @@
-# Tsumegos para Iniciantes
+# Técnicas de Go
 
 > **Português**: Você pode utilizar este projeto como um modelo, mas você terá que mencionar este projeto em algum lugar.
 
 > **English**: You may freely use this project as a template, but, if so, you're gonna have to somewhere mention this project at some point.
 
-Um livro de Go para iniciantes que foca em uma progressão estruturada, e em uma construção de referências de padrões.
+Um livro de técnicas Go que foca em uma progressão estruturada, e em uma construção de referências de padrões.
 
 > **Português**: Todos os diagramas foram feitos inteiramente com LaTeX..
 
