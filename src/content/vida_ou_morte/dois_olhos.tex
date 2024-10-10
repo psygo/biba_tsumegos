@@ -7,13 +7,13 @@
   sgf filename    = dois_olhos.1,
   problem text    = {Este exercício é uma das essências do Go. É possível permanecer incondicionalmente no tabuleiro?},
   answer text one = {\emph{Correto.} Sim, com 1, estabelecemos ``dois olhos'', o que impossibilita a captura do grupo. Branco precisaria jogar tanto em A quanto em B para capturar, mas ele só possui um movimento por turno, portanto, cada um deles será considerado suicídio!},
-  answer text two = {\emph{Incorreto.} Preto talvez pense que seja possível capturar a pedra 1, mas ele morrerá primeiro. Note que, o melhor movimento do seu adversário (jogar 1 para viver como Preto) é também seu melhor movimento.},
+  answer text two = {\emph{Incorreto.} Preto talvez pense que seja possível capturar a pedra 1, mas ele morrerá primeiro. Note que, o melhor movimento do seu adversário --- jogar 1 para viver como Preto --- é também, com frequência, seu melhor movimento.},
 ]
 
 \problemAnswerDiagram[%
   sgf folder      = vida_ou_morte/dois_olhos,
   sgf filename    = dois_olhos.2,
-  problem text    = {Talvez o grupo estar na lateral, e não no canto, mude o seu status.},
+  problem text    = {Talvez o grupo sendo posicionado na lateral, e não no canto, mude o seu status.},
   answer text one = {\emph{Correto.} Não, é exatamente a mesma forma do problema anterior.},
   answer text two = {\emph{Incorreto.} E o mesmo movimento para matar.},
 ]
@@ -23,7 +23,7 @@
   sgf filename    = dois_olhos.3,
   problem text    = {Cercar 3 intersecções é insuficiente para viver, a não ser que seja seu turno. E se estivermos cercando de 4 a 5?},
   answer text one = {\emph{Correto.} Cercar 4 é suficiente, pois é impossível que Branco faça com que todo o espaço vire algo indivisível. Se Branco jogar em 3, Preto responderá em 2.},
-  answer text two = {\emph{Incorreto.} Branco em 2 é uma tática ligeiramente mais avançada --- e que veremos mais a fundo em breve --- para criar um olho falso. Preto acaba efetivamente cercando somente 3 intersecções.},
+  answer text two = {\emph{Incorreto.} Branco em 2 é uma tática ligeiramente mais avançada --- e que veremos mais a fundo em breve --- para criar um olho falso. Preto acaba efetivamente cercando só 3 intersecções.},
 ]
 
 \problemAnswerDiagram[%
@@ -47,7 +47,7 @@
   sgf filename    = dois_olhos.5,
   problem text    = {Pode não parecer a princípio, mas esta é uma variação do problema anterior.},
   answer text one = {\emph{Correto.} É basicamente a mesma forma do problema anterior.},
-  answer text two = {\emph{Incorreto.} Ao descer, Branco pega o bom movimento preto para si, e faz com que o espaço interno não possa ser dissociado.},
+  answer text two = {\emph{Incorreto.} Ao descer, Branco pega o bom movimento preto para si, e faz com que o espaço interno não possa mais ser dissociado.},
 ]
 
 \problemAnswerDiagram[%
