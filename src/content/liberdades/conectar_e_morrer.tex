@@ -6,16 +6,17 @@
   sgf folder      = liberdades/conectar_e_morrer,
   sgf filename    = conectar_e_morrer.2,
   problem text    = {Preto precisa de um milagre, e rápido.},
-  answer text one = {\emph{Correto.} Branco não consegue conectar em 3, pois a pedra preta em A garante um auto-atari. Este é um exemplo muito mais emblemático de ``conectar e morrer''.},
-  answer text two = {\emph{Incorreto.} Capturar em 1 corrige os problemas para Branco.},
+  answer text one = {\emph{Correto.} Branco não consegue conectar em 3, pois a pedra preta em 1 garante um auto-atari. Este é um exemplo emblemático de ``conectar e morrer''.},
+  answer text two = {\emph{Variação.} Conectar em 1 corrige os problemas para Branco.},
 ]
 
 \problemAnswerDiagram[%
-  sgf folder      = liberdades/conectar_e_morrer,
-  sgf filename    = conectar_e_morrer.3,
-  problem text    = {Mais uma situação extremamente suspeita em termos de liberdades.},
-  answer text one = {\emph{Correto.} Branco não consegue conectar em 3 diretamente pois seria auto-atari!},
-  answer text two = {\emph{Incorreto.} Caso Preto não perceba o problema, Branco toma o bom movimento preto para si. Branco A também funcionaria, mas essencialmente tem o mesmo efeito no canto nesta situação, além de retirar uma liberdade das pedras pretas no exterior.},
+  sgf folder               = liberdades/conectar_e_morrer,
+  sgf filename             = conectar_e_morrer.3,
+  problem text             = {Uma situação extremamente suspeita em termos de liberdades.},
+  answer text one          = {\emph{Correto.} Branco não consegue conectar em 3 diretamente pois seria auto-atari!},
+  answer text two          = {\emph{Incorreto.} Caso Preto não perceba o problema, Branco captura em 2 para se prevenir.},
+  answer diagram clip vert = 10,
 ]
 
 \problemAnswerDiagram[%
@@ -29,8 +30,8 @@
 \problemAnswerDiagram[%
   sgf folder      = liberdades/conectar_e_morrer,
   sgf filename    = conectar_e_morrer.1,
-  problem text    = {Branco parece seguro, mas há um problema gigante em sua forma.},
-  answer text one = {\emph{Correto.} Se Branco conectar em 2, é capturado. Esta técnica é conhecida como ``connect and die'' em inglês, ou ``conectar e morrer'', apesar de que muitos diriam que é mais um problema de falta de liberdades. Como benefício extra, a pedra A termina em atari também.},
+  problem text    = {Branco parece forte e seguro, mas há um problema gigante em sua forma.},
+  answer text one = {\emph{Correto.} Se Branco conectar em 3, terá tudo capturado com A. Esta técnica é conhecida como ``connect and die'' em inglês, apesar de que muitos diriam que é somente mais um exemplo de falta de liberdades. Como benefício extra, a pedra A termina em atari também.},
   answer text two = {\emph{Incorreto.} Preto nem sequer conseguirá viver no canto desta maneira.},
 ]
 
@@ -39,7 +40,7 @@
   sgf filename    = conectar_e_morrer.5,
   problem text    = {Lembre que o canto pode gerar mais liberdades do que o esperado, se não tomarmos cuidado.},
   answer text one = {\emph{Correto.} Branco não consegue se conectar com a pedra A pois permaneceria sob atari de qualquer maneira.},
-  answer text two = {\emph{Incorreto.} Jogar em 1 parece também reduzir as liberdades brancas, entretanto, Preto não consegue se mais nada diretamente.},
+  answer text two = {\emph{Incorreto.} Jogar em 1 parece também reduzir as liberdades brancas, entretanto, Preto não conseguirá se aproximar diretamente.},
 ]
 
 \clearedpage
