@@ -10,6 +10,12 @@ Um livro de técnicas Go que foca em uma progressão estruturada, e em uma const
 
 > **English**: All the diagrams were drawn with a custom LaTeX package.
 
+<div style="display: inline-flex">
+  <img src="assets/Amostras Imagens/capa.png" height="400px" />
+  <img src="assets/Amostras Imagens/indice_1.png" height="400px" />
+  <img src="assets/Amostras Imagens/indice_2.png" height="400px" />
+</div>
+
 ## Como Gerar a Capa
 
 A capa pode ser gerada com:
