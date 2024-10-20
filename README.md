@@ -15,9 +15,20 @@ Um livro de técnicas Go que foca em uma progressão estruturada, e em uma const
   <img src="assets/amostras_imagens/contra-capa.png" height="400px" alt="contra-capa" />
   <img src="assets/amostras_imagens/indice_1.png" height="400px" alt="Índice 1" />
   <img src="assets/amostras_imagens/indice_2.png" height="400px" alt="Índice 2" />
+  <img src="assets/amostras_imagens/prefacio_1.png" height="400px" alt="Prefácio 1" />
+  <img src="assets/amostras_imagens/captura_direta_1.png" height="400px" alt="Captura Direta 1" />
+  <img src="assets/amostras_imagens/captura_direta_2.png" height="400px" alt="Captura Direta 2" />
+  <img src="assets/amostras_imagens/escadas_1.png" height="400px" alt="Escadas 1" />
+  <img src="assets/amostras_imagens/escadas_2.png" height="400px" alt="Escadas 2" />
+  <img src="assets/amostras_imagens/redes_1.png" height="400px" alt="Redes 1" />
+  <img src="assets/amostras_imagens/espremer_1.png" height="400px" alt="Espremer 1" />
+  <img src="assets/amostras_imagens/atravessar_1.png" height="400px" alt="Atravessar 1" />
+  <img src="assets/amostras_imagens/atravessar_2.png" height="400px" alt="Atravessar 2" />
+  <img src="assets/amostras_imagens/corridas_de_captura_1.png" height="400px" alt="Corridas de Captura 1" />
+  <img src="assets/amostras_imagens/olhos_falsos_1.png" height="400px" alt="Olhos Falsos 1" />
+  <img src="assets/amostras_imagens/vida_na_segunda_linha_1.png" height="400px" alt="Vida na Segunda Linha 1" />
+  <img src="assets/amostras_imagens/seki_1.png" height="400px" alt="Seki 1" />
 </div>
-
-<br/>
 
 ## Como Gerar a Capa
 
