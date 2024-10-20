@@ -12,9 +12,12 @@ Um livro de técnicas Go que foca em uma progressão estruturada, e em uma const
 
 <div style="display: inline-flex">
   <img src="assets/amostras_imagens/capa.png" height="400px" alt="capa" />
+  <img src="assets/amostras_imagens/contra-capa.png" height="400px" alt="contra-capa" />
   <img src="assets/amostras_imagens/indice_1.png" height="400px" alt="Índice 1" />
   <img src="assets/amostras_imagens/indice_2.png" height="400px" alt="Índice 2" />
 </div>
+
+<br/>
 
 ## Como Gerar a Capa
 
