@@ -11,12 +11,21 @@
 \newcommand{\textLabel}[3]{
   \setCoords{#2}
 
-  \fontfamily{lmr}
+  % \fontfamily{lmr}
+  \ncm
   
   \pgfmathsetmacro{\xCoord}{\x * \step}
   \pgfmathsetmacro{\yCoord}{\y * \step}
 
-  \draw (\xCoord, \yCoord) [
+  \pgfmathsetmacro{\yCoordShifted}{
+    \if\relax\detokenize\expandafter{\romannumeral-0#3}\relax
+     (\yCoord)
+    \else
+     (\yCoord) + 0.000325cm     
+    \fi
+  }
+
+  \draw (\xCoord, \yCoordShifted) [
     fill      = \StoneColor{#2},
     draw      = \StoneColor{#2},
     inner sep = 0pt,
@@ -38,7 +47,7 @@
 
   \pgfmathsetmacro{\fontSize}{\stoneRadius * \fontSizeMultiplier * 9.625pt}
 
-  \draw (\xCoord, \yCoord) 
+  \draw (\xCoord, \yCoordShifted) 
     node[
       color     = -\StoneColor{#2},
       font      = \fontsize{\fontSize}{9pt}\selectfont,
@@ -107,6 +116,8 @@
 
 \newcommand{\crossLabel}[2]{
   \setCoords{#2}
+
+  \fontfamily{lmr}
   
   \pgfmathsetmacro{\xCoord}{\x * \step}
   \pgfmathsetmacro{\yCoord}{\y * \step}

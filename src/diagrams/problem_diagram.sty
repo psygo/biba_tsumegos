@@ -11,12 +11,12 @@
 \newcommand\problemNumber[1]{
   \pgfmathsetmacro{\baselinePad}{
     \ifnum\theproblemCounter>99
-      3.25pt 
+      3.4pt 
     \else
       \ifnum\theproblemCounter>9
-        1.85pt
+        2.pt
       \else
-        1.25pt
+        1.6pt
       \fi
     \fi
   }
@@ -42,13 +42,14 @@
   }
 
   \begin{tikzpicture}[baseline=\baselinePad]
-    \fontfamily{lmr}
+    % \fontfamily{lmr}
+    \ncm
 
     \node[
       draw,
       shape        = circle,
       inner sep    = \innerSep,
-      line width   = 0.025cm,
+      line width   = 0.030cm,
       font         = \fontsize{\fontSize}{9pt}\selectfont,
     ] 
       (char)
