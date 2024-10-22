@@ -19,9 +19,9 @@
 
   \pgfmathsetmacro{\yCoordShifted}{
     \if\relax\detokenize\expandafter{\romannumeral-0#3}\relax
-     (\yCoord)
+      (\yCoord)
     \else
-     (\yCoord) + 0.000325cm     
+      (\yCoord) + 0.000425cm     
     \fi
   }
 
@@ -69,7 +69,7 @@
   ] 
     circle [radius = \stoneRadius * 0.6375cm];
 
-  \pgfmathsetmacro{\yCoordLabelShifted}{(\y * \step) - 0.000625cm}
+  \pgfmathsetmacro{\yCoordLabelShifted}{\yCoord - 0.000425cm}
 
   \draw (\xCoord, \yCoordLabelShifted) 
     node[
@@ -78,8 +78,8 @@
       color                         = -\StoneColor{#2},
       fill                          = \StoneColor{#2},
       line width                    = \stoneRadius * 1.55mm,
-      minimum height                = \stoneRadius * 0.89cm,
-      minimum width                 = \stoneRadius * 0.89cm,
+      minimum height                = \stoneRadius * 0.875cm,
+      minimum width                 = \stoneRadius * 0.875cm,
       rotate                        = 90,
       isosceles triangle apex angle = 60,
       inner sep                     = 0pt,
