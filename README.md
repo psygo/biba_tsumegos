@@ -54,3 +54,4 @@ Também é preciso comentar e descomentar algumas linhas nos arquivos do pacote 
   - [A resposta com o parser basicamente completo de Segletes](https://tex.stackexchange.com/a/709698/64441)
   - [Using LaTeX Workshop with LuaLaTeX or XeLaTeX](https://tex.stackexchange.com/a/726655/64441)
   - [Publishing a Fixed Layout Book on Kindle](https://tex.stackexchange.com/q/727421/64441)
+  - [Book Geometry Definitions](https://tex.stackexchange.com/a/508358/64441)

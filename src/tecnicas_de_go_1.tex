@@ -1,8 +1,21 @@
+% TODO: Adapt this problem as a suicide one: https://www.101weiqi.com/q/37730/
+
 \documentclass[12pt]{book}
+
+% ~A6 (+ 5mm min left and right offset)
+\usepackage[paperheight   = 148mm, 
+            paperwidth    = 105mm,
+            bindingoffset = 5mm,
+            left          = 5mm,
+            right         = 8mm,
+            top           = 15.2mm,
+            bottom        = 13.2mm,
+            footskip      = 6.35mm]{geometry}
 
 \usepackage{config}
 
 \begin{document}
+  \blankpage
   \input{content/capa.tex}
   \blankpage
 
@@ -16,5 +29,5 @@
 
   \mainmatter
   \input{content/liberdades/liberdades.tex}
-  \input{content/vida_ou_morte/vida_ou_morte.tex}
+  % \input{content/vida_ou_morte/vida_ou_morte.tex}
 \end{document}
