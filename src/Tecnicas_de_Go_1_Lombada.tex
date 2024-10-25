@@ -1,0 +1,37 @@
+\documentclass[12pt]{book}
+
+% ~A6
+\usepackage[%
+  paperheight   = 28mm, 
+  paperwidth    = 148mm,
+  bindingoffset = 0mm,
+  left          = 0mm,
+  right         = 0mm,
+  top           = 0mm,
+  bottom        = 0mm,
+  footskip      = 0mm,
+]{geometry}
+
+\usepackage{config}
+
+\begin{document}
+  \begin{titlepage}
+    \scshape
+    
+    \hspace*{0.75cm}
+    \begin{minipage}[c][\textheight]{0.25\linewidth}
+      \begin{center}
+        \vspace{-0.2cm} % Better centering
+        \LARGE Fanaro
+      \end{center}
+    \end{minipage}
+    \hspace{-0.8cm}
+    \begin{minipage}[c][\textheight]{0.75\linewidth}
+      \begin{center}
+        \vspace{-0.2cm} % Better centering
+        \vspace{-0.11cm} % Baseline alignment with the author
+        \huge Técnicas de Go I
+      \end{center}
+    \end{minipage}
+  \end{titlepage}
+\end{document}
