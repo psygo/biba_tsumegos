@@ -16,6 +16,7 @@ Um livro de técnicas Go que foca em uma progressão estruturada, e em uma const
   <img src="assets/amostras_imagens/indice_1.png" height="600px" alt="Índice 1" />
   <img src="assets/amostras_imagens/indice_2.png" height="600px" alt="Índice 2" />
   <img src="assets/amostras_imagens/prefacio_1.png" height="600px" alt="Prefácio 1" />
+  <img src="assets/amostras_imagens/prefacio_2.png" height="600px" alt="Prefácio 2" />
   <img src="assets/amostras_imagens/captura_direta_1.png" height="600px" alt="Captura Direta 1" />
   <img src="assets/amostras_imagens/captura_direta_2.png" height="600px" alt="Captura Direta 2" />
   <img src="assets/amostras_imagens/escadas_1.png" height="600px" alt="Escadas 1" />
