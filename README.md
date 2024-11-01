@@ -31,18 +31,6 @@ Um livro de técnicas Go que foca em uma progressão estruturada, e em uma const
   <img src="assets/amostras_imagens/seki_1.png" height="600px" alt="Seki 1" />
 </div>
 
-## Como Gerar a Capa
-
-A capa pode ser gerada com:
-
-```sh
-cd ./src/cover
-
-./bin/makecover.sh
-```
-
-Também é preciso comentar e descomentar algumas linhas nos arquivos do pacote `goban`.
-
 ## Referências
 
 - Repositórios Referência:
