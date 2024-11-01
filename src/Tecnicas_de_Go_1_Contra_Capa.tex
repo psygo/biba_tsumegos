@@ -7,9 +7,9 @@
   bindingoffset = 0mm,
   left          = 12.5mm,
   right         = 12.5mm,
-  top           = 15.2mm,
-  bottom        = 13.2mm,
-  footskip      = 6.35mm,
+  top           = 0mm,
+  bottom        = 0mm,
+  footskip      = 0mm,
 ]{geometry}
 
 \usepackage{config}
@@ -18,7 +18,7 @@
   \begin{titlepage}
     \setlength\parindent{0ex}
 
-    \vspace*{-1.35cm}
+    \vspace*{0.2cm}
 
     \begin{center}
       \LARGE{\scshape Técnicas de Go}
@@ -40,19 +40,19 @@
 
     Philippe Fanaro é um jogador amador \emph{dan} brasileiro, formado em engenharia elétrica pela Escola Politécnica da USP, que procura trazer mais acesso, em língua portuguesa, ao conteúdo de Go disponível em inglês e línguas asiáticas.
 
-    \vspace*{0.0275cm}
+    \vspace*{0.065cm}
     
     \begin{figure}[ht]
       \centering
       \hbox{
-        \hspace{0.93cm}
+        \hspace{0.95cm}
         \begin{goban}[board dimension       = 8.40,
                       board size            = 19,
                       scale                 = 1,
                       outline line width    = 0.45mm,
                       horizontal clip start = 9,
                       horizontal clip end   = 19,
-                      vertical clip start   = 14,
+                      vertical clip start   = 15,
                       vertical clip end     = 19]
           \parseSgfFile{sgf/liberdades/escadas/escadas.3.sgf}
         \end{goban}
