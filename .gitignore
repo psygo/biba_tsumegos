@@ -16,7 +16,17 @@
 *.toc
 *.out
 *.synctex.gz
+*.synctex.gz(busy)
 *.txss
+# Glossary
+*.glo
+*.ist
+*.glg
+*.gls
+
+#-----------------------------------------------------------
+# Images
+
 *.png
 *.eps
 *.svg

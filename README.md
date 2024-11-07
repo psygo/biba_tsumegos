@@ -34,7 +34,6 @@ Um livro de técnicas Go que foca em uma progressão estruturada, e em uma const
 ## A Fazer
 
 - [ ] Glossário
-- [ ] Index
 
 ## Referências
 

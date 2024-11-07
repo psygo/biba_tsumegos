@@ -11,6 +11,10 @@
         "**/dist/chapters": true,
         "**/*.toc": true,
         "**/*.txss": true,
+        "**/*.glg": true,
+        "**/*.glo": true,
+        "**/*.gls": true,
+        "**/*.ist": true,
     },
     "editor.wordWrap": "on",
 }

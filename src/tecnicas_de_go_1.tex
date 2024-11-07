@@ -1,5 +1,3 @@
-% TODO: Try to improve the black stone text labels
-
 \documentclass[12pt]{book}
 
 % ~A6 (+ 5mm min left and right offset)
@@ -28,7 +26,11 @@
 
 \usepackage{config}
 
+% \input{content/glossario.tex}
+
 \begin{document}
+  \textGeometry
+
   \blankpage
   \blankpage
   \input{content/capa.tex}
@@ -40,18 +42,22 @@
   \emptypage
   \emptypage
 
-  \textGeometry
   \input{content/prefacio.tex}
+
   \restoregeometry
   \setlength{\headwidth}{86.5mm}
 
   \mainmatter
-  % \input{content/liberdades/liberdades.tex}
+  \input{content/liberdades/liberdades.tex}
   % \input{content/vida_ou_morte/vida_ou_morte.tex}
 
   \backmatter
   \textGeometry
+
   \input{content/posfacio.tex}
+  
+  % \printglossary[title=Glossário, toctitle=Glossário]
+
   \restoregeometry
   
   \blankpage
