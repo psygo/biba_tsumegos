@@ -16,7 +16,7 @@
 *.toc
 *.out
 *.synctex.gz
-*.synctex.gz(busy)
+*.synctex(busy)
 *.txss
 # Glossary
 *.glo

@@ -7,6 +7,7 @@
         "**/*.fls": true,
         "**/*.out": true,
         "**/*.synctex.gz": true,
+        "**/*.synctex(busy)": false,
         "**/*.fdb_latexmk": true,
         "**/dist/chapters": true,
         "**/*.toc": true,

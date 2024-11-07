@@ -26,7 +26,7 @@
 
 \usepackage{config}
 
-% \input{content/glossario.tex}
+\input{content/glossario.tex}
 
 \begin{document}
   \textGeometry
@@ -56,7 +56,11 @@
 
   \input{content/posfacio.tex}
   
-  % \printglossary[title=Glossário, toctitle=Glossário]
+  \printglossary[%
+    title    = Glossário,
+    toctitle = Glossário
+  ]
+  \clearedpage
 
   \restoregeometry
   
