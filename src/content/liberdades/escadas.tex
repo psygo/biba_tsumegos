@@ -6,7 +6,7 @@
   sgf folder      = liberdades/escadas,
   sgf filename    = escadas.1,
   problem text    = {Será que há mais de uma maneira de se capturar a pedra branca? (Em problemas de escada, pressupõe-se que não há outras pedras no resto do tabuleiro.)},
-  answer text one = {\emph{Correto.} Este padrão é conhecido como \emph{shicho} em japonês, ou ``escada'' em português. Ao chegar na borda do tabuleiro, Branco não conseguirá mais estender suas liberdades. Tanto A quanto B funcionarão para completar a captura quando chegamos a 1 linha da lateral.},
+  answer text one = {\emph{Correto.} Este padrão é conhecido como \emph{\gls{shicho}} em japonês, ou ``escada'' em português. Ao chegar na borda do tabuleiro, Branco não conseguirá mais estender suas liberdades. Tanto A quanto B funcionarão para completar a captura quando chegamos a 1 linha da lateral.},
   answer text two = {\emph{Incorreto.} Se a configuração do problema estivesse deslocada uma linha para a direita, jogar 1 seria uma opção, mas, nesta situação, jogar 1 é um desastre.},
 ]
 
@@ -23,7 +23,7 @@
   sgf filename    = escadas.3,
   problem text    = {Em relação ao problema anterior, a pedra branca agora está deslocada para o topo. A escada funciona desta vez?},
   answer text one = {\emph{Correto.} Novamente, o melhor que Preto pode fazer é um compromisso. Não há tanto o que reclamar, pois a pedra branca marcada foi bastante danificada, atravessada em relação a 2, um tipo de dano que examinaremos mais à frente. Branco pode decidir jogar de outra maneira, caso a pedra branca marcada seja importante.},
-  answer text two = {\emph{Incorreto.} A escada ainda não funciona. A pedra branca A colocará a pedra B em atari inevitavelmente.},
+  answer text two = {\emph{Incorreto.} A escada ainda não funciona. A pedra branca A colocará a pedra preta 5 em atari inevitavelmente.},
 ]
 
 \problemAnswerDiagram[%
@@ -53,7 +53,7 @@
 \problemAnswerDiagram[%
   sgf folder      = liberdades/escadas,
   sgf filename    = escadas.7,
-  problem text    = {Este é um \emph{joseki} --- isto é, uma sequência ótima para os dois lados. Preto possui basicamente 2 opções a seguir.},
+  problem text    = {Este é um \emph{\gls{joseki}} --- uma sequência ótima para os dois lados --- um dos poucos que sobreviveu bem a transição para a era pós-IA. Preto possui basicamente 2 opções a seguir.},
   answer text one = {\emph{Correto.} A regra geral é capturar a pedra de corte, pois gera excelente forma e força. Preto faz o contra-atari do outro lado e captura o canto.},
   answer text two = {\emph{Variação.} Cortar deste lado é outra opção, caso Preto se interesse mais pelo exterior, e tenha a escada externa. Estes duplos cortes a partir da forma marcada configuram um padrão bastante recorrente em partidas reais, desde amadores até profissionais. Se Preto não tiver a escada, Branco pode imediatamente sair em A.},
 ]
@@ -62,7 +62,7 @@
   sgf folder               = liberdades/escadas,
   sgf filename             = escadas.4,
   problem text             = {Este problema é muito avançado. Mas é uma bela referência de como escadas aparecem comumente em josekis e lutas no meio de jogo.},
-  answer text one          = {\emph{Correto.} Ao jogar em 1 e estender em 3, Preto cria  \emph{miai} --- isto é, duas opções equivalentes --- de capturar em escada com A, ou capturar as pedras de corte no topo com B.},
+  answer text one          = {\emph{Correto.} Ao jogar em 1 e estender em 3, Preto cria  \emph{\gls{miai}} --- isto é, duas opções equivalentes --- de capturar em escada com A, ou capturar as pedras de corte à direita com B.},
   answer text two          = {\emph{Incorreto.} A pedra branca A oferece o suporte necessário para que Branco 6 cancele a escada no exterior! Em geral, no Go, a ordem dos movimentos é extremamente importante. Fazer a sequência supostamente correta fora de ordem é quase sempre errado!},
   answer diagram clip vert = 10,
 ]
@@ -71,8 +71,8 @@
   sgf folder      = liberdades/escadas,
   sgf filename    = escadas.5,
   problem text    = {Mais uma escada bastante avançada. Garanto que há jogadores de nível dan que erram este problema.},
-  answer text one = {\emph{Correto.} Os ataris que Preto possui no exterior ajudam-no a armar a escada. É quase sempre melhor omitir movimentos desnecessários no Go, por isso, é melhor começar por 3 e somente jogar em 5 se Branco realmente sair com 4 (o que seria um erro).},
-  answer text two = {\emph{Incorreto.} Começar pelo atari de 1 parece gerar a mesma sequência, porém de maneira mais simples. Mas Branco terá o tempo de capturar as pedras pretas mais críticas!},
+  answer text one = {\emph{Correto.} Os ataris que Preto possui no exterior ajudam-no a armar a escada. É quase sempre melhor omitir movimentos desnecessários no Go, por isso, é melhor jogar em 5 se Branco realmente sair com 4 (o que seria um erro).},
+  answer text two = {\emph{Incorreto.} Começar pelo a-tari de 1 parece gerar a mesma sequência, porém de maneira mais simples. Mas Branco terá o tempo de capturar as pedras pretas mais críticas!},
 ]
 
 \problemAnswerDiagram[%
