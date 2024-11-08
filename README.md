@@ -31,10 +31,6 @@ Um livro de técnicas Go que foca em uma progressão estruturada, e em uma const
   <img src="assets/amostras_imagens/seki_1.png" height="600px" alt="Seki 1" />
 </div>
 
-## A Fazer
-
-- [ ] Glossário
-
 ## Referências
 
 - Repositórios Referência:
