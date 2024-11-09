@@ -1,7 +1,5 @@
 % TODO: Spacing on TOC
 % TODO: Bold labels
-% TODO: Add edition
-% TODO: Fix the back cover problem
 
 \documentclass[12pt]{book}
 
@@ -41,6 +39,16 @@
   \input{content/capa.tex}
   \blankpage
 
+  \begin{center}
+    \vspace*{4cm}
+
+    \LARGE 1\textsuperscript{a} Edição
+
+    \bigskip
+
+    \Large Novembro de 2024
+  \end{center}
+
   \frontmatter
 
   \tableofcontents
@@ -53,7 +61,7 @@
   \setlength{\headwidth}{86.5mm}
 
   \mainmatter
-  \input{content/liberdades/liberdades.tex}
+  % \input{content/liberdades/liberdades.tex}
   % \input{content/vida_ou_morte/vida_ou_morte.tex}
 
   \backmatter
