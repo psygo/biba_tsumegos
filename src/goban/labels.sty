@@ -138,6 +138,17 @@
     ] {};
 }
 
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+
+% From [this answer](https://tex.stackexchange.com/a/512311/64441).
+\tikzset{
+  cross/.pic = {
+    \draw[rotate = 45] (-#1,0) -- (#1,0);
+    \draw[rotate = 45] (0,-#1) -- (0, #1);
+  }
+}
+
 \newcommand{\crossLabel}[2]{
   \setCoords{#2}
 
@@ -145,12 +156,11 @@
   
   \pgfmathsetmacro{\xCoord}{\x * \step}
   \pgfmathsetmacro{\yCoord}{\y * \step}
-
+  
   \draw (\xCoord, \yCoord) 
-    node[
-      color     = -\StoneColor{#2},
-      fill      = \StoneColor{#2},
-      font      = \fontsize{11.5pt}{9pt}\selectfont,
-      inner sep = 0pt
-    ] {$\mathbf{\times}$};
+    pic[
+      color      = -\StoneColor{#2},
+      fill       = \StoneColor{#2},
+      line width = 1.15pt
+    ] {cross = 4pt};
 }
