@@ -10,9 +10,7 @@
 
 \newcommand{\textLabel}[3]{
   \setCoords{#2}
-
-  \ncm
-  
+ 
   \pgfmathsetmacro{\xCoord}{\x * \step}
   \pgfmathsetmacro{\yCoord}{\y * \step}
 
@@ -70,6 +68,8 @@
   }
 
   \pgfmathsetmacro{\fontSize}{\stoneRadius * \fontSizeMultiplier * 9.625pt}
+  
+  \ncm
 
   \draw (\xCoordShifted, \yCoordShifted) 
     node[
