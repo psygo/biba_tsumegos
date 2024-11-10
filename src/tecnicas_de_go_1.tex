@@ -1,5 +1,3 @@
-% TODO: Spacing on TOC
-
 \documentclass[12pt]{book}
 
 % ~A6 (+ 5mm min left and right offset)
@@ -38,15 +36,7 @@
   \input{content/capa.tex}
   \blankpage
 
-  \begin{center}
-    \vspace*{4cm}
-
-    \LARGE 1\textsuperscript{a} Edição
-
-    \bigskip
-
-    \Large Novembro de 2024
-  \end{center}
+  \input{content/edicao.tex}
 
   \frontmatter
 
@@ -61,7 +51,7 @@
 
   \mainmatter
   \input{content/liberdades/liberdades.tex}
-  % \input{content/vida_ou_morte/vida_ou_morte.tex}
+  \input{content/vida_ou_morte/vida_ou_morte.tex}
 
   \backmatter
   \textGeometry
