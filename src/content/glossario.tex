@@ -1,11 +1,16 @@
 \usepackage[toc]{glossaries}
-% From [this answer](https://tex.stackexchange.com/a/343279/64441).
+% From [this answer](https://tex.stackexchange.com/a/730599/64441).
 \newglossarystyle{tableStyle}{
   \setglossarystyle{long}
   \renewenvironment{theglossary}
     {\begin{longtable}{p{1.5cm}p{6cm}}}
     {\end{longtable}}
 }
+
+\renewcommand{\glsnamefont}[1]{\bfseries#1}
+\renewcommand{\glswrglosslocationtextfmt}[1]{\bfseries#1}
+\renewcommand{\delimR}{$\boldsymbol{-}$}
+\renewcommand{\delimN}{{\bfseries, }}
 
 \makeglossaries
 
