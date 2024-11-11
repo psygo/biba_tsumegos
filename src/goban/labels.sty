@@ -69,13 +69,15 @@
 
   \pgfmathsetmacro{\fontSize}{\stoneRadius * \fontSizeMultiplier * 9.625pt}
   
-  \ncm
-
+  % \ncm
+  % \itc
+  \fontfamily{lmr}
+  
   \draw (\xCoordShifted, \yCoordShifted) 
     node[
       color     = -\StoneColor{#2},
       font      = \fontsize{\fontSize}{9pt}\selectfont,
-    ] {#3};
+    ] {\textbf{#3}};
 }
 
 \newcommand{\triangleLabel}[2]{
@@ -152,8 +154,6 @@
 \newcommand{\crossLabel}[2]{
   \setCoords{#2}
 
-  \fontfamily{lmr}
-  
   \pgfmathsetmacro{\xCoord}{\x * \step}
   \pgfmathsetmacro{\yCoord}{\y * \step}
   
@@ -161,6 +161,6 @@
     pic[
       color      = -\StoneColor{#2},
       fill       = \StoneColor{#2},
-      line width = 1.15pt
+      line width = 1.05pt
     ] {cross = 4pt};
 }
