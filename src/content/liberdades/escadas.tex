@@ -14,7 +14,7 @@
   sgf folder      = liberdades/escadas,
   sgf filename    = escadas.2,
   problem text    = {Agora, Branco possui uma pedra no caminho da escada. Isso muda alguma coisa?},
-  answer text one = {\emph{Correto.} O melhor que Preto pode fazer em uma situação destas, localmente, é um compromisso ou negociação. Pedras adversárias que impossibilitam a escada são chamadas de ``quebra-escadas''. Para Branco, teria sido melhor ser mais ambicioso, atacando em larga escala com A, ao invés de 1.},
+  answer text one = {\emph{Correto.} O melhor que Preto pode fazer em uma situação destas, localmente, é um compromisso ou negociação. Pedras adversárias que impossibilitam a escada são chamadas de ``\glspl{quebra-escada}''. Para Branco, teria sido melhor ser mais ambicioso, atacando em larga escala com A, ao invés de 2.},
   answer text two = {\emph{Incorreto.} A pedra branca A ajudará a estender as liberdades daquelas em escada, impossibilitando sua conclusão. Caso a escada não funcione, jogar o padrão é um dano indireto pois Preto fica com múltiplos ataris duplos no exterior.},
 ]
 
@@ -39,14 +39,14 @@
   sgf filename    = escadas.9,
   problem text    = {A troca do problema anterior foi ligeiramente modificada. É escada ou não?},
   answer text one = {\emph{Correto.} A escada não funciona desta vez. Como diria Toshiro Kageyama 7p, não há atalhos, é preciso ler a escada! Se Branco insistir em capturar o topo --- teria sido melhor capturar com 4 diretamente ---, podemos danificar o exterior com uma forma leve e flexível.},
-  answer text two = {\emph{Variação.} Globalmente, se a partida ainda estiver no início, seria até mesmo melhor somente danificar a pedra do centro e forçar uma resposta branca com 1 ou A. Visto que o topo já foi desvalorizado, podemos jogar em outro lugar.},
+  answer text two = {\emph{Variação.} Globalmente, se a partida ainda estiver no início, seria até mesmo melhor somente danificar a pedra do centro, forçar uma resposta branca com 1 ou A e, visto que o topo já foi desvalorizado, podemos jogar em outro lugar.},
 ]
 
 \problemAnswerDiagram[%
   sgf folder      = liberdades/escadas,
   sgf filename    = escadas.8,
   problem text    = {Parece haver mais de uma resposta.},
-  answer text one = {\emph{Correto.} A presença da pedra A completa a escada. Há alguns que chamam este tipo de forma de mini-escada.},
+  answer text one = {\emph{Correto.} A presença da pedra A completa a escada. Há alguns que chamam este tipo de forma de ``\gls{mini-escada}''.},
   answer text two = {\emph{Incorreto.} Branco poderia até capturar diretamente as pedras de corte com A ou B, mas 2 cria mais problemas para Preto. Além disso, se Branco A ou B, Preto pode jogar 2 e C para se conectar por fora.},
 ]
 
@@ -55,7 +55,7 @@
   sgf filename    = escadas.7,
   problem text    = {Este é um \emph{\gls{joseki}} --- uma sequência ótima para os dois lados --- um dos poucos que sobreviveu bem a transição para a era pós-IA. Preto possui basicamente 2 opções a seguir.},
   answer text one = {\emph{Correto.} A regra geral é capturar a pedra de corte, pois gera excelente forma e força. Preto faz o contra-atari do outro lado e captura o canto.},
-  answer text two = {\emph{Variação.} Cortar deste lado é outra opção, caso Preto se interesse mais pelo exterior, e tenha a escada externa. Estes duplos cortes a partir da forma marcada configuram um padrão bastante recorrente em partidas reais, desde amadores até profissionais. Se Preto não tiver a escada, Branco pode imediatamente sair em A.},
+  answer text two = {\emph{Variação.} Cortar deste lado é outra opção, caso Preto se interesse mais pelo exterior, e tenha a escada externa. Estes duplos cortes a partir da forma marcada configuram um padrão bastante recorrente em partidas reais, desde amadores até profissionais. Se Preto não possuir a escada, Branco pode imediatamente sair em A.},
 ]
 
 \problemAnswerDiagram[%
@@ -81,4 +81,5 @@
   problem text    = {Preto acaba de encontrar uma jogada magnífica. Como continuar?},
   answer text one = {\emph{Correto.} Esta é uma escada em duas etapas, com uma mudança de direção, tudo graças aos benefícios da lateral do tabuleiro.},
   answer text two = {\emph{Continuação.} Preto muda a direção da escada para o centro.},
+  answer diagram clip vert = 10,
 ]
