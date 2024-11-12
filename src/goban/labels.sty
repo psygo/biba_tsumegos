@@ -69,15 +69,13 @@
 
   \pgfmathsetmacro{\fontSize}{\stoneRadius * \fontSizeMultiplier * 9.625pt}
   
-  % \ncm
-  % \itc
-  \fontfamily{lmr}
+  \clmuni
   
   \draw (\xCoordShifted, \yCoordShifted) 
     node[
       color     = -\StoneColor{#2},
       font      = \fontsize{\fontSize}{9pt}\selectfont,
-    ] {\textbf{#3}};
+    ] {\textsb{#3}};
 }
 
 \newcommand{\triangleLabel}[2]{

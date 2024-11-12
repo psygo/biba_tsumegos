@@ -2,10 +2,23 @@
 % Fonts
 
 \usepackage[T1]{fontenc}
-\usepackage[default]{fontsetup}
-\newfontfamily\ncm{NewCM10-Regular.otf}
-\usepackage{lmodern}
+
 \usepackage{fontspec}
+\newfontfamily\ncm{NewCM10-Regular.otf}
+\newfontfamily\clmuni{Latin Modern Roman}[%
+  Numbers={Lining,Proportional},%
+  FontFace={sb}{n}{Font=lmromandemi10-regular.otf},%
+  FontFace={sb}{sl}{Font=lmromandemi10-oblique.otf},%
+]
+
+\makeatletter
+\DeclareRobustCommand{\sbweight}{%
+  \not@math@alphabet\sbweight\relax
+  \fontseries{sb}\selectfont
+}
+\makeatother
+\DeclareTextFontCommand{\textsb}{\sbweight}
+
 % From [this comment](https://www.reddit.com/r/identifythisfont/comments/1fiahvg/comment/lngfilr/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)
 \setmainfont{Adobe Garamond Pro}
 
