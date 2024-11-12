@@ -6,8 +6,8 @@
   sgf folder      = vida_ou_morte/dois_olhos,
   sgf filename    = dois_olhos.1,
   problem text    = {Este exercício é uma das essências do Go. É possível permanecer incondicionalmente no tabuleiro?},
-  answer text one = {\emph{Correto.} Sim, com 1, estabelecemos ``dois olhos'', o que impossibilita a captura do grupo. Branco precisaria jogar tanto em A quanto em B para capturar, mas ele só possui um movimento por turno, portanto, cada um deles será considerado suicídio!},
-  answer text two = {\emph{Incorreto.} Preto talvez pense que seja possível capturar a pedra 1, mas ele morrerá primeiro. Note que, o melhor movimento do seu adversário --- jogar 1 para viver como Preto --- é também, com frequência, seu melhor movimento.},
+  answer text one = {\emph{Correto.} Sim, com 1, estabelecemos ``dois olhos'', o que impossibilita a captura do grupo. Branco precisaria jogar tanto em A quanto em B para capturar, mas ele só possui um movimento por turno, portanto, cada um deles será isoladamente considerado suicídio!},
+  answer text two = {\emph{Incorreto.} Preto talvez pense que seja possível capturar a pedra 1, mas ele morrerá no final. Note que, o melhor movimento do seu adversário --- jogar 1 para viver como Preto --- é, também, com frequência, seu melhor movimento.},
 ]
 
 \problemAnswerDiagram[%
@@ -23,7 +23,7 @@
   sgf filename    = dois_olhos.3,
   problem text    = {Cercar 3 intersecções é insuficiente para viver, a não ser que seja seu turno. E se estivermos cercando de 4 a 5?},
   answer text one = {\emph{Correto.} Cercar 4 é suficiente, pois é impossível que Branco faça com que todo o espaço vire algo indivisível. Se Branco jogar em 3, Preto responderá em 2.},
-  answer text two = {\emph{Incorreto.} Branco em 2 é uma tática ligeiramente mais avançada --- e que veremos mais a fundo em breve --- para criar um olho falso. Preto acaba efetivamente cercando só 3 intersecções.},
+  answer text two = {\emph{Incorreto.} Branco em 2 é uma tática ligeiramente mais avançada --- e que veremos mais a fundo em breve --- para criar um olho falso. Preto acaba efetivamente cercando somente 3 intersecções.},
 ]
 
 \problemAnswerDiagram[%
@@ -71,13 +71,13 @@
   sgf filename    = dois_olhos.9,
   problem text    = {Se Preto jogar em A para expandir seu espaço interno, o que acontece? É a resposta?},
   answer text one = {\emph{Correto.} O melhor é proteger o ponto-chave 2-1 para garantir um olho e resiliência. O ponto 2-1 costuma ser muito importante neste tipo de situação.},
-  answer text two = {\emph{Incorreto.} Nem sequer será um ko --- Branco 2 em 3, e Preto 3 em Branco 2 ---, se Preto expandir seu espaço interno. O interior cercado é uma forma morta de 5 pedras, o que vermos mais a fundo em um próximo capítulo.},
+  answer text two = {\emph{Incorreto.} Nem sequer será um ko --- Branco 2 em 3, Preto 3 em Branco 2 ---, se Preto expandir seu espaço interno. O interior cercado é uma forma morta de 5 pedras, o que estudaremos mais a fundo em um próximo capítulo.},
 ]
 
 \problemAnswerDiagram[%
   sgf folder      = vida_ou_morte/dois_olhos,
   sgf filename    = dois_olhos.10,
   problem text    = {Mais uma potencial armadilha.},
-  answer text one = {\emph{Correto.} Jogar em 2 não funciona para retirar o segundo o olho. No máximo, será uma redução se conectarmos em A. Como redução, porém, para Branco, teria sido muito mais natural ter jogado por A inicialmente.},
+  answer text one = {\emph{Correto.} Jogar em 2 não funciona para retirar o segundo olho. No máximo, será uma redução se conectarmos em A. Como redução, porém, para Branco, teria sido muito mais natural jogar por A.},
   answer text two = {\emph{Incorreto.} Branco estende o sacrifício, criando um olho único e indissociável.},
 ]
