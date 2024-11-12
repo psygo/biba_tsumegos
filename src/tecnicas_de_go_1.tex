@@ -1,5 +1,3 @@
-% TODO: Download CFR-LM font on this computer
-
 \documentclass[12pt]{book}
 
 % ~A6 (+ 5mm min left and right offset)
@@ -43,8 +41,6 @@
   \frontmatter
 
   \tableofcontents
-  \emptypage
-  \emptypage
 
   \input{content/prefacio.tex}
 
@@ -53,7 +49,7 @@
 
   \mainmatter
   \input{content/liberdades/liberdades.tex}
-  % \input{content/vida_ou_morte/vida_ou_morte.tex}
+  \input{content/vida_ou_morte/vida_ou_morte.tex}
 
   \backmatter
   \textGeometry
@@ -65,7 +61,6 @@
     toctitle = Glossário,
     style    = tableStyle,
   ]
-  \clearedpage
 
   \restoregeometry
   
