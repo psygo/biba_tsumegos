@@ -16,7 +16,7 @@
 
   \pgfmathsetmacro{\xCoordShifted}{
     \if\relax\detokenize\expandafter{\romannumeral-0#3}\relax
-      \xCoord
+      \xCoord + 0.00012cm
     \else
       \if#3B
         \xCoord + 0.00029cm
