@@ -5,7 +5,7 @@
 \problemAnswerDiagram[%
   sgf folder      = liberdades/corridas_de_captura,
   sgf filename    = corridas_de_captura.11,
-  problem text    = {Corridas de captura --- ou, em japonês, \emph{semeai} --- são provavelmente o tópico de leitura mais complexo do Go. Porém, há princípios que simplificam drasticamente sua complexidade.},
+  problem text    = {Corridas de captura --- ou, em japonês, \emph{\gls{semeai}} --- são provavelmente o tópico de leitura mais complexo do Go. Porém, há princípios que simplificam drasticamente sua complexidade.},
   answer text one = {\emph{Correto.} O princípio primordial é com certeza começar reduzindo as liberdades por fora, isto é, pelas liberdades não mútuas dos grupos dentro corrida.},
   answer text two = {\emph{Incorreto.} Preencher as liberdades mútuas primeiro é como fazer auto-atari.},
 ]
@@ -13,16 +13,16 @@
 \problemAnswerDiagram[%
   sgf folder      = liberdades/corridas_de_captura,
   sgf filename    = corridas_de_captura.1,
-  problem text    = {Mais um princípio essencial. Consegue percebê-lo?},
+  problem text    = {Mais um princípio essencial. Você consegue percebê-lo?},
   answer text one = {\emph{Correto.} Manter-se conectado aumenta o número de liberdades pretas e, assim, pode-se ganhar a corrida.},
-  answer text two = {\emph{Incorreto.} Se simplesmente tentarmos diminuir as liberdades brancas por fora, o que é um outro e muito bom princípio, desta vez, não funcionará. É preciso checar se o princípio funciona, ao invés de jogá-lo diretamente.},
+  answer text two = {\emph{Incorreto.} Se simplesmente tentarmos diminuir as liberdades brancas por fora, o que é um outro e muito bom princípio, desta vez, não funcionará. É preciso checar se o princípio funciona, ao invés de jogá-lo diretamente. Alternativamente, Preto 1 em A seria um auto-atari.},
 ]
 
 \problemAnswerDiagram[%
   sgf folder               = liberdades/corridas_de_captura,
   sgf filename             = corridas_de_captura.2,
   problem text             = {A terceira receita.},
-  answer text one          = {\emph{Correto.} Este é o princípio de ``olho vs sem olho''. Em geral, o grupo que possui olho guarda as liberdades internas para si, garantindo uma grande vantagem na corrida. Por exemplo, Branco não pode se aproximar em A depois de Preto 1.},
+  answer text one          = {\emph{Correto.} Este é o princípio de ``\gls{olho vs sem olho}''. Em geral, o grupo que possui olho guarda as liberdades internas para si, garantindo uma grande vantagem na corrida. Branco não pode se aproximar em A, pois, neste tipo de corrida, as liberdades mútuas são de quem tem olho.},
   answer text two          = {\emph{Variação.} Se Branco puder jogar, pode ganhar a corrida retirando o olho com um atari.},
   answer diagram clip vert = 10,
 ]
@@ -47,7 +47,7 @@
   sgf folder      = liberdades/corridas_de_captura,
   sgf filename    = corridas_de_captura.5,
   problem text    = {Precisamos de uma heurística nova?},
-  answer text one = {\emph{Correto.} Ao fazer um olho, reduzimos o problema a ``olho vs sem olho''. Branco não consegue se aproximar por lugar nenhum, Preto pode capturar quando quiser.},
+  answer text one = {\emph{Correto.} Ao fazer um olho, reduzimos o problema a ``\gls{olho vs sem olho}''. Branco não consegue se aproximar por lugar nenhum, Preto pode capturar quando quiser.},
   answer text two = {\emph{Incorreto.} Saber que há a possibilidade de ko é uma técnica muito útil, mas desnecessária e errada aqui. Além disso, este é um ko em que Branco captura primeiro e, se Preto perder, Branco captura em A, constituindo um olho e colocando B sob atari.},
 ]
 
@@ -64,7 +64,7 @@
   sgf filename    = corridas_de_captura.7,
   problem text    = {Parece ser uma corrida bastante específica, mas este tipo de forma é bastante recorrente em partidas.},
   answer text one = {\emph{Correto.} Preto garante um olho para expandir suas liberdades e começar a reduzir as liberdades brancas por fora.},
-  answer text two = {\emph{Incorreto.} Se Preto tentar reduzir as liberdades diretamente, é colocado em atari. Jogar em A parece um ko, mas Preto será capturado diretamente.},
+  answer text two = {\emph{Incorreto.} Se Preto tentar reduzir as liberdades por fora, é colocado em atari. Jogar em A parece um ko, mas Preto será capturado diretamente.},
 ]
 
 \problemAnswerDiagram[%
@@ -78,7 +78,7 @@
 \problemAnswerDiagram[%
   sgf folder      = liberdades/corridas_de_captura,
   sgf filename    = corridas_de_captura.9,
-  problem text    = {Vamos revisitar o conceito de ``olho vs sem olho''. Preto pode partir para uma corrida de liberdades difícil em A ou simplesmente se conectar em B.},
+  problem text    = {Vamos revisitar o conceito de ``\gls{olho vs sem olho}''. Preto pode partir para uma corrida de liberdades difícil em A ou simplesmente se conectar em B.},
   answer text one = {\emph{Correto.} Apesar de que Preto não possui olho, há liberdades suficientes para ganhar a corrida.},
   answer text two = {\emph{Incorreto.} Branco vive, salvando um grupo grande, enquanto Preto deixa de lucrar bastante.},
 ]
