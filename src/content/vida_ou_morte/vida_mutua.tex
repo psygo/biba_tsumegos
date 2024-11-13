@@ -6,8 +6,8 @@
   sgf folder      = vida_ou_morte/vida_mutua,
   sgf filename    = vida_mutua.1,
   problem text    = {Se Preto conseguir resgatar as pedras marcadas, ele fará pontos?},
-  answer text one = {\emph{Correto.} Já que nenhum dos lados conseguirá jogar em A ou B, dado que é auto-atari, ninguém fará pontos nesta região. Diz-se que grupos que permanecem no tabuleiro sem pontos, em geral, estão em vida mútua, ou, mais comumente ainda, \emph{seki}.},
-  answer text two = {\emph{Variação.} Se Branco conse-guir conectar aqui, finalmente, ele fará pontos. No caso, serão 8 pontos.},
+  answer text one = {\emph{Correto.} Já que nenhum dos lados conseguirá jogar em A ou B, dado que é auto-atari, ninguém fará pontos nesta região. Diz-se que grupos que permanecem no tabuleiro sem pontos, em geral, estão em vida mútua, ou, mais comumente ainda, em japonês, \emph{\gls{seki}}.},
+  answer text two = {\emph{Variação.} Se Branco conse-guir conectar aqui eventualmente, ele fará pontos. No caso, serão 8 pontos.},
 ]
 
 \problemAnswerDiagram[%
@@ -23,7 +23,7 @@
   sgf filename             = vida_mutua.3,
   problem text             = {Aqui há mais valor do que somente um seki.},
   answer text one          = {\emph{Correto.} Se Preto jogar em A, será um seki. Mas por que não fazer pontos quando podemos capturar tudo com 1?},
-  answer text two          = {\emph{Variação.} Se Branco jogar em 1, já que Preto não pode mais jogar em A, Branco capturará toda a região! Preto estaria em atari se jogasse em B nessa situação. Branco A também funcionaria, ao invés de 1.},
+  answer text two          = {\emph{Variação.} Se Branco jogar em 1, já que Preto não pode mais jogar em A, Branco capturará toda a região! Preto estaria em atari se jogasse em B nesta situação. Branco A também funcionaria, ao invés de 1.},
   answer diagram clip vert = 10,
 ]
 
@@ -32,7 +32,7 @@
   sgf filename    = vida_mutua.4,
   problem text    = {No canto, sekis podem ser um pouco mais estranhos ou peculiares. Inclusive, há outras maneiras ainda mais raras de se permanecer no tabuleiro, como duplos e triplos kos, e ``vidas eternas''.},
   answer text one = {\emph{Correto.} Branco não pode fazer nada no canto pois seria auto-atari. Mas Preto não conseguirá capturar nada, então ninguém faz pontos.},
-  answer text two = {\emph{Variação.} Branco joga no ponto-chave preto e estabelece um olho. Quando quiser, ele poderá jogar em A ou B para capturar as pedras pretas.},
+  answer text two = {\emph{Variação.} Branco joga no ponto-chave preto e estabelece um olho. Quando quiser, ele poderá jogar em A ou B para capturar as pedras pretas, então consideramos o grupo preto morto, A e B sendo desnecessários.},
 ]
 
 \problemAnswerDiagram[%
@@ -40,13 +40,13 @@
   sgf filename    = vida_mutua.5,
   problem text    = {Estudar formas mortas é de extrema importância.},
   answer text one = {\emph{Correto.} Preto não pode jogar em A ou B, caso contrário teríamos realmente uma forma morta de 3 pedras.},
-  answer text two = {\emph{Incorreto.} Ao jogar em 1, Branco forçará Preto a se conectar em A mais tarde, devido ao atari de B. Essencialmente, a não ser em um caso específico no canto conhecido como ``bent four in the corner'', ou ``quatro curvado no canto'', a forma de 4 pedras que existiria no caso de Branco jogar A ou C não é forma morta.},
+  answer text two = {\emph{Incorreto.} Ao jogar em 1, Branco forçará Preto a se conectar em A mais tarde, devido ao atari de B. Essencialmente, a não ser em um caso específico no canto conhecido como ``\gls{bent four in the corner}'', ou ``quatro curvado no canto'', a forma de 4 pedras que existiria quando Branco joga em A ou C não é forma morta.},
 ]
 
 \problemAnswerDiagram[%
   sgf folder      = vida_ou_morte/vida_mutua,
   sgf filename    = vida_mutua.6,
-  problem text    = {Preto conseguiu a pedra marcada em algum momento, o que possibilitou uma sequência de redução de fim de jogo, e Branco erra ao jogar em 4. Como punir o erro?},
+  problem text    = {Preto conseguiu a pedra marcada em algum momento, o que possibilitou uma sequência de redução de fim de jogo, redução que ficou maior quando Branco erra ao jogar em 4. Como punir o erro?},
   answer text one = {\emph{Correto.} Branco termina em seki. Ou seja, seu canto, que teria basicamente 6 pontos, agora foi zerado.},
   answer text two = {\emph{Variação.} O melhor teria sido aceitar a redução com 1. Assim, pelo menos, Branco fará 2 pontos.},
 ]
@@ -64,14 +64,14 @@
   sgf filename    = vida_mutua.8,
   problem text    = {É possível reduzir este problema a um que já estudamos.},
   answer text one = {\emph{Correto.} Converge exatamente para o problema anterior.},
-  answer text two = {\emph{Incorreto.} No final, Branco 4 garante que isso não será seki.},
+  answer text two = {\emph{Incorreto.} No final, Branco 4 garante que isto não será seki.},
 ]
 
 \problemAnswerDiagram[%
   sgf folder      = vida_ou_morte/vida_mutua,
   sgf filename    = vida_mutua.9,
   problem text    = {Entre a vida mútua e a morte.},
-  answer text one = {\emph{Correto.} Preto faz com que A ou B sejam miai para uma forma viva.},
+  answer text one = {\emph{Correto.} Preto faz com que A ou B sejam \gls{miai} para uma forma viva.},
   answer text two = {\emph{Variação.} Se Branco puder, jogar 1 garante um olho interno, e Preto é capturado indiretamente.},
 ]
 
@@ -79,6 +79,6 @@
   sgf folder      = vida_ou_morte/vida_mutua,
   sgf filename    = vida_mutua.10,
   problem text    = {Será que é um ko para gerar um seki?},
-  answer text one = {\emph{Correto.} Se Branco 2 em 3, Preto joga em 2, e será um seki também, mas Branco terá que fazer um sacrifício em A para manter o seki, ou seja, seria uma perda de 1 ponto.},
-  answer text two = {\emph{Incorreto.} Ao assegurar seu olho, Branco nem sequer precisa diretamente lutar pelo ko de imediato, Preto já está capturado.},
+  answer text one = {\emph{Correto.} Se Branco 2 em 3, Preto joga em 2, e será um seki também, mas Branco terá que fazer um sacrifício em A para manter o seki, ou seja, seria uma perda de 1 ponto nas regras japonesas. Nas regras chinesas, como capturas não são pontos, não haveria diferença.},
+  answer text two = {\emph{Incorreto.} Ao assegurar seu olho, Branco nem sequer precisa lutar pelo ko, Preto já está capturado.},
 ]
