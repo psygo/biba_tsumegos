@@ -6,17 +6,17 @@
   
   \begin{figure}
     \ifnum#4=11
-      \vspace{0.15cm}
+      \vspace{0.1cm}
     \fi
     \ifnum#4=10
-      \vspace{0.15cm}
+      \vspace{0.25cm}
     \fi
     \ifnum#4=9
-      \vspace{-0.05cm}
+      \vspace{-0.025cm}
     \fi
 
-    \begin{minipage}[c]{0.5\linewidth}
-      \begin{goban}[board dimension       = 9,
+    \begin{minipage}[c]{0.475\linewidth}
+      \begin{goban}[board dimension       = 8.4,
                     board size            = 19,
                     scale                 = 1,
                     outline line width    = 0.425mm,
@@ -27,7 +27,7 @@
         \parseSgfFile{sgf/#1/#2.solution.\theanswerCounter.sgf}
       \end{goban}
     \end{minipage}\hfill
-    \begin{minipage}[c]{0.5\linewidth}
+    \begin{minipage}[c]{0.525\linewidth}
       \ifnum#4=11
         \vspace{0.375cm}
       \fi
