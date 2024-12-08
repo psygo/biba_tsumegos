@@ -11,25 +11,25 @@ Um livro de técnicas Go que foca em uma progressão estruturada, e em uma const
 > **English**: All the diagrams were drawn with a custom LaTeX package.
 
 <div style="display: inline-flex">
-  <img src="assets/amostras_imagens/capa.png" width="275px" alt="capa" />
-  <img src="assets/amostras_imagens/contra_capa.png" width="275px" alt="contra-capa" />
-  <img src="assets/amostras_imagens/indice_1.png" width="275px" alt="Índice 1" />
-  <img src="assets/amostras_imagens/indice_2.png" width="275px" alt="Índice 2" />
-  <img src="assets/amostras_imagens/indice_3.png" width="275px" alt="Índice 3" />
-  <img src="assets/amostras_imagens/prefacio_1.png" width="275px" alt="Prefácio 1" />
-  <img src="assets/amostras_imagens/prefacio_2.png" width="275px" alt="Prefácio 2" />
-  <img src="assets/amostras_imagens/captura_direta_1.png" width="275px" alt="Captura Direta 1" />
-  <img src="assets/amostras_imagens/captura_direta_2.png" width="275px" alt="Captura Direta 2" />
-  <img src="assets/amostras_imagens/escadas_1.png" width="275px" alt="Escadas 1" />
-  <img src="assets/amostras_imagens/escadas_2.png" width="275px" alt="Escadas 2" />
-  <img src="assets/amostras_imagens/redes_1.png" width="275px" alt="Redes 1" />
-  <img src="assets/amostras_imagens/espremer_1.png" width="275px" alt="Espremer 1" />
-  <img src="assets/amostras_imagens/atravessar_1.png" width="275px" alt="Atravessar 1" />
-  <img src="assets/amostras_imagens/atravessar_2.png" width="275px" alt="Atravessar 2" />
-  <img src="assets/amostras_imagens/corridas_de_captura_1.png" width="275px" alt="Corridas de Captura 1" />
-  <img src="assets/amostras_imagens/olhos_falsos_1.png" width="275px" alt="Olhos Falsos 1" />
-  <img src="assets/amostras_imagens/vida_na_segunda_linha_1.png" width="275px" alt="Vida na Segunda Linha 1" />
-  <img src="assets/amostras_imagens/seki_1.png" width="275px" alt="Seki 1" />
+  <img src="assets/amostras_imagens/capa.png" width="260px" alt="capa" />
+  <img src="assets/amostras_imagens/contra_capa.png" width="260px" alt="contra-capa" />
+  <img src="assets/amostras_imagens/indice_1.png" width="260px" alt="Índice 1" />
+  <img src="assets/amostras_imagens/indice_2.png" width="260px" alt="Índice 2" />
+  <img src="assets/amostras_imagens/indice_3.png" width="260px" alt="Índice 3" />
+  <img src="assets/amostras_imagens/prefacio_1.png" width="260px" alt="Prefácio 1" />
+  <img src="assets/amostras_imagens/prefacio_2.png" width="260px" alt="Prefácio 2" />
+  <img src="assets/amostras_imagens/captura_direta_1.png" width="260px" alt="Captura Direta 1" />
+  <img src="assets/amostras_imagens/captura_direta_2.png" width="260px" alt="Captura Direta 2" />
+  <img src="assets/amostras_imagens/escadas_1.png" width="260px" alt="Escadas 1" />
+  <img src="assets/amostras_imagens/escadas_2.png" width="260px" alt="Escadas 2" />
+  <img src="assets/amostras_imagens/redes_1.png" width="260px" alt="Redes 1" />
+  <img src="assets/amostras_imagens/espremer_1.png" width="260px" alt="Espremer 1" />
+  <img src="assets/amostras_imagens/atravessar_1.png" width="260px" alt="Atravessar 1" />
+  <img src="assets/amostras_imagens/atravessar_2.png" width="260px" alt="Atravessar 2" />
+  <img src="assets/amostras_imagens/corridas_de_captura_1.png" width="260px" alt="Corridas de Captura 1" />
+  <img src="assets/amostras_imagens/olhos_falsos_1.png" width="260px" alt="Olhos Falsos 1" />
+  <img src="assets/amostras_imagens/vida_na_segunda_linha_1.png" width="260px" alt="Vida na Segunda Linha 1" />
+  <img src="assets/amostras_imagens/seki_1.png" width="260px" alt="Seki 1" />
 </div>
 
 ## Referências
