@@ -12,7 +12,7 @@ Um livro de técnicas Go que foca em uma progressão estruturada, e em uma const
 
 Aqui estão os lugares em que você pode comprar o livro:
 
-- [Mercado Livre](https://produto.mercadolivre.com.br/MLB-3947538421-tecnicas-de-go-volume-1-liberdades-e-vida-ou-morte-_JM)
+- [Mercado Livre](https://produto.mercadolivre.com.br/MLB-3947538421-tecnicas-de-go-volume-1-liberdades-e-vida-ou-morte)
 - [Kindle, disponível mundialmente](https://www.amazon.com.br/dp/B0DSCJ1PXC)
 - [Brasil Nihon Kiin](https://www.instagram.com/nihon_kiin/)
 
