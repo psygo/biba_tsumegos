@@ -16,6 +16,11 @@ Aqui estão os lugares em que você pode comprar o livro:
 - [Kindle, disponível mundialmente](https://www.amazon.com.br/dp/B0DSCJ1PXC)
 - [Brasil Nihon Kiin](https://www.instagram.com/nihon_kiin/)
 
+E estes são os vídeos apresentando o livro e o projeto no meu canal:
+
+- [Prévia do Meu Novo Livro "Técnicas de Go"! Vamos dar uma olhada no capítulo de redes!](https://youtu.be/DlasSQqKEDo)
+- [Meu Novo Livro! | Técnicas de Go — Volume 1: Liberdades e Vida ou Morte](https://youtu.be/rrQpnwbRNMI)
+
 <div style="display: inline-flex">
   <img src="assets/amostras_imagens/capa.png" width="260px" alt="capa" />
   <img src="assets/amostras_imagens/contra_capa.png" width="260px" alt="contra-capa" />
