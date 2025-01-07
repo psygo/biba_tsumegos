@@ -19,7 +19,7 @@ Aqui estão os lugares em que você pode comprar o livro:
 E estes são os vídeos apresentando o livro e o projeto no meu canal:
 
 - [Prévia do Meu Novo Livro "Técnicas de Go"! Vamos dar uma olhada no capítulo de redes!](https://youtu.be/DlasSQqKEDo)
-- [Meu Novo Livro! | Técnicas de Go — Volume 1: Liberdades e Vida ou Morte](https://youtu.be/rrQpnwbRNMI)
+- [Meu Novo Livro! | Técnicas de Go — Volume 1: Liberdades e Vida ou Morte](https://youtu.be/kynZ_5FMG0c)
 
 <div style="display: inline-flex">
   <img src="assets/amostras_imagens/capa.png" width="260px" alt="capa" />
