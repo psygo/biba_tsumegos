@@ -14,7 +14,7 @@
 
 \usepackage{config}
 
-\newcommand\problemDiagramDia[1]{
+\newcommand\problemDiagram[1]{
   \begin{goban}[board dimension       = 9,
                 board size            = 19,
                 scale                 = 1,
@@ -27,16 +27,16 @@
   \end{goban}
 }
 
-\newcommand\problemRow[3]{
+\newcommand\problemRowThree[3]{
   \begin{figure}
     \begin{minipage}[c]{0.3\linewidth}
-      \problemDiagramDia{#1}
+      \problemDiagram{#1}
     \end{minipage}\hfill
     \begin{minipage}[c]{0.3\linewidth}
-      \problemDiagramDia{#2}
+      \problemDiagram{#2}
     \end{minipage}\hfill
     \begin{minipage}[c]{0.3\linewidth}
-      \problemDiagramDia{#3}
+      \problemDiagram{#3}
     \end{minipage}
   \end{figure}
 }
@@ -44,7 +44,7 @@
 \newcommand\problemRowTwo[2]{
   \begin{figure}
     \begin{minipage}[c]{0.3\linewidth}
-      \problemDiagramDia{#1}
+      \problemDiagram{#1}
     \end{minipage}\hfill
     \begin{minipage}[c]{0.3\linewidth}
       \centering
@@ -52,7 +52,7 @@
       \normalsize%
     \end{minipage}\hfill
     \begin{minipage}[c]{0.3\linewidth}
-      \problemDiagramDia{#2}
+      \problemDiagram{#2}
     \end{minipage}
   \end{figure}
 }
@@ -86,9 +86,9 @@
 \newcommand\problemPage[1][]{
   \pgfkeys{/phili/problemPage/.cd, #1}
 
-  \problemRow{\problemOne}{\problemTwo}{\problemThree}
-  \problemRow{\problemFour}{\problemFive}{\problemSix}
-  \problemRow{\problemSeven}{\problemEight}{\problemNine}
+  \problemRowThree{\problemOne}{\problemTwo}{\problemThree}
+  \problemRowThree{\problemFour}{\problemFive}{\problemSix}
+  \problemRowThree{\problemSeven}{\problemEight}{\problemNine}
   \problemRowTwo{\problemTen}{\problemEleven}
 }
 
@@ -115,7 +115,7 @@
   \vspace*{0.5cm}
 
   \centering
-  \Huge Happy Birthday, Philippe!
+  \Huge Happy Torture, Philippe!
 
   \vfill
 
