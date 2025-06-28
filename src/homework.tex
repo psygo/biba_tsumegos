@@ -93,19 +93,29 @@
 }
 
 \begin{document}
+  \newpage
+  % \vspace*{\fill}
+  \vfill
   \begin{figure}
     \centering
-    \begin{goban}[board dimension       = 15,
+    \begin{goban}[board dimension       = 16.5,
                   board size            = 19,
                   scale                 = 1,
                   outline line width    = 0.55mm,
                   horizontal clip start = 1,
                   horizontal clip end   = 19,
-                  vertical clip start   = 1,
+                  vertical clip start   = 11,
                   vertical clip end     = 19]
       \parseSgfFile{sgf/dia/sjs.sgf}
     \end{goban}
   \end{figure}
+  \vfill
+  % \vspace*{\fill}
+  \newpage
+
+  % \vfill
+  \centering
+  \Huge Happy Torture, Philippe!
 
   \clearpage
 
