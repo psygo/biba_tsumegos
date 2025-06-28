@@ -1,0 +1,138 @@
+\documentclass[12pt]{book}
+
+% A4
+\usepackage[
+  paperheight   = 297mm, 
+  paperwidth    = 210mm,
+  bindingoffset = 10mm,
+  left          = 10mm,
+  right         = 15mm,
+  top           = 20mm,
+  bottom        = 15mm,
+  footskip      = 5mm,
+]{geometry}
+
+\usepackage{config}
+
+\newcommand\problemDiagramDia[1]{
+  \begin{goban}[board dimension       = 10.5,
+                board size            = 19,
+                scale                 = 1,
+                outline line width    = 0.55mm,
+                horizontal clip start = 11,
+                horizontal clip end   = 19,
+                vertical clip start   = 11,
+                vertical clip end     = 19]
+    \parseSgfFile{sgf/dia/#1}
+  \end{goban}
+}
+
+\newcommand\problemRow[3]{
+  \begin{figure}
+    \begin{minipage}[c]{0.3\linewidth}
+      \problemDiagramDia{#1}
+    \end{minipage}\hfill
+    \begin{minipage}[c]{0.3\linewidth}
+      \problemDiagramDia{#2}
+    \end{minipage}\hfill
+    \begin{minipage}[c]{0.3\linewidth}
+      \problemDiagramDia{#3}
+    \end{minipage}
+  \end{figure}
+}
+
+\newcommand\problemRowTwo[2]{
+  \begin{figure}
+    \begin{minipage}[c]{0.3\linewidth}
+      \problemDiagramDia{#1}
+    \end{minipage}\hfill
+    \begin{minipage}[c]{0.3\linewidth}
+      \centering
+      \Huge\textbf{BIBA}
+      \normalsize%
+    \end{minipage}\hfill
+    \begin{minipage}[c]{0.3\linewidth}
+      \problemDiagramDia{#2}
+    \end{minipage}
+  \end{figure}
+}
+
+\pgfkeys{%
+  /phili/problemPage/.cd, 
+    problem 1/.store in  = \problemOne,
+    problem 1            = One,
+    problem 2/.store in  = \problemTwo,
+    problem 2            = 2,
+    problem 3/.store in  = \problemThree,
+    problem 3            = 3,
+    problem 4/.store in  = \problemFour,
+    problem 4            = 4,
+    problem 5/.store in  = \problemFive,
+    problem 5            = 5,
+    problem 6/.store in  = \problemSix,
+    problem 6            = 6,
+    problem 7/.store in  = \problemSeven,
+    problem 7            = 7,
+    problem 8/.store in  = \problemEight,
+    problem 8            = 8,
+    problem 9/.store in  = \problemNine,
+    problem 9            = 9,
+    problem 10/.store in  = \problemTen,
+    problem 10            = 10,
+    problem 11/.store in  = \problemEleven,
+    problem 11            = 11,
+}
+
+\newcommand\problemPage[1][]{
+  \pgfkeys{/phili/problemPage/.cd, #1}
+
+  \problemRow{\problemOne}{\problemTwo}{\problemThree}
+  \problemRow{\problemFour}{\problemFive}{\problemSix}
+  \problemRow{\problemSeven}{\problemEight}{\problemNine}
+  \problemRowTwo{\problemTen}{\problemEleven}
+}
+
+\begin{document}
+  \begin{figure}
+    \centering
+    \begin{goban}[board dimension       = 25,
+                  board size            = 19,
+                  scale                 = 1,
+                  outline line width    = 0.55mm,
+                  horizontal clip start = 9,
+                  horizontal clip end   = 19,
+                  vertical clip start   = 9,
+                  vertical clip end     = 19]
+      \parseSgfFile{sgf/dia/atravessar.1.sgf}
+    \end{goban}
+  \end{figure}
+
+  \clearpage
+
+  \problemPage[%
+    problem 1 = atravessar.1.sgf,
+    problem 2 = atravessar.2.sgf,
+    problem 3 = atravessar.2.sgf,
+    problem 4 = atravessar.1.sgf,
+    problem 5 = atravessar.2.sgf,
+    problem 6 = atravessar.1.sgf,
+    problem 7 = atravessar.1.sgf,
+    problem 8 = atravessar.2.sgf,
+    problem 9 = atravessar.1.sgf,
+    problem 10 = atravessar.2.sgf,
+    problem 11 = atravessar.1.sgf,
+  ]
+  \problemPage[%
+    problem 1 = atravessar.3.sgf,
+    problem 2 = atravessar.2.sgf,
+    problem 3 = atravessar.2.sgf,
+    problem 4 = atravessar.1.sgf,
+    problem 5 = atravessar.2.sgf,
+    problem 6 = atravessar.1.sgf,
+    problem 7 = atravessar.1.sgf,
+    problem 8 = atravessar.2.sgf,
+    problem 9 = atravessar.1.sgf,
+    problem 10 = atravessar.2.sgf,
+    problem 11 = atravessar.1.sgf,
+  ]
+\end{document}
