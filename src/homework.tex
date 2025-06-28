@@ -5,8 +5,8 @@
   paperheight   = 297mm, 
   paperwidth    = 210mm,
   bindingoffset = 10mm,
-  left          = 10mm,
-  right         = 15mm,
+  left          = 7.5mm,
+  right         = 12.5mm,
   top           = 20mm,
   bottom        = 15mm,
   footskip      = 5mm,
@@ -15,15 +15,15 @@
 \usepackage{config}
 
 \newcommand\problemDiagramDia[1]{
-  \begin{goban}[board dimension       = 10.5,
+  \begin{goban}[board dimension       = 9,
                 board size            = 19,
                 scale                 = 1,
                 outline line width    = 0.55mm,
-                horizontal clip start = 11,
+                horizontal clip start = 8,
                 horizontal clip end   = 19,
-                vertical clip start   = 11,
+                vertical clip start   = 9,
                 vertical clip end     = 19]
-    \parseSgfFile{sgf/dia/#1}
+    \parseSgfFile{sgf/birthday/#1}
   \end{goban}
 }
 
@@ -93,56 +93,69 @@
 }
 
 \begin{document}
-  \newpage
-  % \vspace*{\fill}
   \vfill
-  \begin{figure}
-    \centering
-    \begin{goban}[board dimension       = 16.5,
+  \vspace*{0.5cm}
+
+  \begin{center}
+    \hspace{0.5cm}
+    \begin{goban}[board dimension       = 16.675,
                   board size            = 19,
                   scale                 = 1,
                   outline line width    = 0.55mm,
                   horizontal clip start = 1,
                   horizontal clip end   = 19,
-                  vertical clip start   = 11,
+                  vertical clip start   = 1,
                   vertical clip end     = 19]
-      \parseSgfFile{sgf/dia/sjs.sgf}
+      \parseSgfFile{sgf/birthday/main_problem.sgf}
     \end{goban}
-  \end{figure}
-  \vfill
-  % \vspace*{\fill}
-  \newpage
+  \end{center}
 
-  % \vfill
+  \vspace*{0.5cm}
+
   \centering
-  \Huge Happy Torture, Philippe!
+  \Huge Happy Birthday, Philippe!
+
+  \vfill
 
   \clearpage
 
   \problemPage[%
-    problem 1 = atravessar.1.sgf,
-    problem 2 = atravessar.2.sgf,
-    problem 3 = atravessar.2.sgf,
-    problem 4 = atravessar.1.sgf,
-    problem 5 = atravessar.2.sgf,
-    problem 6 = atravessar.1.sgf,
-    problem 7 = atravessar.1.sgf,
-    problem 8 = atravessar.2.sgf,
-    problem 9 = atravessar.1.sgf,
-    problem 10 = atravessar.2.sgf,
-    problem 11 = atravessar.1.sgf,
+    problem 1  = problem_1.sgf,
+    problem 2  = problem_2.sgf,
+    problem 3  = problem_3.sgf,
+    problem 4  = problem_4.sgf,
+    problem 5  = problem_5.sgf,
+    problem 6  = problem_6.sgf,
+    problem 7  = problem_7.sgf,
+    problem 8  = problem_8.sgf,
+    problem 9  = problem_9.sgf,
+    problem 10 = problem_10.sgf,
+    problem 11 = problem_11.sgf,
   ]
   \problemPage[%
-    problem 1 = atravessar.3.sgf,
-    problem 2 = atravessar.2.sgf,
-    problem 3 = atravessar.2.sgf,
-    problem 4 = atravessar.1.sgf,
-    problem 5 = atravessar.2.sgf,
-    problem 6 = atravessar.1.sgf,
-    problem 7 = atravessar.1.sgf,
-    problem 8 = atravessar.2.sgf,
-    problem 9 = atravessar.1.sgf,
-    problem 10 = atravessar.2.sgf,
-    problem 11 = atravessar.1.sgf,
+    problem 1  = problem_12.sgf,
+    problem 2  = problem_13.sgf,
+    problem 3  = problem_14.sgf,
+    problem 4  = problem_15.sgf,
+    problem 5  = problem_16.sgf,
+    problem 6  = problem_17.sgf,
+    problem 7  = problem_18.sgf,
+    problem 8  = problem_19.sgf,
+    problem 9  = problem_20.sgf,
+    problem 10 = problem_21.sgf,
+    problem 11 = problem_22.sgf,
+  ]
+  \problemPage[%
+    problem 1  = problem_23.sgf,
+    problem 2  = problem_24.sgf,
+    problem 3  = problem_25.sgf,
+    problem 4  = problem_26.sgf,
+    problem 5  = problem_27.sgf,
+    problem 6  = problem_28.sgf,
+    problem 7  = problem_29.sgf,
+    problem 8  = problem_30.sgf,
+    problem 9  = problem_31.sgf,
+    problem 10 = problem_32.sgf,
+    problem 11 = problem_33.sgf,
   ]
 \end{document}
