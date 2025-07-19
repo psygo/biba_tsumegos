@@ -1,3 +1,6 @@
+%-----------------------------------------------------------
+% Diagrams
+
 \newcommand\problemDiagram[1]{
   \begin{goban}[board dimension       = 9,
                 board size            = 19,
@@ -10,6 +13,31 @@
     \parseSgfFile{#1}
   \end{goban}
 }
+
+\newcommand\haengmaProblem[1]{
+  \vfill
+  \vspace*{0.5cm}
+
+  \begin{center}
+    \begin{goban}[board dimension       = 17.15,
+                  board size            = 19,
+                  scale                 = 1,
+                  outline line width    = 0.55mm,
+                  horizontal clip start = 1,
+                  horizontal clip end   = 19,
+                  vertical clip start   = 1,
+                  vertical clip end     = 19]
+      \parseSgfFile{sgf/#1}
+    \end{goban}
+  \end{center}
+
+  \vspace*{0.5cm}
+  \vfill
+
+  \clearpage
+}
+
+%-----------------------------------------------------------
 
 \newcommand\problemRowThree[3]{
   \begin{figure}
@@ -43,6 +71,9 @@
     \end{minipage}
   \end{figure}
 }
+
+%-----------------------------------------------------------
+% Problem Page
 
 \pgfkeys{%
   /phili/problemPage/.cd, 
@@ -79,25 +110,4 @@
   \problemRowTwo{\problemTen}{\problemEleven}
 }
 
-\newcommand\haengmaProblem[1]{
-  \vfill
-  \vspace*{0.5cm}
-
-  \begin{center}
-    \begin{goban}[board dimension       = 17.15,
-                  board size            = 19,
-                  scale                 = 1,
-                  outline line width    = 0.55mm,
-                  horizontal clip start = 1,
-                  horizontal clip end   = 19,
-                  vertical clip start   = 1,
-                  vertical clip end     = 19]
-      \parseSgfFile{sgf/#1}
-    \end{goban}
-  \end{center}
-
-  \vspace*{0.5cm}
-  \vfill
-
-  \clearpage
-}
+%-----------------------------------------------------------
