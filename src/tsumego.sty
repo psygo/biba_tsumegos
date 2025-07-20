@@ -1,4 +1,58 @@
 %-----------------------------------------------------------
+
+\newcounter{problemCounter}
+\setcounter{problemCounter}{0}
+
+\newcommand\problemNumber[2]{
+  \pgfmathsetmacro{\baselinePad}{
+    \ifnum\theproblemCounter>99
+      3.4pt 
+    \else
+      \ifnum\theproblemCounter>9
+        2.pt
+      \else
+        1.6pt
+      \fi
+    \fi
+  }
+
+  \pgfmathsetmacro{\innerSep}{
+    \ifnum\theproblemCounter>9 
+      2.5pt 
+    \else
+      3.5pt
+    \fi
+  }
+
+  \pgfmathsetmacro{\fontSize}{
+    \ifnum\theproblemCounter>99
+      21pt
+    \else
+      \ifnum\theproblemCounter>9
+        23pt
+      \else
+        27pt
+      \fi
+    \fi
+  }
+
+  \begin{tikzpicture}[baseline=\baselinePad]
+    \ncm
+
+    \hspace*{#2}
+    \node[
+      draw,
+      shape        = circle,
+      inner sep    = \innerSep,
+      line width   = 0.060cm,
+      font         = \fontsize{\fontSize}{9pt}\selectfont,
+    ] 
+      (char)
+      {\textmd{#1}};
+  \end{tikzpicture}
+}
+
+%-----------------------------------------------------------
 % Diagrams
 
 \pgfkeys{%
@@ -25,8 +79,13 @@
 }
 
 \newcommand\haengmaProblem[1]{%
+  \stepcounter{problemCounter}
+  
   \vfill
-  \vspace*{1.5cm}
+  \vspace*{1.25cm}
+
+  \problemNumber{\theproblemCounter}{0.625cm}
+  \vspace*{-0.5cm}
 
   \begin{center}
     \begin{goban}[board dimension       = 17.15,
@@ -42,10 +101,12 @@
     \end{goban}
   \end{center}
 
-  \vspace*{0.5cm}
+  \stepcounter{problemCounter}
+
+  \vspace*{-0.11cm}
+  \problemNumber{\theproblemCounter}{14.9cm}
+
   \vfill
 
   \clearpage
 }
-
-%-----------------------------------------------------------
