@@ -84,7 +84,13 @@
   \vfill
   \vspace*{1.25cm}
 
-  \problemNumber{\theproblemCounter}{0.625cm}
+  \problemNumber{\theproblemCounter}{
+    \ifnum\theproblemCounter>9
+      0.61cm
+    \else
+      0.625cm
+    \fi
+  }
   \vspace*{-0.5cm}
 
   \begin{center}
@@ -104,7 +110,13 @@
   \stepcounter{problemCounter}
 
   \vspace*{-0.11cm}
-  \problemNumber{\theproblemCounter}{14.9cm}
+  \problemNumber{\theproblemCounter}{
+    \ifnum\theproblemCounter>9
+      14.9cm
+    \else
+      15.1cm
+    \fi
+  }
 
   \vfill
 
