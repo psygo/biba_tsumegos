@@ -57,20 +57,22 @@
 
 \pgfkeys{%
   /phili/problemDiagram/.cd, 
-    path/.store in   = \problemPath,
-    path             = sgf,
-    player/.store in = \problemPlayer,
-    player           = 흑,
+    path/.store in           = \problemPath,
+    path                     = sgf,
+    player/.store in         = \problemPlayer,
+    player                   = 흑,
+    caption margin/.store in = \captionMargin,
+    caption margin           = 0.2cm,
     % %-------------------------------------------------------
     % % Partial Boards
-    % horizontal clip start/.store in = \horClipStartT,
-    % horizontal clip start           = 9,
-    % horizontal clip end/.store in   = \horClipEndT, % This is more like the width?
-    % horizontal clip end             = 19,
-    % vertical clip start/.store in   = \verClipStartT,
-    % vertical clip start             = 1,
-    % vertical clip end/.store in     = \verClipEndT, % This is more like the height?
-    % vertical clip end               = 10.5,
+    horizontal clip start/.store in = \horClipStartT,
+    horizontal clip start           = 9,
+    horizontal clip end/.store in   = \horClipEndT, % This is more like the width?
+    horizontal clip end             = 19,
+    vertical clip start/.store in   = \verClipStartT,
+    vertical clip start             = 1,
+    vertical clip end/.store in     = \verClipEndT, % This is more like the height?
+    vertical clip end               = 10.5,
     % %---------------------------------------------------------
 }
 
@@ -82,15 +84,15 @@
     \hfill
     \fontsize{13pt}{13pt}\selectfont (\theproblemCounter) \ \ \problemPlayer
     \hspace{0.125cm}
-    \vspace{0.2cm}
+    \vspace{\captionMargin}
     \begin{goban}[board dimension       = 8.75,
                   board size            = 19,
                   scale                 = 1,
                   outline line width    = 0.55mm,
-                  horizontal clip start = 9,
-                  horizontal clip end   = 19,
-                  vertical clip start   = 1,
-                  vertical clip end     = 10.5]
+                  horizontal clip start = \horClipStartT,
+                  horizontal clip end   = \horClipEndT,
+                  vertical clip start   = \verClipStartT,
+                  vertical clip end     = \verClipEndT,]
       \parseSgfFile{\problemPath}
     \end{goban}
   \end{minipage}\hfill
