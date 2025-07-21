@@ -114,11 +114,30 @@
     \ifnum\theproblemCounter>9
       14.9cm
     \else
-      15.1cm
+      15.3cm
     \fi
   }
 
   \vfill
 
   \clearpage
+}
+
+%-----------------------------------------------------------
+% Title Pages
+
+\newcommand\haengmaTitlePage[1]{%
+  \begin{titlepage}
+    \centering
+
+    \scshape
+
+    \vspace*{5.75cm}
+
+    \fontsize{60pt}{60pt}\selectfont\textbf{행마 #1} \\
+
+    \vspace*{1.5cm}
+
+    \fontsize{60pt}{60pt}\selectfont\textbf{Haengma #1}
+  \end{titlepage}
 }
