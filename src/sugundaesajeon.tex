@@ -1,0 +1,32 @@
+
+\documentclass[12pt]{book}
+
+% A4
+\usepackage[
+  paperheight   = 297mm, 
+  paperwidth    = 210mm,
+  bindingoffset = 10mm,
+  left          = 7.5mm,
+  right         = 12.5mm,
+  top           = 20mm,
+  bottom        = 15mm,
+  footskip      = 5mm,
+]{geometry}
+
+\usepackage{config}
+
+\begin{document}
+  \koreanTsumegoTitlePage[%
+    korean title  = 수군대사전,
+    english title = Sugundaesajeon,
+  ]
+  
+  \problemDiagram[%
+    path                  = sgf/sugundaesajeon/1/1.sgf,]
+    % horizontal clip start = \horClipStartT,
+    % horizontal clip end   = \horClipEndT,
+    % vertical clip start   = \verClipStartT,
+    % vertical clip end     = \verClipEndT,]
+  \problemDiagram[path = sgf/sugundaesajeon/1/2.sgf]
+  \hspace*{-\fill}
+\end{document}

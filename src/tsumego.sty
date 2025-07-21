@@ -61,6 +61,17 @@
     path             = sgf,
     player/.store in = \problemPlayer,
     player           = 흑,
+    % %-------------------------------------------------------
+    % % Partial Boards
+    % horizontal clip start/.store in = \horClipStartT,
+    % horizontal clip start           = 9,
+    % horizontal clip end/.store in   = \horClipEndT, % This is more like the width?
+    % horizontal clip end             = 19,
+    % vertical clip start/.store in   = \verClipStartT,
+    % vertical clip start             = 1,
+    % vertical clip end/.store in     = \verClipEndT, % This is more like the height?
+    % vertical clip end               = 10.5,
+    % %---------------------------------------------------------
 }
 
 \newcommand\problemDiagram[1][]{%
@@ -133,7 +144,16 @@
 %-----------------------------------------------------------
 % Title Pages
 
-\newcommand\haengmaTitlePage[1]{%
+\pgfkeys{%
+  /phili/koreanTsumegoTitlePage/.cd, 
+    korean title/.store in  = \titleKorean,
+    korean title            = 행마,
+    english title/.store in = \titleEnglish,
+    english title           = Haengma,
+}
+
+\newcommand\koreanTsumegoTitlePage[1][]{%
+  \pgfkeys{/phili/koreanTsumegoTitlePage/.cd, #1}%
   \begin{titlepage}
     \centering
 
@@ -141,10 +161,10 @@
 
     \vspace*{5.75cm}
 
-    \fontsize{60pt}{60pt}\selectfont\textbf{행마 #1} \\
+    \fontsize{60pt}{60pt}\selectfont\textbf{\titleKorean} \\
 
     \vspace*{1.5cm}
 
-    \fontsize{60pt}{60pt}\selectfont\textbf{Haengma #1}
+    \fontsize{60pt}{60pt}\selectfont\textbf{\titleEnglish} \\
   \end{titlepage}
 }
