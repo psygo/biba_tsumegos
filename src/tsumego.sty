@@ -57,15 +57,22 @@
 
 \pgfkeys{%
   /phili/problemDiagram/.cd, 
-    path/.store in  = \problemPath,
-    path            = sgf,
+    path/.store in   = \problemPath,
+    path             = sgf,
+    player/.store in = \problemPlayer,
+    player           = 흑,
 }
 
 \newcommand\problemDiagram[1][]{%
-  \pgfkeys{/phili/problemDiagram/.cd, #1}
-  %
+  \pgfkeys{/phili/problemDiagram/.cd, #1}%
+  \stepcounter{problemCounter}%
+  \noindent%
   \begin{minipage}[c]{0.3\linewidth}
-    \begin{goban}[board dimension       = 9,
+    \hfill
+    \fontsize{13pt}{13pt}\selectfont (\theproblemCounter) \ \ \problemPlayer
+    \hspace{0.125cm}
+    \vspace{0.2cm}
+    \begin{goban}[board dimension       = 8.75,
                   board size            = 19,
                   scale                 = 1,
                   outline line width    = 0.55mm,
