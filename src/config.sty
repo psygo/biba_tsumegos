@@ -28,26 +28,26 @@
 %-----------------------------------------------------------
 % Language and Hyphenation
 
-\usepackage[portuguese]{babel}
+% \usepackage[portuguese]{babel}
 \usepackage{microtype}
 \usepackage{hyphenat}
-\hyphenation{pa-ra}
-\hyphenation{Bran-co}
-\hyphenation{bran-ca}
-\hyphenation{Pre-to}
-\hyphenation{cri-ar}
-\hyphenation{mor-ta}
-\hyphenation{quan-do}
-\hyphenation{for-ça}
-\hyphenation{o-lho}
-\hyphenation{mes-mo}
-\hyphenation{can-to}
-\hyphenation{po-de}
-\hyphenation{as-sim}
-\hyphenation{e-xer-cí-cios}
-\hyphenation{al-go}
-\hyphenation{quan-to}
-\hyphenation{te-rá}
+% \hyphenation{pa-ra}
+% \hyphenation{Bran-co}
+% \hyphenation{bran-ca}
+% \hyphenation{Pre-to}
+% \hyphenation{cri-ar}
+% \hyphenation{mor-ta}
+% \hyphenation{quan-do}
+% \hyphenation{for-ça}
+% \hyphenation{o-lho}
+% \hyphenation{mes-mo}
+% \hyphenation{can-to}
+% \hyphenation{po-de}
+% \hyphenation{as-sim}
+% \hyphenation{e-xer-cí-cios}
+% \hyphenation{al-go}
+% \hyphenation{quan-to}
+% \hyphenation{te-rá}
 
 %-----------------------------------------------------------
 % URLs
@@ -68,18 +68,18 @@
 %-----------------------------------------------------------
 % TOC
 
-\usepackage{tocloft}
-\renewcommand\cftchapfont{\mdseries}
-\renewcommand\cftchappagefont{\mdseries}
-\renewcommand{\cfttoctitlefont}{\bfseries\huge}
-\setlength{\cftbeforetoctitleskip}{-25pt}
-\setlength{\cftaftertoctitleskip}{20pt}
-\setlength{\cftbeforepartskip}{25pt}
+\usepackage[titles]{tocloft}
+\renewcommand\cftchapfont{\bfseries\LARGE}
+\renewcommand\cftchappagefont{\bfseries\LARGE}
+\renewcommand{\cfttoctitlefont}{\bfseries\Huge}
+% \setlength{\cftbeforetoctitleskip}{-25pt}
+% \setlength{\cftaftertoctitleskip}{20pt}
+% \setlength{\cftbeforepartskip}{25pt}
 
 \usepackage[nottoc,numbib]{tocbibind}
-\addto\captionsportuguese{
-  \renewcommand{\contentsname}{Índice}
-}
+% \addto\captionsenglish{
+  \renewcommand{\contentsname}{\bfseries\fontsize{30pt}{30pt}\selectfont Contents}
+% }
 
 %-----------------------------------------------------------
 % Chapter and Part Titles
