@@ -1,4 +1,5 @@
 %-----------------------------------------------------------
+% Problem Numbering
 
 \newcounter{problemCounter}
 \setcounter{problemCounter}{0}
@@ -170,3 +171,26 @@
     \fontsize{60pt}{60pt}\selectfont\textbf{\titleEnglish} \\
   \end{titlepage}
 }
+
+%-----------------------------------------------------------
+% Problem Generators
+
+\pgfkeys{%
+  /phili/haengmaProblemGenerator/.cd, 
+    book number/.store in = \problemBookNumber,
+    book number           = 1,
+    chapter/.store in     = \problemChapter,
+    chapter               = 1,
+    max problem/.store in = \problemMax,
+    max problem           = 1,
+}
+
+\newcommand\haengmaProblemGenerator[1][]{%
+  \pgfkeys{/phili/haengmaProblemGenerator/.cd, #1}%
+  \foreach \i in {1,3,...,\problemMax}{
+    \pgfmathtruncatemacro{\j}{\i + 1}
+    \haengmaProblem{haengma_\problemBookNumber/\problemChapter/\i_\j.sgf}
+  }
+}
+
+%-----------------------------------------------------------

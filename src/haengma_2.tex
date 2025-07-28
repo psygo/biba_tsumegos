@@ -17,9 +17,30 @@
 \usepackage{tsumego}
 
 \begin{document}
-  \haengmaProblem{haengma_2/1/1_2.sgf}
-  \haengmaProblem{haengma_2/1/3_4.sgf}
-  \haengmaProblem{haengma_2/1/5_6.sgf}
-  \haengmaProblem{haengma_2/1/7_8.sgf}
-  \haengmaProblem{haengma_2/1/9_10.sgf}
+  \koreanTsumegoTitlePage[%
+    korean title  = 행마 2,
+    english title = Haengma 2,
+  ]
+  
+  \tableofcontents
+  
+  \chapter{Connection and Joining of Stones (돌의 연결과 이음)}
+  
+  \clearpage
+
+  \haengmaProblemGenerator[%
+    book number = 2,
+    chapter     = 1,
+    max problem = 15,
+  ]
+
+  \clearpage
+
+  \chapter{How to Revive a Stone (돌을 살리는 방법)}
+
+  \haengmaProblemGenerator[%
+    book number = 2,
+    chapter     = 10,
+    max problem = 13,
+  ]
 \end{document}
