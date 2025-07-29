@@ -11,7 +11,8 @@
   "license": "ISC",
   "packageManager": "pnpm@10.12.2",
   "dependencies": {
-    "jsdom": "^26.1.0"
+    "jsdom": "^26.1.0",
+    "puppeteer": "^24.15.0"
   },
   "devDependencies": {
     "@types/node": "^24.1.0",

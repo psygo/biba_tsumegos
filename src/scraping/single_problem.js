@@ -1,4 +1,4 @@
-const { JSDOM } = require("jsdom")
+const puppeteer = require("puppeteer")
 
 /**
  * From [this answer](https://stackoverflow.com/a/79717008/4756173)
@@ -23,13 +23,35 @@ function parseGamePos(config) {
   return JSON.parse(output.join(""))
 }
 
-const url = "https://www.101weiqi.com/q/17773/"
+const sampleProblemUrl = "https://www.101weiqi.com/q/17773/"
+const weiqi101signup = "https://www.101weiqi.com/login/"
+
+const dummyAccount = "comoti7227@atebin.com"
 
 async function fetchProblem() {
-  const req = await fetch(url)
-  const body = await req.text()
+  const browser = await puppeteer.launch()
+  const page = await browser.newPage()
 
-  console.log(body)
+  await page.goto(weiqi101signup)
+  
+  await page.type(`input[x-model="loginName"]`, dummyAccount)
+  await page.type(`input[x-model="loginPassword"]`, dummyAccount)
+
+  await page.click(`.login-button.active`)
+  
+  await page.waitForNavigation()
+
+  await page.goto(sampleProblemUrl)
+  const bodyHtml = await page.evaluate(() => document.body.innerHTML);
+  console.log(bodyHtml);
+
+  
+  // const req = await fetch(url)
+  // const body = await req.text()
+
+  await browser.close();
+
+  // console.log(body)
   // const matches = body.match(/script/)
   // console.log(matches)
   // const idx = body.indexOf('qqdata')
