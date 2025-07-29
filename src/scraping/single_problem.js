@@ -1,4 +1,5 @@
 const puppeteer = require("puppeteer")
+const fs = require('fs');
 
 const sampleProblemUrl = "https://www.101weiqi.com/q/17773/"
 const weiqi101signup = "https://www.101weiqi.com/login/"
@@ -11,8 +12,6 @@ let page
 async function login() {
   browser = await puppeteer.launch()
   page = await browser.newPage()
-
-  // Login
 
   await page.goto(weiqi101signup)
 
@@ -41,13 +40,15 @@ async function fetchProblem() {
   await login()
 
   // Go to the Problem Page
-
   await page.goto(sampleProblemUrl)
 
   // Getting the Data into an SGF
-
   const qqdata = await page.evaluate(() => window.qqdata)
-  console.log(toSGFCoords(qqdata))
+  const sgfString = toSGFCoords(qqdata)
+  
+  // Save the SGF to a File
+  const filePath = `./problems/${qqdata.id}.sgf`
+  fs.writeFileSync(filePath, sgfString);
 
   await browser.close()
 }
