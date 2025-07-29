@@ -1,8 +1,9 @@
 const puppeteer = require("puppeteer")
-const fs = require('fs');
+const fs = require("fs")
 
 const sampleProblemUrl = "https://www.101weiqi.com/q/17773/"
-const weiqi101signup = "https://www.101weiqi.com/login/"
+const sampleBookUrl = "https://www.101weiqi.com/book/3/"
+const weiqi101login = "https://www.101weiqi.com/login/"
 
 const dummyAccount = "comoti7227@atebin.com"
 
@@ -13,7 +14,7 @@ async function login() {
   browser = await puppeteer.launch()
   page = await browser.newPage()
 
-  await page.goto(weiqi101signup)
+  await page.goto(weiqi101login)
 
   await page.type(`input[x-model="loginName"]`, dummyAccount)
   await page.type(`input[x-model="loginPassword"]`, dummyAccount)
@@ -32,7 +33,7 @@ function toSGFCoords(data) {
   const whiteStones = whiteCoords.map((coord) => `[${coord}]`).join("")
 
   const sgf = `(${sgfPrefix}AB${blackStones}AW${whiteStones})`
-  
+
   return sgf
 }
 
@@ -45,12 +46,15 @@ async function fetchProblem() {
   // Getting the Data into an SGF
   const qqdata = await page.evaluate(() => window.qqdata)
   const sgfString = toSGFCoords(qqdata)
-  
+
   // Save the SGF to a File
   const filePath = `./problems/${qqdata.id}.sgf`
-  fs.writeFileSync(filePath, sgfString);
+  fs.writeFileSync(filePath, sgfString)
 
   await browser.close()
 }
 
-fetchProblem()
+// await function fetchBookProblems() {}
+
+login().then(() => fetchProblem())
+
