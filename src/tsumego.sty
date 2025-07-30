@@ -173,7 +173,7 @@
 }
 
 %-----------------------------------------------------------
-% Problem Generators
+% Problem and Chapter Generators
 
 \pgfkeys{%
   /phili/haengmaProblemGenerator/.cd, 
@@ -191,6 +191,29 @@
     \pgfmathtruncatemacro{\j}{\i + 1}
     \haengmaProblem{haengma_\problemBookNumber/\problemChapter/\i_\j.sgf}
   }
+}
+
+\pgfkeys{%
+  /phili/haengmaChapterGenerator/.cd, 
+    book number/.store in  = \problemBookNumber,
+    book number            = 1,
+    chapter/.store in      = \problemChapter,
+    chapter                = 1,
+    max problem/.store in  = \problemMax,
+    max problem            = 1,
+    chapter name/.store in = \problemChapterName,
+    chapter name           = Chapter,
+}
+
+\newcommand\haengmaChapterGenerator[1][]{%
+  \pgfkeys{/phili/haengmaChapterGenerator/.cd, #1}%
+  \chapter{\problemChapterName}
+  \clearpage
+  \haengmaProblemGenerator[%
+    book number = 2,
+    chapter     = 1,
+    max problem = 37,
+  ]
 }
 
 %-----------------------------------------------------------
