@@ -110,6 +110,7 @@
 
 % From [this question](https://tex.stackexchange.com/q/726389/64441)
 \usepackage{fancyhdr}
+\pagestyle{fancy}
 
 \fancyhead{}
 \fancyhead[LE, RO]{\fontsize{17pt}{15pt}\slshape\nouppercase\rightmark}
@@ -117,11 +118,11 @@
 \fancyhead[LE,RO]{\fontsize{17pt}{15pt}\selectfont\thepage}
 
 \fancyfoot{}
+
 \setlength{\headheight}{17.74304pt}
 \setlength{\headsep}{1.1cm}
-
 \renewcommand\headrulewidth{0pt}
-\pagestyle{fancy}
+
 \makeatletter
 \renewcommand\chaptermark[1]{\markboth{\if@mainmatter\thechapter. \fi#1}{}}
 \makeatother
