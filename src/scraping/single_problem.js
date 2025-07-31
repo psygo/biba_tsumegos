@@ -60,7 +60,7 @@ async function fetchProblem(problemId, path = "./problems/", filename = "") {
   const folder = qqdata.levelname.substring(0, 2)
   const fullPath = `${path}/${folder}`
   if (!fs.existsSync(fullPath)) fs.mkdirSync(fullPath, { recursive: true })
-  const filePath = `${path}${name}.sgf`
+  const filePath = `${fullPath}/${name}.sgf`
   fs.writeFileSync(filePath, sgfString)
 }
 
