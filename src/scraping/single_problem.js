@@ -52,10 +52,14 @@ async function fetchProblem(problemId, path = "./problems/", filename = "") {
 
   // Getting the Data into an SGF
   const qqdata = await page.evaluate(() => window.qqdata)
+  console.log(qqdata)
   const sgfString = toSGFCoords(qqdata)
 
   // Save the SGF to a File
   const name = filename === "" ? qqdata.id : filename
+  const folder = qqdata.levelname.substring(0, 2)
+  const fullPath = `${path}/${folder}`
+  if (!fs.existsSync(fullPath)) fs.mkdirSync(fullPath, { recursive: true })
   const filePath = `${path}${name}.sgf`
   fs.writeFileSync(filePath, sgfString)
 }
@@ -91,9 +95,9 @@ async function fetchBookProblemsByLevelOrder(bookId) {
           `../sgf/101weiqi_books/${bookId}/`,
           problemCount.toString()
         )
-        // }, 1_000)
+      // }, 1_000)
       problemCount++
-      break
+      // break
     }
   }
 }
