@@ -66,10 +66,52 @@ async function fetchProblem(problemId, path = "./problems/", filename = "") {
 
 async function fetchBookProblems(bookId, levelOrder = false) {
   if (levelOrder) await fetchBookProblemsByLevelOrder(bookId)
+  else await fetchBookProblemsByChapter(bookId)
 }
 
 function delay(ms) {
   return new Promise((res) => setTimeout(res, ms))
+}
+
+async function fetchBookProblemsByChapter(bookId) {
+  const bookUrl = `https://www.101weiqi.com/book/${bookId}`
+  await page.goto(bookUrl)
+
+  const bookData = await page.evaluate(() => window.bookdata)
+
+  const chapters = bookData.chapters.map((chapter) => ({
+    id: chapter.id,
+    totalProblems: chapter.nodecount,
+  }))
+
+  console.log(chapters)
+
+  for (const chapter of chapters) {
+    const pageTotal = Math.ceil(chapter.totalProblems / 60)
+
+    let problemCount = 1
+    for (let i = 1; i < pageTotal; i++) {
+      const bookUrlWithPage = `${bookUrl}/${chapter.id}/?page=${i}`
+      console.log(bookUrlWithPage)
+
+      await page.goto(bookUrlWithPage)
+
+      const pagedata = await page.evaluate(() => window.nodedata.pagedata)
+      const questionIds = pagedata.qs.map((q) => q.qid)
+
+      console.log(questionIds)
+
+      for (const id of questionIds) {
+        await fetchProblem(
+          id,
+          `../sgf/101weiqi_books/${bookId}/chapters/${chapter.id}`,
+          problemCount.toString()
+        )
+        problemCount++
+        await delay(Math.random() * 5_000)
+      }
+    }
+  }
 }
 
 async function fetchBookProblemsByLevelOrder(bookId) {
@@ -95,7 +137,7 @@ async function fetchBookProblemsByLevelOrder(bookId) {
     for (const id of questionIds) {
       await fetchProblem(
         id,
-        `../sgf/101weiqi_books/${bookId}/`,
+        `../sgf/101weiqi_books/${bookId}/levelorder/`,
         problemCount.toString()
       )
       problemCount++
@@ -107,7 +149,8 @@ async function fetchBookProblemsByLevelOrder(bookId) {
 async function fetchData() {
   await login()
 
-  await fetchBookProblems(3, true)
+  // await fetchBookProblems(3, true)
+  await fetchBookProblems(3, false)
   // await fetchProblem(6814)
 
   await browser.close()
