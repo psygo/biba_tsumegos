@@ -41,7 +41,7 @@ function toSGFCoords(data) {
   const blackStones = blackCoords.map((coord) => `[${coord}]`).join("")
   const whiteStones = whiteCoords.map((coord) => `[${coord}]`).join("")
 
-  const sgf = `(${sgfPrefix}AB${blackStones}AW${whiteStones})`
+  const sgf = `(${sgfPrefix}C[${data.id} | ${data.levelname}]AB${blackStones}AW${whiteStones})`
 
   return sgf
 }
@@ -52,7 +52,7 @@ async function fetchProblem(problemId, path = "./problems/", filename = "") {
 
   // Getting the Data into an SGF
   const qqdata = await page.evaluate(() => window.qqdata)
-  console.log(qqdata)
+  console.log(qqdata.id)
   const sgfString = toSGFCoords(qqdata)
 
   // Save the SGF to a File
@@ -66,6 +66,10 @@ async function fetchProblem(problemId, path = "./problems/", filename = "") {
 
 async function fetchBookProblems(bookId, levelOrder = false) {
   if (levelOrder) await fetchBookProblemsByLevelOrder(bookId)
+}
+
+function delay(ms) {
+  return new Promise((res) => setTimeout(res, ms))
 }
 
 async function fetchBookProblemsByLevelOrder(bookId) {
@@ -89,15 +93,13 @@ async function fetchBookProblemsByLevelOrder(bookId) {
     console.log(questionIds)
 
     for (const id of questionIds) {
-      // setTimeout(async () => {
-        await fetchProblem(
-          id,
-          `../sgf/101weiqi_books/${bookId}/`,
-          problemCount.toString()
-        )
-      // }, 1_000)
+      await fetchProblem(
+        id,
+        `../sgf/101weiqi_books/${bookId}/`,
+        problemCount.toString()
+      )
       problemCount++
-      // break
+      await delay(Math.random() * 5_000)
     }
   }
 }
