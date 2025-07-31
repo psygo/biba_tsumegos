@@ -25,7 +25,7 @@ async function login() {
 
   await page.goto(weiqi101login)
 
-  await page.type(`input[x-model="loginName"]`, dummyAccounts[1])
+  await page.type(`input[x-model="loginName"]`, dummyAccounts[2])
   await page.type(`input[x-model="loginPassword"]`, dummyAccounts[1])
 
   await page.click(`.login-button.active`)
@@ -81,16 +81,19 @@ async function fetchBookProblemsByLevelOrder(bookId) {
     const pagedata = await page.evaluate(() => window.pagedata)
     const questionIds = pagedata.qs.map((q) => q.qid)
 
+    console.log(questionIds)
+
     let count = 1
     for (const id of questionIds) {
-      setTimeout(async () => {
-        await fetchProblem(
-          id,
-          `../sgf/101weiqi_books/${bookId}/`,
-          count.toString()
-        )
-      }, 1_000) // Wait a bit to avoid overwhelming the server
+      // setTimeout(async () => {
+      await fetchProblem(
+        id,
+        `../sgf/101weiqi_books/${bookId}/`,
+        count.toString()
+      )
+      // }, 1_000)
       count++
+      break
     }
   }
 }
@@ -98,8 +101,8 @@ async function fetchBookProblemsByLevelOrder(bookId) {
 async function fetchData() {
   await login()
 
-  await fetchBookProblems(3, true)
-  // await fetchProblem(17933)
+  // await fetchBookProblems(3, true)
+  await fetchProblem(6814)
 
   await browser.close()
 }
