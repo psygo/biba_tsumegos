@@ -25,8 +25,10 @@ async function login() {
 
   await page.goto(weiqi101login)
 
-  await page.type(`input[x-model="loginName"]`, dummyAccounts[2])
-  await page.type(`input[x-model="loginPassword"]`, dummyAccounts[2])
+  const acc = dummyAccounts[3]
+
+  await page.type(`input[x-model="loginName"]`, acc)
+  await page.type(`input[x-model="loginPassword"]`, acc)
 
   await page.click(`.login-button.active`)
 
@@ -52,6 +54,7 @@ async function fetchProblem(problemId, path = "./problems/", filename = "") {
 
   // Getting the Data into an SGF
   const qqdata = await page.evaluate(() => window.qqdata)
+  // console.log(qqdata)
   console.log(qqdata.id)
   const sgfString = toSGFCoords(qqdata)
 
@@ -150,8 +153,8 @@ async function fetchData() {
   await login()
 
   // await fetchBookProblems(3, true)
-  await fetchBookProblems(3, false)
-  // await fetchProblem(6814)
+  // await fetchBookProblems(3, false)
+  await fetchProblem(17929)
 
   await browser.close()
 }
