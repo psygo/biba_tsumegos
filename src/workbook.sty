@@ -145,34 +145,6 @@
 }
 
 %-----------------------------------------------------------
-% Title Pages
-
-\pgfkeys{%
-  /phili/koreanTsumegoTitlePage/.cd, 
-    korean title/.store in  = \titleKorean,
-    korean title            = 행마,
-    english title/.store in = \titleEnglish,
-    english title           = Haengma,
-}
-
-\newcommand\koreanTsumegoTitlePage[1][]{%
-  \pgfkeys{/phili/koreanTsumegoTitlePage/.cd, #1}%
-  \begin{titlepage}
-    \centering
-
-    \scshape
-
-    \vspace*{5.75cm}
-
-    \fontsize{60pt}{60pt}\selectfont\textbf{\titleKorean} \\
-
-    \vspace*{1.5cm}
-
-    \fontsize{60pt}{60pt}\selectfont\textbf{\titleEnglish} \\
-  \end{titlepage}
-}
-
-%-----------------------------------------------------------
 % Problem and Chapter Generators
 
 \pgfkeys{%
@@ -214,6 +186,34 @@
     chapter     = 1,
     max problem = 37,
   ]
+}
+
+%-----------------------------------------------------------
+% Title Pages
+
+\pgfkeys{%
+  /phili/koreanTsumegoTitlePage/.cd, 
+    korean title/.store in  = \titleKorean,
+    korean title            = 행마,
+    english title/.store in = \titleEnglish,
+    english title           = Haengma,
+}
+
+\newcommand\koreanTsumegoTitlePage[1][]{%
+  \pgfkeys{/phili/koreanTsumegoTitlePage/.cd, #1}%
+  \begin{titlepage}
+    \centering
+
+    \scshape
+
+    \vspace*{5.75cm}
+
+    \fontsize{60pt}{60pt}\selectfont\textbf{\titleKorean} \\
+
+    \vspace*{1.5cm}
+
+    \fontsize{60pt}{60pt}\selectfont\textbf{\titleEnglish} \\
+  \end{titlepage}
 }
 
 %-----------------------------------------------------------
