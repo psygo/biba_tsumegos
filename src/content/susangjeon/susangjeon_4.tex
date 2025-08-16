@@ -1,0 +1,37 @@
+\documentclass[12pt]{book}
+
+% A4
+\usepackage[
+  paperheight   = 297mm, 
+  paperwidth    = 210mm,
+  bindingoffset = 10mm,
+  left          = 7.5mm,
+  right         = 12.5mm,
+  top           = 20mm,
+  bottom        = 15mm,
+  footskip      = 4.36mm,
+]{geometry}
+
+\def\repoPath{/Users/phili/Code/Go/tsumego_workbooks/src}
+\usepackage{\repoPath/config}
+
+\begin{document}
+  \workbookTitlePage[%
+    korean title  = 수상전 4,
+    english title = Susangjeon 4,
+  ]
+  
+  \blankpage
+  
+  \frontmatter
+
+  \tableofcontents
+  
+  \mainmatter
+  
+  % \haengmaChapterGenerator[%
+  %   chapter name = Comprehensive Practice (수상전 종합연습문제),
+  %   path         = {\repoPath/sgf/susangjeon/susangjeon_4/3},
+  %   max problem  = 4,
+  % ]
+\end{document}
