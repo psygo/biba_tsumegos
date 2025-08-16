@@ -186,15 +186,15 @@
 % Title Pages
 
 \pgfkeys{%
-  /phili/koreanTsumegoTitlePage/.cd, 
+  /phili/workbookTitlePage/.cd, 
     korean title/.store in  = \titleKorean,
     korean title            = 행마,
     english title/.store in = \titleEnglish,
     english title           = Haengma,
 }
 
-\newcommand\koreanTsumegoTitlePage[1][]{%
-  \pgfkeys{/phili/koreanTsumegoTitlePage/.cd, #1}%
+\newcommand\workbookTitlePage[1][]{%
+  \pgfkeys{/phili/workbookTitlePage/.cd, #1}%
   \begin{titlepage}
     \centering
 
