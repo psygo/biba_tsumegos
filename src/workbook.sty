@@ -99,8 +99,19 @@
   \end{minipage}\hfill
 }
 
-\newcommand\haengmaProblem[1]{%
-  \stepcounter{problemCounter}
+\pgfkeys{%
+  /phili/haengmaProblem/.cd, 
+    path/.store in            = \haengmaPath,
+    path                      = sgf,
+    filename/.store in         = \haengmaFilename,
+    filename                   = 1_2,
+    initial counter/.store in = \haengmaCounter,
+    initial counter           = 1,
+}
+
+\newcommand\haengmaProblem[1][]{%
+  \pgfkeys{/phili/haengmaProblem/.cd, #1}%
+  \setcounter{problemCounter}{\haengmaCounter}%
   
   \vfill
   \vspace*{1.25cm}
@@ -124,7 +135,7 @@
                   vertical clip start   = 1,
                   vertical clip end     = 19,
                   split line width      = 0.45mm]
-      \parseSgfFile{\repoPath/sgf/#1}
+      \parseSgfFile{\haengmaPath/\haengmaFilename.sgf}
     \end{goban}
   \end{center}
 
@@ -148,44 +159,27 @@
 % Problem and Chapter Generators
 
 \pgfkeys{%
-  /phili/haengmaProblemGenerator/.cd, 
-    book number/.store in = \problemBookNumber,
-    book number           = 1,
-    chapter/.store in     = \problemChapter,
-    chapter               = 1,
-    max problem/.store in = \problemMax,
-    max problem           = 1,
-}
-
-\newcommand\haengmaProblemGenerator[1][]{%
-  \pgfkeys{/phili/haengmaProblemGenerator/.cd, #1}%
-  \foreach \i in {1,3,...,\problemMax}{
-    \pgfmathtruncatemacro{\j}{\i + 1}
-    \haengmaProblem{haengma/haengma_\problemBookNumber/\problemChapter/\i_\j.sgf}
-  }
-}
-
-\pgfkeys{%
   /phili/haengmaChapterGenerator/.cd, 
-    book number/.store in  = \problemBookNumber,
-    book number            = 1,
-    chapter/.store in      = \problemChapter,
-    chapter                = 1,
-    max problem/.store in  = \problemMax,
-    max problem            = 1,
     chapter name/.store in = \problemChapterName,
     chapter name           = Chapter,
+    path/.store in         = \haengmaChapterPath,
+    path                   = sgf,
+    max problem/.store in  = \problemMax,
+    max problem            = 1,
 }
 
 \newcommand\haengmaChapterGenerator[1][]{%
   \pgfkeys{/phili/haengmaChapterGenerator/.cd, #1}%
   \chapter{\problemChapterName}
   \clearpage
-  \haengmaProblemGenerator[%
-    book number = 2,
-    chapter     = 1,
-    max problem = 37,
-  ]
+  \foreach \i in {1,3,...,\problemMax}{
+    \pgfmathtruncatemacro{\j}{\i + 1}
+    \haengmaProblem[%
+      path            = \haengmaChapterPath,
+      filename        = \i_\j,
+      initial counter = \i,
+    ]
+  }
 }
 
 %-----------------------------------------------------------
