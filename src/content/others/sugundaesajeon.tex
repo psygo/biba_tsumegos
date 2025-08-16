@@ -1,0 +1,37 @@
+\documentclass[12pt]{book}
+
+% A4
+\usepackage[
+  paperheight   = 297mm, 
+  paperwidth    = 210mm,
+  bindingoffset = 10mm,
+  left          = 7.5mm,
+  right         = 12.5mm,
+  top           = 20mm,
+  bottom        = 15mm,
+  footskip      = 5mm,
+]{geometry}
+
+\def\repoPath{/Users/phili/Code/Go/tsumego_workbooks/src}
+\usepackage{\repoPath/config}
+
+\def\sgfPath{sgf/birthday/}
+
+\begin{document}
+  \workbookTitlePage[%
+    korean title  = 수군대사전,
+    english title = Sugundaesajeon,
+  ]
+
+  \foreach \i in {1,2,...,23}{
+    \problemDiagram[%
+      path                  = \repoPath/sgf/sugundaesajeon/1/\i.sgf,
+      horizontal clip start = 8,
+      horizontal clip end   = 19,
+      vertical clip start   = 9,
+      vertical clip end     = 19,
+    ]
+  }
+  \hspace*{-\fill}
+  % TODO: Fix the alignment for the last row
+\end{document}
