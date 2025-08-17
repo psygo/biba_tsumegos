@@ -60,16 +60,16 @@
   /phili/problemDiagram/.cd, 
     path/.store in                      = \problemPath,
     path                                = sgf,
-    player/.store in                    = \problemPlayer,
-    player                              = 흑,
+    problem text/.store in              = \problemPlayer,
+    problem text                        = 흑,
     caption vertical margin/.store in   = \captionVertMargin,
     caption vertical margin             = 0cm,
     caption horizontal margin/.store in = \captionHorMargin,
     caption horizontal margin           = 0.125cm,
     problem size/.store in              = \problemSize,
     problem size                        = 8.75,
-    % %-------------------------------------------------------
-    % % Partial Boards
+    %-------------------------------------------------------
+    % Partial Boards
     horizontal clip start/.store in     = \horClipStartT,
     horizontal clip start               = 9,
     horizontal clip end/.store in       = \horClipEndT,
@@ -78,7 +78,7 @@
     vertical clip start                 = 1,
     vertical clip end/.store in         = \verClipEndT,
     vertical clip end                   = 10.5,
-    % %---------------------------------------------------------
+    %---------------------------------------------------------
 }
 
 \newcommand\problemDiagram[1][]{%
@@ -87,7 +87,7 @@
   \noindent%
   \begin{minipage}[c]{0.3\linewidth}
     \hfill
-    \fontsize{13pt}{13pt}\selectfont (\theproblemCounter) \ \ \problemPlayer
+    \fontsize{13pt}{13pt}\selectfont \theproblemCounter \ \ \problemPlayer
     \hspace{\captionHorMargin}
     \vspace{\captionVertMargin}
     \begin{goban}[board dimension       = \problemSize,

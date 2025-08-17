@@ -33,11 +33,13 @@
 \newcommand\birthdayProblemPage[1][]{%
   \pgfkeys{/phili/birthdayProblemPage/.cd, #1}%
   \pgfmathtruncatemacro{\beforeEnd}{\problemEnd - 1}%
+  \vspace*{0.1cm}
   \foreach \i in {\problemInit,...,\beforeEnd}{
     \problemDiagram[%
       path                      = \repoPath/sgf/birthday/problem_\i.sgf,
       problem size              = 8,
-      caption horizontal margin = -0.2cm,
+      problem text              = ,
+      caption horizontal margin = -0.4cm,
       horizontal clip start     = 7,
       horizontal clip end       = 19,
       vertical clip start       = 9,
@@ -48,7 +50,8 @@
   \problemDiagram[%
     path                      = \repoPath/sgf/birthday/problem_\problemEnd.sgf,
     problem size              = 8,
-    caption horizontal margin = -0.2cm,
+    problem text              = ,
+    caption horizontal margin = -0.4cm,
     horizontal clip start     = 7,
     horizontal clip end       = 19,
     vertical clip start       = 9,
@@ -59,11 +62,13 @@
 \def\sgfPath{sgf/birthday/}
 
 \begin{document}
+  \thispagestyle{empty}
   \centering
   \vfill
-  \vspace*{0.05cm}
+  \vspace*{-0.6cm}
 
   \Huge Shin Jinseo 9p vs Xu Jiayang 9p\\
+  \vspace{0.1cm}
   \Huge (2025-06-11)
 
   \vspace*{-1cm}
@@ -91,7 +96,7 @@
   \vfill
 
   \clearpage
-
+  
   \birthdayProblemPage[%
     init = 1,
     end  = 11,
