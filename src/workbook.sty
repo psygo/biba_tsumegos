@@ -58,22 +58,26 @@
 
 \pgfkeys{%
   /phili/problemDiagram/.cd, 
-    path/.store in           = \problemPath,
-    path                     = sgf,
-    player/.store in         = \problemPlayer,
-    player                   = 흑,
-    caption margin/.store in = \captionMargin,
-    caption margin           = 0.2cm,
+    path/.store in                      = \problemPath,
+    path                                = sgf,
+    player/.store in                    = \problemPlayer,
+    player                              = 흑,
+    caption vertical margin/.store in   = \captionVertMargin,
+    caption vertical margin             = 0cm,
+    caption horizontal margin/.store in = \captionHorMargin,
+    caption horizontal margin           = 0.125cm,
+    problem size/.store in              = \problemSize,
+    problem size                        = 8.75,
     % %-------------------------------------------------------
     % % Partial Boards
-    horizontal clip start/.store in = \horClipStartT,
-    horizontal clip start           = 9,
-    horizontal clip end/.store in   = \horClipEndT,
-    horizontal clip end             = 19,
-    vertical clip start/.store in   = \verClipStartT,
-    vertical clip start             = 1,
-    vertical clip end/.store in     = \verClipEndT,
-    vertical clip end               = 10.5,
+    horizontal clip start/.store in     = \horClipStartT,
+    horizontal clip start               = 9,
+    horizontal clip end/.store in       = \horClipEndT,
+    horizontal clip end                 = 19,
+    vertical clip start/.store in       = \verClipStartT,
+    vertical clip start                 = 1,
+    vertical clip end/.store in         = \verClipEndT,
+    vertical clip end                   = 10.5,
     % %---------------------------------------------------------
 }
 
@@ -84,9 +88,9 @@
   \begin{minipage}[c]{0.3\linewidth}
     \hfill
     \fontsize{13pt}{13pt}\selectfont (\theproblemCounter) \ \ \problemPlayer
-    \hspace{0.125cm}
-    \vspace{\captionMargin}
-    \begin{goban}[board dimension       = 8.75,
+    \hspace{\captionHorMargin}
+    \vspace{\captionVertMargin}
+    \begin{goban}[board dimension       = \problemSize,
                   board size            = 19,
                   scale                 = 1,
                   outline line width    = 0.55mm,
@@ -103,8 +107,8 @@
   /phili/haengmaProblem/.cd, 
     path/.store in            = \haengmaPath,
     path                      = sgf,
-    filename/.store in         = \haengmaFilename,
-    filename                   = 1_2,
+    filename/.store in        = \haengmaFilename,
+    filename                  = 1_2,
     initial counter/.store in = \haengmaCounter,
     initial counter           = 1,
 }

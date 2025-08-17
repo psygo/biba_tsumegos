@@ -46,11 +46,13 @@
 
   \foreach \i in {1,2,...,33}{
     \problemDiagram[%
-      path                  = \repoPath/sgf/birthday/problem_\i.sgf,
-      horizontal clip start = 8,
-      horizontal clip end   = 19,
-      vertical clip start   = 9,
-      vertical clip end     = 19,
+      path                      = \repoPath/sgf/birthday/problem_\i.sgf,
+      problem size              = 8,
+      caption horizontal margin = -0.2cm,
+      horizontal clip start     = 7,
+      horizontal clip end       = 19,
+      vertical clip start       = 9,
+      vertical clip end         = 19,
     ]
   }
   \hspace*{-\fill}
