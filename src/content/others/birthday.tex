@@ -15,11 +15,58 @@
 \def\repoPath{/Users/phili/Code/Go/tsumego_workbooks/src}
 \usepackage{\repoPath/config}
 
+\newcommand\biba{%
+  \begin{minipage}[c]{0.3\linewidth}
+    \centering
+    \Huge\textbf{BIBA}
+  \end{minipage}\hfill
+}
+
+\pgfkeys{%
+  /phili/birthdayProblemPage/.cd, 
+    init/.store in = \problemInit,
+    init           = sgf,
+    end/.store in  = \problemEnd,
+    end            = 1_2,
+}
+
+\newcommand\birthdayProblemPage[1][]{%
+  \pgfkeys{/phili/birthdayProblemPage/.cd, #1}%
+  \pgfmathtruncatemacro{\beforeEnd}{\problemEnd - 1}%
+  \foreach \i in {\problemInit,...,\beforeEnd}{
+    \problemDiagram[%
+      path                      = \repoPath/sgf/birthday/problem_\i.sgf,
+      problem size              = 8,
+      caption horizontal margin = -0.2cm,
+      horizontal clip start     = 7,
+      horizontal clip end       = 19,
+      vertical clip start       = 9,
+      vertical clip end         = 19,
+    ]
+  }%
+  \biba%
+  \problemDiagram[%
+    path                      = \repoPath/sgf/birthday/problem_\problemEnd.sgf,
+    problem size              = 8,
+    caption horizontal margin = -0.2cm,
+    horizontal clip start     = 7,
+    horizontal clip end       = 19,
+    vertical clip start       = 9,
+    vertical clip end         = 19,
+  ]\hspace*{-\fill}
+}
+
 \def\sgfPath{sgf/birthday/}
 
 \begin{document}
+  \centering
   \vfill
-  \vspace*{0.5cm}
+  \vspace*{0.05cm}
+
+  \Huge Shin Jinseo 9p vs Xu Jiayang 9p\\
+  \Huge (2025-06-11)
+
+  \vspace*{-1cm}
 
   \begin{center}
     \hspace{0.5cm}
@@ -35,27 +82,26 @@
     \end{goban}
   \end{center}
 
-  \vspace*{0.5cm}
+  \vspace*{0.1cm}
 
-  \centering
-  \Huge Happy Torture, Philippe!
+  \Huge Happy Torture, Philippe!\\
+  \Huge Happy Birthday!!!\\
+  \Huge Dia \& Potto
 
   \vfill
 
   \clearpage
 
-  \foreach \i in {1,2,...,33}{
-    \problemDiagram[%
-      path                      = \repoPath/sgf/birthday/problem_\i.sgf,
-      problem size              = 8,
-      caption horizontal margin = -0.2cm,
-      horizontal clip start     = 7,
-      horizontal clip end       = 19,
-      vertical clip start       = 9,
-      vertical clip end         = 19,
-    ]
-  }
-  \hspace*{-\fill}
-  % TODO: Recreate the BIBA box
-  % TODO: Fix the alignment for the last row
+  \birthdayProblemPage[%
+    init = 1,
+    end  = 11,
+  ]%
+  \birthdayProblemPage[%
+    init = 12,
+    end  = 22,
+  ]%
+  \birthdayProblemPage[%
+    init = 23,
+    end  = 33,
+  ]%
 \end{document}
