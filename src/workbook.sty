@@ -191,10 +191,8 @@
 
 \pgfkeys{%
   /phili/workbookTitlePage/.cd, 
-    korean title/.store in  = \titleKorean,
-    korean title            = 행마,
-    english title/.store in = \titleEnglish,
-    english title           = Haengma,
+    title/.store in = \workbookTitle,
+    title           = Haengma,
 }
 
 \newcommand\workbookTitlePage[1][]{%
@@ -205,12 +203,8 @@
     \scshape
 
     \vspace*{5.75cm}
-
-    \fontsize{60pt}{60pt}\selectfont\textbf{\titleKorean} \\
-
-    \vspace*{1.5cm}
-
-    \fontsize{60pt}{60pt}\selectfont\textbf{\titleEnglish} \\
+    
+    \workbookTitle
   \end{titlepage}
 }
 

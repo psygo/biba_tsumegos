@@ -1,0 +1,76 @@
+
+\documentclass[12pt]{book}
+
+% A4
+\usepackage[
+  paperheight   = 297mm, 
+  paperwidth    = 210mm,
+  bindingoffset = 10mm,
+  left          = 7.5mm,
+  right         = 12.5mm,
+  top           = 20mm,
+  bottom        = 15mm,
+  footskip      = 5mm,
+]{geometry}
+
+\def\repoPath{/Users/phili/Code/Go/tsumego_workbooks/src}
+\usepackage{\repoPath/config}
+
+\pgfkeys{%
+  /phili/tdgChapterGenerator/.cd, 
+    chapter name/.store in = \tdgChapterName,
+    chapter name           = Chapter,
+    path/.store in         = \tdgChapterPath,
+    path                   = sgf,
+    max problem/.store in  = \tdgProblemMax,
+    max problem            = 1,
+}
+
+\newcommand\tdgChapterGenerator[1][]{%
+  \pgfkeys{/phili/tdgChapterGenerator/.cd, #1}%
+  \chapter{\tdgChapterName}
+  \clearpage
+  \foreach \i in {1,...,\tdgProblemMax}{
+    \problemDiagram[%
+      path                      = \tdgChapterPath/\i.sgf,
+      problem size              = 8.5,
+      problem text              = ,
+      caption horizontal margin = -0.4cm,
+      horizontal clip start     = 8,
+      horizontal clip end       = 19,
+      vertical clip start       = 9,
+      vertical clip end         = 19,
+    ]
+  }
+  \hspace*{-\fill}
+}
+
+\begin{document}
+  % TODO: Make this similar to the original title page
+  \workbookTitlePage[%
+    title = {%
+      \scshape
+
+      \fontsize{60pt}{60pt}\selectfont\textbf{Técnicas de Go} \\
+
+      \vspace*{1.5cm}
+
+      \fontsize{60pt}{60pt}\selectfont\textbf{Volume 1}
+    }
+  ]
+  
+  \blankpage
+  
+  \frontmatter
+
+  \tableofcontents
+
+  \mainmatter
+
+  % TODO: Reorder problems to match the original book
+  \tdgChapterGenerator[%
+    chapter name = Captura Direta,
+    path         = {\repoPath/sgf/tecnicas_de_go/liberdades/captura},
+    max problem  = 10,
+  ]
+\end{document}

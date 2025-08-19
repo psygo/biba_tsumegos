@@ -33,7 +33,6 @@
 \newcommand\birthdayProblemPage[1][]{%
   \pgfkeys{/phili/birthdayProblemPage/.cd, #1}%
   \pgfmathtruncatemacro{\beforeEnd}{\problemEnd - 1}%
-  \vspace*{0.1cm}
   \foreach \i in {\problemInit,...,\beforeEnd}{
     \problemDiagram[%
       path                      = \repoPath/sgf/birthday/problem_\i.sgf,
@@ -58,8 +57,6 @@
     vertical clip end         = 19,
   ]\hspace*{-\fill}
 }
-
-\def\sgfPath{sgf/birthday/}
 
 \begin{document}
   \thispagestyle{empty}
