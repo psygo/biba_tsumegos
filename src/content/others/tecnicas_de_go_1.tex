@@ -45,19 +45,76 @@
   \hspace*{-\fill}
 }
 
+\newcommand\coverRuler{
+  \rule{0.97\textwidth}{1.6pt}\vspace*{-\baselineskip}\vspace*{2pt}
+  \rule{0.97\textwidth}{0.4pt}
+}
+
 \begin{document}
-  % TODO: Make this similar to the original title page
-  \workbookTitlePage[%
-    title = {%
-      \scshape
+  \blankpage
+  \begin{titlepage}
+    \centering
+    
+    \scshape % Small Caps
 
-      \fontsize{60pt}{60pt}\selectfont\textbf{Técnicas de Go} \\
+    \vspace*{-1.6cm}
+    
+    %---------------------------------------------------------
+    % Título
+    
+    \coverRuler
+    
+    \vspace{1\baselineskip}
+    
+    \fontsize{50pt}{50pt}\selectfont{Técnicas de Go} \\
+    % \huge{Técnicas de Go}\\
+    \vspace*{0.3cm}
+    \fontsize{40pt}{40pt}\selectfont{Volume \rom{1}} \\
+    % \large{Volume \rom{1}}\\
+    \vspace*{0.2375cm}
+    \Large{Liberdades e Vida ou Morte}
 
-      \vspace*{1.5cm}
+    \vspace{0.275\baselineskip}
+    
+    \coverRuler
 
-      \fontsize{60pt}{60pt}\selectfont\textbf{Volume 1}
-    }
-  ]
+    %---------------------------------------------------------
+
+    \vspace*{-0.42cm}
+
+    %---------------------------------------------------------
+    % Imagem
+    
+    \begin{figure}[h]
+      \centering
+      \hbox{
+        % Inside the book, this changes due to the margins
+        \hspace{2.75cm}
+        % \hspace{0.6cm}
+        \begin{goban}[board dimension       = 11,
+                      board size            = 9,
+                      scale                 = 1,
+                      outline line width    = 0.45mm,
+                      horizontal clip start = 1,
+                      horizontal clip end   = 9,
+                      vertical clip start   = 1,
+                      vertical clip end     = 9]
+          \parseSgfFile{\repoPath/sgf/tecnicas_de_go/capa_9x9_atravessar.sgf}
+        \end{goban}
+      }
+    \end{figure}
+
+    %---------------------------------------------------------
+    
+    \vspace*{-0.4cm}
+
+    %---------------------------------------------------------
+    % Autor
+
+    \Large{Philippe Fanaro}
+
+    %---------------------------------------------------------
+  \end{titlepage}
   
   \blankpage
   
@@ -67,10 +124,15 @@
 
   \mainmatter
 
-  % TODO: Reorder problems to match the original book
   \tdgChapterGenerator[%
     chapter name = Captura Direta,
     path         = {\repoPath/sgf/tecnicas_de_go/liberdades/captura},
+    max problem  = 10,
+  ]
+
+  \tdgChapterGenerator[%
+    chapter name = Resgate,
+    path         = {\repoPath/sgf/tecnicas_de_go/liberdades/resgate},
     max problem  = 10,
   ]
 \end{document}
