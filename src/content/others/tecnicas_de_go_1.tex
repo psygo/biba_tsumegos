@@ -50,8 +50,7 @@
   \rule{0.97\textwidth}{0.4pt}
 }
 
-\begin{document}
-  \blankpage
+\newcommand\tdgTitlePage{
   \begin{titlepage}
     \centering
     
@@ -112,7 +111,11 @@
 
     %---------------------------------------------------------
   \end{titlepage}
-  
+}
+
+\begin{document}
+  \blankpage
+  \tdgTitlePage
   \blankpage
   
   \frontmatter
