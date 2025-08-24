@@ -93,32 +93,35 @@
 %-----------------------------------------------------------
 % TOC
 
-% \usepackage[titles]{tocloft}
-% \renewcommand\cftchapfont{\bfseries\LARGE}
-% \renewcommand\cftchappagefont{\bfseries\LARGE}
-% \renewcommand{\cfttoctitlefont}{\bfseries\Huge}
-% \setlength{\cftbeforetoctitleskip}{-30pt}
-% \setlength{\cftaftertoctitleskip}{20pt}
-% \setlength{\cftbeforepartskip}{25pt}
-% \titlespacing*{\chapter}{0pt}{50pt}{40pt}
-
 \usepackage{titletoc}
-% \titleformat{\chapter}[block]{11pt}{\thechapter}{20pt}{}
-% \titlespacing*{\chapter}{0pt}{50pt}{40pt}
+\titleformat{name=\chapter, numberless}[block]
+  {\bfseries\fontsize{24}{24}\selectfont}
+  {}
+  {0cm}
+  {}
+  % {\rlap{\rule[-1ex]{\linewidth}{0.4pt}}}
+  [\addvspace{1cm}]
+  \addto\captionsenglish{
+    \renewcommand{\contentsname}{\bfseries\fontsize{30pt}{30pt}\selectfont Contents}
+  }
+  \addto\captionsportuguese{
+    \renewcommand{\contentsname}{Índice}
+  }
+\titlecontents{part}
+  [0em]
+  {\bfseries\fontsize{18}{18}\selectfont\contentslabel{2em}}
+  {}
+  {\bfseries\fontsize{20}{20}\selectfont}
+  {} % without page number
+  [\addvspace{0.5cm}]
 \titlecontents{chapter}
-              [1.2cm] 
-              {}
-              {\fontsize{18}{18}\selectfont\contentslabel{2em}}
-              {\hspace*{-2em}}
-              {\titlerule*[1pc]{}\contentspage}
+  [1.225cm] 
+  {}
+  {\bfseries\fontsize{18}{18}\selectfont\contentslabel{2em}}
+  {}
+  {\titlerule*[1pc]{}\bfseries\fontsize{16}{16}\selectfont\contentspage}
+  [\addvspace{0.25cm}]
 
-\usepackage[nottoc,numbib]{tocbibind}
-\addto\captionsenglish{
-  \renewcommand{\contentsname}{\bfseries\fontsize{30pt}{30pt}\selectfont Contents}
-}
-\addto\captionsportuguese{
-  \renewcommand{\contentsname}{Índice}
-}
 
 %-----------------------------------------------------------
 % Page Header
@@ -133,7 +136,7 @@
 
 \fancyfoot{}
 
-\setlength{\headheight}{17.74304pt}
+\setlength{\headheight}{18.72pt}
 \setlength{\headsep}{1.1cm}
 \renewcommand\headrulewidth{0pt}
 
