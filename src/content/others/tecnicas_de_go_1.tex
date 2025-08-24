@@ -40,9 +40,8 @@
       horizontal clip end       = 19,
       vertical clip start       = 9,
       vertical clip end         = 19,
-    ]
-  }
-  \hspace*{-\fill}
+    ]%
+  }\hspace*{-\fill}%
 }
 
 \newcommand\coverRuler{
@@ -133,6 +132,30 @@
   \tdgChapterGenerator[%
     chapter name = Resgate,
     path         = {\repoPath/sgf/tecnicas_de_go/liberdades/resgate},
+    max problem  = 10,
+  ]
+
+  \tdgChapterGenerator[%
+    chapter name = Duplo-Atari,
+    path         = {\repoPath/sgf/tecnicas_de_go/liberdades/duplo_atari},
+    max problem  = 5,
+  ]
+
+  \tdgChapterGenerator[%
+    chapter name = Suicídio,
+    path         = {\repoPath/sgf/tecnicas_de_go/liberdades/suicidio},
+    max problem  = 5,
+  ]
+
+  \tdgChapterGenerator[%
+    chapter name = Recaptura,
+    path         = {\repoPath/sgf/tecnicas_de_go/liberdades/recaptura},
+    max problem  = 5,
+  ]
+
+  \tdgChapterGenerator[%
+    chapter name = Ko,
+    path         = {\repoPath/sgf/tecnicas_de_go/liberdades/ko},
     max problem  = 10,
   ]
 \end{document}
