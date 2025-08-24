@@ -28,8 +28,8 @@
 %-----------------------------------------------------------
 % Language and Hyphenation
 
-\usepackage[english]{babel}
-% \usepackage[portuguese]{babel}
+% \usepackage[english]{babel}
+\usepackage[portuguese]{babel}
 \usepackage{microtype}
 \usepackage{hyphenat}
 % \hyphenation{pa-ra}
@@ -53,34 +53,18 @@
 %-----------------------------------------------------------
 % URLs
 
-\usepackage[%
-  colorlinks  = true,
-  allcolors   = black,
-  pdfsubject  = {Go;\ Baduk;\ Weiqi},
-  pdftitle    = {Técnicas\ de\ Go\ ---\ Volume I\ ---\ Captura\ e\ Vida\ ou\ Morte},
-  pdfauthor   = {Philippe\ Fanaro},
-  pdfkeywords = {Go;\ Baduk;\ Weiqi;\ Tsumegos},
-  pdfproducer = {LaTeX},
-  pdfcreator  = {pdflatex;\ bibtex},
-  bookmarksnumbered,
-]{hyperref}
+% \usepackage[%
+%   colorlinks  = true,
+%   allcolors   = black,
+%   pdfsubject  = {Go;\ Baduk;\ Weiqi},
+%   pdftitle    = {Técnicas\ de\ Go\ ---\ Volume I\ ---\ Captura\ e\ Vida\ ou\ Morte},
+%   pdfauthor   = {Philippe\ Fanaro},
+%   pdfkeywords = {Go;\ Baduk;\ Weiqi;\ Tsumegos},
+%   pdfproducer = {LaTeX},
+%   pdfcreator  = {pdflatex;\ bibtex},
+%   bookmarksnumbered,
+% ]{hyperref}
 \usepackage{xurl}
-
-%-----------------------------------------------------------
-% TOC
-
-\usepackage[titles]{tocloft}
-\renewcommand\cftchapfont{\bfseries\LARGE}
-\renewcommand\cftchappagefont{\bfseries\LARGE}
-\renewcommand{\cfttoctitlefont}{\bfseries\Huge}
-% \setlength{\cftbeforetoctitleskip}{-25pt}
-% \setlength{\cftaftertoctitleskip}{20pt}
-% \setlength{\cftbeforepartskip}{25pt}
-
-\usepackage[nottoc,numbib]{tocbibind}
-% \addto\captionsenglish{
-  \renewcommand{\contentsname}{\bfseries\fontsize{30pt}{30pt}\selectfont Contents}
-% }
 
 %-----------------------------------------------------------
 % Chapter and Part Titles
@@ -94,7 +78,7 @@
 \titlespacing*{\chapter}
               {0pt}
               {-30pt}
-              {20pt}
+              {10pt}
 
 \renewcommand{\chaptermark}[1]{%
   \markboth{\thechapter.\ #1}{}}
@@ -105,6 +89,36 @@
 \AtBeginDocument{\xpatchcmd{\NR@part}{\partname\nobreakspace}{}{}{}} % Removing "Part" from part titles
 \pagestyle{headings} % Apply the change
 \makeatother
+
+%-----------------------------------------------------------
+% TOC
+
+% \usepackage[titles]{tocloft}
+% \renewcommand\cftchapfont{\bfseries\LARGE}
+% \renewcommand\cftchappagefont{\bfseries\LARGE}
+% \renewcommand{\cfttoctitlefont}{\bfseries\Huge}
+% \setlength{\cftbeforetoctitleskip}{-30pt}
+% \setlength{\cftaftertoctitleskip}{20pt}
+% \setlength{\cftbeforepartskip}{25pt}
+% \titlespacing*{\chapter}{0pt}{50pt}{40pt}
+
+\usepackage{titletoc}
+% \titleformat{\chapter}[block]{11pt}{\thechapter}{20pt}{}
+% \titlespacing*{\chapter}{0pt}{50pt}{40pt}
+\titlecontents{chapter}
+              [1.2cm] 
+              {}
+              {\fontsize{18}{18}\selectfont\contentslabel{2em}}
+              {\hspace*{-2em}}
+              {\titlerule*[1pc]{}\contentspage}
+
+\usepackage[nottoc,numbib]{tocbibind}
+\addto\captionsenglish{
+  \renewcommand{\contentsname}{\bfseries\fontsize{30pt}{30pt}\selectfont Contents}
+}
+\addto\captionsportuguese{
+  \renewcommand{\contentsname}{Índice}
+}
 
 %-----------------------------------------------------------
 % Page Header
