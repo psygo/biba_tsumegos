@@ -99,7 +99,6 @@
   {}
   {0cm}
   {}
-  % {\rlap{\rule[-1ex]{\linewidth}{0.4pt}}}
   [\addvspace{1cm}]
   \addto\captionsenglish{
     \renewcommand{\contentsname}{\bfseries\fontsize{30pt}{30pt}\selectfont Contents}
@@ -109,7 +108,7 @@
   }
 \titlecontents{part}
   [0em]
-  {\bfseries\fontsize{18}{18}\selectfont\contentslabel{2em}}
+  {\addvspace{0.75cm}}
   {}
   {\bfseries\fontsize{20}{20}\selectfont}
   {} % without page number
@@ -119,7 +118,7 @@
   {}
   {\bfseries\fontsize{18}{18}\selectfont\contentslabel{2em}}
   {}
-  {\titlerule*[1pc]{}\bfseries\fontsize{16}{16}\selectfont\contentspage}
+  {\titlerule*[1pc]{.}\bfseries\fontsize{16}{16}\selectfont\contentspage}
   [\addvspace{0.25cm}]
 
 
